@@ -1,4 +1,4 @@
-using BLL;
+using BLL.Services.OpenAi;
 using Shared.interfaces;
 
 namespace DeveloperWorkingInWorldOfAi
@@ -10,7 +10,7 @@ namespace DeveloperWorkingInWorldOfAi
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddTransient<IThirdPartyAiService, OpenAiService>();
+            builder.Services.AddTransient<IThirdPartyAiService, Service>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

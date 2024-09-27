@@ -1,8 +1,8 @@
 ﻿using Shared.interfaces;
 
-namespace BLL
+namespace BLL.Services.OpenAi
 {
-    public class OpenAiService : IThirdPartyAiService
+    public class Service : IThirdPartyAiService
     {
         public string GetSuggestion(string prompt)
         {
