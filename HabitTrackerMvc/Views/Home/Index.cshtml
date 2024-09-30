@@ -1,0 +1,26 @@
+﻿@using HabitTracker.Models
+@model List<Habit>
+
+<h2>Habit List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Priority</th>
+            <th>Category</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var habit in Model) // This works because Model is now a List<Habit>
+        {
+            <tr>
+                <td>@habit.Name</td>
+                <td>@habit.Priority</td>
+                <td>@habit.Category</td>
+                <td>@habit.Date.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

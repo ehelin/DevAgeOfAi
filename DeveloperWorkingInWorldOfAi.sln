@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{EFE188B6-1076-446F-BBED-E53457F63A46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker", "HabitTracker\HabitTracker.csproj", "{89D5EA5B-61F5-4085-949E-81B2194440B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTrackerMvc", "HabitTrackerMvc\HabitTrackerMvc.csproj", "{EF3CF48D-95EC-4327-8D81-C2726ED52537}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

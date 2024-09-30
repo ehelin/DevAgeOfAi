@@ -1,0 +1,28 @@
+﻿@using HabitTracker.Models
+@model Habit
+
+<h2>Create New Habit</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" required>
+    </div>
+    <div class="form-group">
+        <label for="Priority">Priority</label>
+        <select class="form-control" id="Priority" name="Priority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Category">Category</label>
+        <input type="text" class="form-control" id="Category" name="Category" required>
+    </div>
+    <div class="form-group">
+        <label for="Date">Date</label>
+        <input type="date" class="form-control" id="Date" name="Date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
