@@ -4,9 +4,30 @@ namespace BLL.Services.OpenAi
 {
     public class Service : IThirdPartyAiService
     {
-        public string GetSuggestion(string prompt)
+        private readonly Client client = null;
+        private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
+
+        public Service(Client client)
         {
-            throw new NotImplementedException();
+            this.client = client;
         }
+
+        public string GetHabitToTrackSuggestion()
+        {
+            var response = GetSuggestion(HABIT_TO_TRACK_PROMPT).Result;
+
+            return response;
+        }
+
+        #region Private Methods
+
+        private async Task<string> GetSuggestion(string prompt)
+        {
+            var result = await this.client.GetCompletionAsync(prompt);
+
+            return result;
+        }
+
+        #endregion
     }
 }

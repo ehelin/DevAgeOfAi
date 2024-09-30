@@ -6,18 +6,20 @@ namespace Tests
     public class OpenAiTests
     {
         private readonly IThirdPartyAiService service;
+        private readonly Client client;
 
         public OpenAiTests()
         {
-            service = new Service();
+            var openAiKey = EnvironmentManager.GetVariable("OpenAiKey");
+
+            client = new Client(openAiKey);
+            service = new Service(client);
         }
 
         [Fact]
         public void GetSuggestion_Test()
         {
-            var prompt = "Tell me something";
-
-            var result = service.GetSuggestion(prompt);
+            var result = service.GetHabitToTrackSuggestion();
 
             Assert.NotNull(result);
             Assert.NotEmpty(result);

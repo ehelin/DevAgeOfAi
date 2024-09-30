@@ -22,7 +22,7 @@ namespace BLL.Services.OpenAi
         {
             var requestBody = new
             {
-                model = "text-davinci-003", // or another available model
+                model = "gpt-4o-mini", // or another available model
                 prompt,
                 max_tokens = 100,
                 temperature = 0.7
