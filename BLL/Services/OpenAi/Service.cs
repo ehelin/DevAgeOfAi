@@ -12,9 +12,9 @@ namespace BLL.Services.OpenAi
             this.client = client;
         }
 
-        public string GetHabitToTrackSuggestion()
+        public async Task<string> GetHabitToTrackSuggestion()
         {
-            var response = GetSuggestion(HABIT_TO_TRACK_PROMPT).Result;
+            var response = await GetSuggestion(HABIT_TO_TRACK_PROMPT);
 
             return response;
         }

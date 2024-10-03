@@ -13,6 +13,8 @@ namespace HabitTracker
         {
             this.thirdPartyAiService = thirdPartyAiService; // Injected AI service
 
+            this.TopMost = false;
+
             InitializeComponent();
             LoadHabitsFromFile(); // Load habits on start
         }
@@ -91,10 +93,10 @@ namespace HabitTracker
             try
             {
                 // Call the AI service to get habit suggestions
-                string habitSuggestion = this.thirdPartyAiService.GetHabitToTrackSuggestion();
+                string habitSuggestion = await this.thirdPartyAiService.GetHabitToTrackSuggestion();
 
                 // Prompt the user with the suggestion and allow them to accept or deny
-                DialogResult result = MessageBox.Show(this,
+                DialogResult result = System.Windows.Forms.MessageBox.Show(this,
                                                       $"Suggested habit: {habitSuggestion}\nDo you want to add this habit?",
                                                       "New Habit Suggestion",
                                                       MessageBoxButtons.YesNo,
@@ -106,6 +108,8 @@ namespace HabitTracker
                     AddHabitToTracker(habitSuggestion);
                     SaveHabitsToFile();
                     MessageBox.Show(this, "Habit added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadHabitsFromFile(); // Load habits on start
                 }
             }
             catch (Exception ex)
@@ -163,6 +167,8 @@ namespace HabitTracker
                 var habits = JsonConvert.DeserializeObject<List<Habit>>(json);
                 if (habits != null)
                 {
+                    lstHabits.Items.Clear();
+
                     foreach (var habit in habits)
                     {
                         ListViewItem item = new ListViewItem(habit.Name);

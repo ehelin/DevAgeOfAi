@@ -2,6 +2,6 @@
 {
     public interface IThirdPartyAiService
     {
-        string GetHabitToTrackSuggestion();
+        Task<string> GetHabitToTrackSuggestion();
     }
 }
