@@ -14,12 +14,12 @@ namespace DeveloperWorkingInWorldOfAi.Controllers
             this.openAiService = openAiService;
         }
 
-        [HttpGet]
-        public string Get(string prompt)
-        {
-            var result = this.openAiService.GetSuggestion(prompt);
+        //[HttpGet]
+        //public string Get(string prompt)
+        //{
+        //    var result = this.openAiService.GetSuggestion(prompt);
 
-            return result;
-        }
+        //    return result;
+        //}
     }
 }

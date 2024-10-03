@@ -10,6 +10,7 @@
         private System.Windows.Forms.Button btnRemoveCompleted;
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Button btnGenerateHabit;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -135,6 +136,15 @@
             this.btnRemoveCompleted.UseVisualStyleBackColor = true;
             this.btnRemoveCompleted.Click += new System.EventHandler(this.btnRemoveCompleted_Click);
 
+            this.btnGenerateHabit = new System.Windows.Forms.Button();
+            this.btnGenerateHabit.Location = new System.Drawing.Point(10, 10); // Adjust position
+            this.btnGenerateHabit.Name = "btnGenerateHabit";
+            this.btnGenerateHabit.Size = new System.Drawing.Size(150, 30);
+            this.btnGenerateHabit.Text = "Give me habits to track";
+            this.btnGenerateHabit.UseVisualStyleBackColor = true;
+            this.btnGenerateHabit.Click += new System.EventHandler(this.btnGenerateHabit_Click);
+
+
             // 
             // HabitTrackerForm
             // 
@@ -148,6 +158,7 @@
             this.Controls.Add(this.txtHabitName);
             this.Controls.Add(this.btnMarkCompleted);
             this.Controls.Add(this.btnRemoveCompleted);
+            this.Controls.Add(this.btnGenerateHabit);
             this.Name = "HabitTrackerForm";
             this.Text = "Habit Tracker";
             this.ResumeLayout(false);

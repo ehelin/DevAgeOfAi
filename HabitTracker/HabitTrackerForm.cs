@@ -4,16 +4,20 @@ using System.IO;
 using System.Windows.Forms;
 using HabitTracker.Models;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using Shared.interfaces;
 
 namespace HabitTracker
 {
     public partial class HabitTrackerForm : Form
     {
         private const string FileName = "data.json";
+        private readonly IThirdPartyAiService _thirdPartyAiService;
 
-        public HabitTrackerForm()
+        public HabitTrackerForm(IThirdPartyAiService thirdPartyAiService)
         {
             InitializeComponent();
+            _thirdPartyAiService = thirdPartyAiService; // Injected AI service
             LoadHabitsFromFile(); // Load habits on start
         }
 
@@ -82,6 +86,44 @@ namespace HabitTracker
 
             // Save updated list after removing completed habits
             SaveHabitsToFile();
+        }
+
+        private async void btnGenerateHabit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Call the AI service to get habit suggestions
+                string habitSuggestion = _thirdPartyAiService.GetHabitToTrackSuggestion();
+
+                // Prompt the user with the suggestion and allow them to accept or deny
+                DialogResult result = MessageBox.Show($"Suggested habit: {habitSuggestion}\nDo you want to add this habit?",
+                                                      "New Habit Suggestion",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                // If the user accepts, add it to the habit tracker list
+                if (result == DialogResult.Yes)
+                {
+                    AddHabitToTracker(habitSuggestion);
+                    SaveHabitsToFile();
+                    MessageBox.Show("Habit added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddHabitToTracker(string habitName)
+        {
+            // Add habit to the list
+            ListViewItem item = new ListViewItem(habitName);
+            item.SubItems.Add("Not Completed");
+            item.SubItems.Add("0"); // Initialize streak to 0
+            item.SubItems.Add("Medium"); // Default priority
+            item.SubItems.Add("General"); // Default category
+            lstHabits.Items.Add(item);
         }
 
         private void SaveHabitsToFile()

@@ -20,6 +20,8 @@ namespace BLL.Services.OpenAi
 
         public async Task<string> GetCompletionAsync(string prompt)
         {
+            return "test";
+
             var requestBody = new
             {
                 model = "gpt-4o-mini", // or another available model
