@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
 using HabitTracker.Models;
 using Newtonsoft.Json;
-using System.Threading.Tasks;
 using Shared.interfaces;
 
 namespace HabitTracker
@@ -12,12 +7,13 @@ namespace HabitTracker
     public partial class HabitTrackerForm : Form
     {
         private const string FileName = "data.json";
-        private readonly IThirdPartyAiService _thirdPartyAiService;
+        private readonly IThirdPartyAiService thirdPartyAiService;
 
         public HabitTrackerForm(IThirdPartyAiService thirdPartyAiService)
         {
+            this.thirdPartyAiService = thirdPartyAiService; // Injected AI service
+
             InitializeComponent();
-            _thirdPartyAiService = thirdPartyAiService; // Injected AI service
             LoadHabitsFromFile(); // Load habits on start
         }
 
@@ -44,6 +40,8 @@ namespace HabitTracker
 
                 // Save habits to file
                 SaveHabitsToFile();
+
+                LoadHabitsFromFile(); // reload habits
             }
             else
             {
@@ -93,10 +91,11 @@ namespace HabitTracker
             try
             {
                 // Call the AI service to get habit suggestions
-                string habitSuggestion = _thirdPartyAiService.GetHabitToTrackSuggestion();
+                string habitSuggestion = this.thirdPartyAiService.GetHabitToTrackSuggestion();
 
                 // Prompt the user with the suggestion and allow them to accept or deny
-                DialogResult result = MessageBox.Show($"Suggested habit: {habitSuggestion}\nDo you want to add this habit?",
+                DialogResult result = MessageBox.Show(this,
+                                                      $"Suggested habit: {habitSuggestion}\nDo you want to add this habit?",
                                                       "New Habit Suggestion",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Question);
@@ -106,14 +105,15 @@ namespace HabitTracker
                 {
                     AddHabitToTracker(habitSuggestion);
                     SaveHabitsToFile();
-                    MessageBox.Show("Habit added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this, "Habit added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, $"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void AddHabitToTracker(string habitName)
         {

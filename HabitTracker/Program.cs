@@ -28,8 +28,16 @@ namespace HabitTracker
         {
             IServiceCollection services = new ServiceCollection();
 
-            // Register the OpenAiClient
-            services.AddSingleton<BLL.Services.OpenAi.Client>();
+            // Retrieve the API key from environment variables
+            var apiKey = EnvironmentManager.GetVariable("OpenAiKey");
+
+            if (string.IsNullOrEmpty(apiKey))
+            {
+                throw new InvalidOperationException("API key is missing in environment variables.");
+            }
+
+            // Register the OpenAiClient with the API key injected
+            services.AddSingleton<BLL.Services.OpenAi.Client>(sp => new BLL.Services.OpenAi.Client(apiKey));
 
             // Register the AI Service
             services.AddSingleton<IThirdPartyAiService, BLL.Services.OpenAi.Service>();

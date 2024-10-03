@@ -33,136 +33,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtHabitName = new System.Windows.Forms.TextBox();
-            this.btnAddHabit = new System.Windows.Forms.Button();
-            this.lstHabits = new System.Windows.Forms.ListView();
-            this.btnMarkCompleted = new System.Windows.Forms.Button();
-            this.btnRemoveCompleted = new System.Windows.Forms.Button();
-            this.cmbPriority = new System.Windows.Forms.ComboBox();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
-
+            txtHabitName = new TextBox();
+            btnAddHabit = new Button();
+            lstHabits = new ListView();
+            btnMarkCompleted = new Button();
+            btnRemoveCompleted = new Button();
+            cmbPriority = new ComboBox();
+            cmbCategory = new ComboBox();
+            btnGenerateHabit = new Button();
+            SuspendLayout();
             // 
             // txtHabitName
             // 
-            this.txtHabitName.Location = new System.Drawing.Point(12, 12);
-            this.txtHabitName.Name = "txtHabitName";
-            this.txtHabitName.Size = new System.Drawing.Size(200, 20);
-            this.txtHabitName.TabIndex = 0;
-
+            txtHabitName.Location = new Point(16, 18);
+            txtHabitName.Margin = new Padding(4, 5, 4, 5);
+            txtHabitName.Name = "txtHabitName";
+            txtHabitName.Size = new Size(265, 27);
+            txtHabitName.TabIndex = 0;
             // 
             // btnAddHabit
             // 
-            this.btnAddHabit.Location = new System.Drawing.Point(220, 10);
-            this.btnAddHabit.Name = "btnAddHabit";
-            this.btnAddHabit.Size = new System.Drawing.Size(75, 23);
-            this.btnAddHabit.TabIndex = 1;
-            this.btnAddHabit.Text = "Add Habit";
-            this.btnAddHabit.UseVisualStyleBackColor = true;
-            this.btnAddHabit.Click += new System.EventHandler(this.btnAddHabit_Click);
-
-            // 
-            // cmbPriority
-            // 
-            this.cmbPriority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPriority.FormattingEnabled = true;
-            this.cmbPriority.Items.AddRange(new object[] {
-            "Low",
-            "Medium",
-            "High"});
-            this.cmbPriority.Location = new System.Drawing.Point(320, 10);
-            this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(75, 23);
-            this.cmbPriority.TabIndex = 5;
-
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Items.AddRange(new object[] {
-            "Health",
-            "Work",
-            "Personal Development",
-            "Other"});
-            this.cmbCategory.Location = new System.Drawing.Point(400, 10);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(120, 23);
-            this.cmbCategory.TabIndex = 6;
-
+            btnAddHabit.Location = new Point(293, 15);
+            btnAddHabit.Margin = new Padding(4, 5, 4, 5);
+            btnAddHabit.Name = "btnAddHabit";
+            btnAddHabit.Size = new Size(100, 35);
+            btnAddHabit.TabIndex = 1;
+            btnAddHabit.Text = "Add Habit";
+            btnAddHabit.UseVisualStyleBackColor = true;
+            btnAddHabit.Click += btnAddHabit_Click;
             // 
             // lstHabits
             // 
-            this.lstHabits.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            new System.Windows.Forms.ColumnHeader() { Text = "Habit", Width = 150 },
-            new System.Windows.Forms.ColumnHeader() { Text = "Status", Width = 100 },
-            new System.Windows.Forms.ColumnHeader() { Text = "Streak", Width = 80 },
-            new System.Windows.Forms.ColumnHeader() { Text = "Priority", Width = 80 },
-            new System.Windows.Forms.ColumnHeader() { Text = "Category", Width = 100 }});
-            this.lstHabits.FullRowSelect = true;
-            this.lstHabits.GridLines = true;
-            this.lstHabits.Location = new System.Drawing.Point(12, 50);
-            this.lstHabits.Name = "lstHabits";
-            this.lstHabits.Size = new System.Drawing.Size(510, 250);
-            this.lstHabits.TabIndex = 2;
-            this.lstHabits.UseCompatibleStateImageBehavior = false;
-            this.lstHabits.View = System.Windows.Forms.View.Details;
-
-            // Anchor ListView to expand with the form
-            this.lstHabits.Anchor = (System.Windows.Forms.AnchorStyles.Top |
-                                     System.Windows.Forms.AnchorStyles.Bottom |
-                                     System.Windows.Forms.AnchorStyles.Left |
-                                     System.Windows.Forms.AnchorStyles.Right);
-
+            lstHabits.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lstHabits.FullRowSelect = true;
+            lstHabits.GridLines = true;
+            lstHabits.Location = new Point(16, 77);
+            lstHabits.Margin = new Padding(4, 5, 4, 5);
+            lstHabits.Name = "lstHabits";
+            lstHabits.Size = new Size(679, 382);
+            lstHabits.TabIndex = 2;
+            lstHabits.UseCompatibleStateImageBehavior = false;
+            lstHabits.View = View.Details;
             // 
             // btnMarkCompleted
             // 
-            this.btnMarkCompleted.Location = new System.Drawing.Point(12, 320);
-            this.btnMarkCompleted.Name = "btnMarkCompleted";
-            this.btnMarkCompleted.Size = new System.Drawing.Size(100, 23);
-            this.btnMarkCompleted.TabIndex = 3;
-            this.btnMarkCompleted.Text = "Mark Completed";
-            this.btnMarkCompleted.UseVisualStyleBackColor = true;
-            this.btnMarkCompleted.Click += new System.EventHandler(this.btnMarkCompleted_Click);
-
+            btnMarkCompleted.Location = new Point(16, 492);
+            btnMarkCompleted.Margin = new Padding(4, 5, 4, 5);
+            btnMarkCompleted.Name = "btnMarkCompleted";
+            btnMarkCompleted.Size = new Size(133, 35);
+            btnMarkCompleted.TabIndex = 3;
+            btnMarkCompleted.Text = "Mark Completed";
+            btnMarkCompleted.UseVisualStyleBackColor = true;
+            btnMarkCompleted.Click += btnMarkCompleted_Click;
             // 
             // btnRemoveCompleted
             // 
-            this.btnRemoveCompleted.Location = new System.Drawing.Point(195, 320);
-            this.btnRemoveCompleted.Name = "btnRemoveCompleted";
-            this.btnRemoveCompleted.Size = new System.Drawing.Size(100, 23);
-            this.btnRemoveCompleted.TabIndex = 4;
-            this.btnRemoveCompleted.Text = "Remove Completed";
-            this.btnRemoveCompleted.UseVisualStyleBackColor = true;
-            this.btnRemoveCompleted.Click += new System.EventHandler(this.btnRemoveCompleted_Click);
-
-            this.btnGenerateHabit = new System.Windows.Forms.Button();
-            this.btnGenerateHabit.Location = new System.Drawing.Point(10, 10); // Adjust position
-            this.btnGenerateHabit.Name = "btnGenerateHabit";
-            this.btnGenerateHabit.Size = new System.Drawing.Size(150, 30);
-            this.btnGenerateHabit.Text = "Give me habits to track";
-            this.btnGenerateHabit.UseVisualStyleBackColor = true;
-            this.btnGenerateHabit.Click += new System.EventHandler(this.btnGenerateHabit_Click);
-
-
+            btnRemoveCompleted.Location = new Point(260, 492);
+            btnRemoveCompleted.Margin = new Padding(4, 5, 4, 5);
+            btnRemoveCompleted.Name = "btnRemoveCompleted";
+            btnRemoveCompleted.Size = new Size(133, 35);
+            btnRemoveCompleted.TabIndex = 4;
+            btnRemoveCompleted.Text = "Remove Completed";
+            btnRemoveCompleted.UseVisualStyleBackColor = true;
+            btnRemoveCompleted.Click += btnRemoveCompleted_Click;
+            // 
+            // cmbPriority
+            // 
+            cmbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPriority.FormattingEnabled = true;
+            cmbPriority.Items.AddRange(new object[] { "Low", "Medium", "High" });
+            cmbPriority.Location = new Point(427, 15);
+            cmbPriority.Margin = new Padding(4, 5, 4, 5);
+            cmbPriority.Name = "cmbPriority";
+            cmbPriority.Size = new Size(99, 28);
+            cmbPriority.TabIndex = 5;
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Items.AddRange(new object[] { "Health", "Work", "Personal Development", "Other" });
+            cmbCategory.Location = new Point(533, 15);
+            cmbCategory.Margin = new Padding(4, 5, 4, 5);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(159, 28);
+            cmbCategory.TabIndex = 6;
+            // 
+            // btnGenerateHabit
+            // 
+            btnGenerateHabit.Location = new Point(515, 492);
+            btnGenerateHabit.Margin = new Padding(4, 5, 4, 5);
+            btnGenerateHabit.Name = "btnGenerateHabit";
+            btnGenerateHabit.Size = new Size(180, 35);
+            btnGenerateHabit.TabIndex = 7;
+            btnGenerateHabit.Text = "Give me habits to track";
+            btnGenerateHabit.UseVisualStyleBackColor = true;
+            btnGenerateHabit.Click += btnGenerateHabit_Click;
             // 
             // HabitTrackerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);  // Initial form size
-            this.Controls.Add(this.cmbPriority);
-            this.Controls.Add(this.cmbCategory);
-            this.Controls.Add(this.lstHabits);
-            this.Controls.Add(this.btnAddHabit);
-            this.Controls.Add(this.txtHabitName);
-            this.Controls.Add(this.btnMarkCompleted);
-            this.Controls.Add(this.btnRemoveCompleted);
-            this.Controls.Add(this.btnGenerateHabit);
-            this.Name = "HabitTrackerForm";
-            this.Text = "Habit Tracker";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 615);
+            Controls.Add(cmbPriority);
+            Controls.Add(cmbCategory);
+            Controls.Add(lstHabits);
+            Controls.Add(btnAddHabit);
+            Controls.Add(txtHabitName);
+            Controls.Add(btnMarkCompleted);
+            Controls.Add(btnRemoveCompleted);
+            Controls.Add(btnGenerateHabit);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "HabitTrackerForm";
+            Text = "Habit Tracker";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
