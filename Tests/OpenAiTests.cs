@@ -17,9 +17,9 @@ namespace Tests
         }
 
         [Fact]
-        public void GetSuggestion_Test()
+        public async Task GetSuggestion_Test()
         {
-            var result = service.GetHabitToTrackSuggestion();
+            var result = await service.GetHabitToTrackSuggestion();
 
             Assert.NotNull(result);
             Assert.NotEmpty(result);

@@ -4,7 +4,8 @@ namespace BLL.Services.OpenAi
 {
     public class Service : IThirdPartyAiService
     {
-        private readonly Client client = null;
+        private readonly Client client;
+
         private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
 
         public Service(Client client)
