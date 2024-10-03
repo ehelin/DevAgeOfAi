@@ -10,7 +10,7 @@ namespace BLL.Services.OpenAi
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
-        private const string ApiUrl = "https://api.openai.com/v1/completions";
+        private const string ApiUrl = "https://api.openai.com/v1/chat/completions";
 
         public Client(string apiKey)
         {
@@ -20,12 +20,15 @@ namespace BLL.Services.OpenAi
 
         public async Task<string> GetCompletionAsync(string prompt)
         {
-            return "test";
-
+            // Prepare the chat messages
             var requestBody = new
             {
-                model = "gpt-4o-mini", // or another available model
-                prompt,
+                model = "gpt-4", // Replace with an available model
+                messages = new[]
+                {
+                    new { role = "system", content = "You are a helpful assistant." },
+                    new { role = "user", content = prompt }
+                },
                 max_tokens = 100,
                 temperature = 0.7
             };
@@ -46,8 +49,8 @@ namespace BLL.Services.OpenAi
             var responseString = await response.Content.ReadAsStringAsync();
             var responseJson = JsonSerializer.Deserialize<JsonElement>(responseString);
 
-            // Extracting the text from the response JSON.
-            return responseJson.GetProperty("choices")[0].GetProperty("text").GetString();
+            // Extracting the message content from the response JSON.
+            return responseJson.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
         }
     }
 }
