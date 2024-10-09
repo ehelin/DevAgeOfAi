@@ -13,7 +13,7 @@ namespace Tests
             var openAiKey = EnvironmentManager.GetVariable("OpenAiKey");
 
             client = new Client(openAiKey);
-            service = new Service(client);
+            service = new BLL.Services.Service(client);
         }
 
         [Fact]

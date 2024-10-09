@@ -1,3 +1,4 @@
+using BLL.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.interfaces;
 using System;
@@ -29,18 +30,19 @@ namespace HabitTracker
             IServiceCollection services = new ServiceCollection();
 
             // Retrieve the API key from environment variables
-            var apiKey = EnvironmentManager.GetVariable("OpenAiKey");
+            var openAiKey = EnvironmentManager.GetVariable("OpenAiKey");
+            var msAiKey = EnvironmentManager.GetVariable("MsAiKey");
 
-            if (string.IsNullOrEmpty(apiKey))
+            if (string.IsNullOrEmpty(openAiKey) || string.IsNullOrEmpty(msAiKey))
             {
-                throw new InvalidOperationException("API key is missing in environment variables.");
+                throw new InvalidOperationException("API key(s) is missing in environment variables.");
             }
 
-            // Register the OpenAiClient with the API key injected
-            services.AddSingleton<BLL.Services.OpenAi.Client>(sp => new BLL.Services.OpenAi.Client(apiKey));
+            services.AddSingleton(new BLL.Services.OpenAi.Client(openAiKey));
+            services.AddSingleton(new BLL.Services.MicrosoftAi.Client(msAiKey));
 
             // Register the AI Service
-            services.AddSingleton<IThirdPartyAiService, BLL.Services.OpenAi.Service>();
+            services.AddSingleton<IThirdPartyAiService, Service>();
 
             // Register the HabitTrackerForm
             services.AddSingleton<HabitTrackerForm>();

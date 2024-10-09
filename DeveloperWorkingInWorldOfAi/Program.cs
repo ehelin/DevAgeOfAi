@@ -1,4 +1,4 @@
-using BLL.Services.OpenAi;
+using BLL.Services;
 using Shared.interfaces;
 
 namespace DeveloperWorkingInWorldOfAi

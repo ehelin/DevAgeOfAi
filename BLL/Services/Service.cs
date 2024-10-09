@@ -1,6 +1,7 @@
-﻿using Shared.interfaces;
+﻿using BLL.Services.OpenAi;
+using Shared.interfaces;
 
-namespace BLL.Services.OpenAi
+namespace BLL.Services
 {
     public class Service : IThirdPartyAiService
     {
@@ -24,7 +25,7 @@ namespace BLL.Services.OpenAi
 
         private async Task<string> GetSuggestion(string prompt)
         {
-            var result = await this.client.GetCompletionAsync(prompt);
+            var result = await client.GetCompletionAsync(prompt);
 
             return result;
         }
