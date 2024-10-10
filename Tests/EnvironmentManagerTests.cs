@@ -10,5 +10,14 @@
             Assert.NotNull(result);
             Assert.NotEmpty(result);
         }
+
+        [Fact]
+        public void GetMsAiKey_Test()
+        {
+            var result = EnvironmentManager.GetVariable("MsAiKey");
+
+            Assert.NotNull(result);
+            Assert.NotEmpty(result);
+        }
     }
 }

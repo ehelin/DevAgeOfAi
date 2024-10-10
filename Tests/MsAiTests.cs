@@ -1,16 +1,16 @@
 using Shared.interfaces;
-using BLL.Services.OpenAi;
+using BLL.Services.MicrosoftAi;
 
 namespace Tests
 {
-    public class OpenAiTests
+    public class MsAiTests
     {
         private readonly IThirdPartyAiService service;
         private readonly Client client;
 
-        public OpenAiTests()
+        public MsAiTests()
         {
-            var aiKey = EnvironmentManager.GetVariable("OpenAiKey");
+            var aiKey = EnvironmentManager.GetVariable("MsAiKey");
 
             client = new Client(aiKey);
             service = new BLL.Services.Service(client);

@@ -1,15 +1,16 @@
 ﻿using BLL.Services.OpenAi;
 using Shared.interfaces;
+using Shared.Interfaces;
 
 namespace BLL.Services
 {
     public class Service : IThirdPartyAiService
     {
-        private readonly Client client;
+        private readonly IClient client;
 
         private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
 
-        public Service(Client client)
+        public Service(IClient client)
         {
             this.client = client;
         }

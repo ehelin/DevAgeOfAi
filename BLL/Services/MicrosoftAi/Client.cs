@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Interfaces;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Services.MicrosoftAi
 {
-    public class Client
+    public class Client : IClient
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
