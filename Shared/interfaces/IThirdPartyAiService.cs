@@ -1,4 +1,4 @@
-﻿namespace Shared.interfaces
+﻿namespace Shared.Interfaces
 {
     public interface IThirdPartyAiService
     {

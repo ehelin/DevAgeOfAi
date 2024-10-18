@@ -1,5 +1,5 @@
-using Shared.interfaces;
-using BLL.Services.OpenAi;
+using Shared.Interfaces;
+using BLL.Ai.Clients.OpenAi;
 
 namespace Tests
 {
@@ -13,7 +13,7 @@ namespace Tests
             var aiKey = EnvironmentManager.GetVariable("OpenAiKey");
 
             client = new Client(aiKey);
-            service = new BLL.Services.Service(client);
+            service = new BLL.Ai.Services.OpenAiService(client);
         }
 
         [Fact]

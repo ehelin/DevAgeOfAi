@@ -1,6 +1,6 @@
 using HabitTracker.Models;
 using Newtonsoft.Json;
-using Shared.interfaces;
+using Shared.Interfaces;
 
 namespace HabitTracker
 {

@@ -1,6 +1,6 @@
 ﻿using DeveloperWorkingInWorldOfAi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Shared.interfaces;
+using Shared.Interfaces;
 using System.Diagnostics;
 
 namespace DeveloperWorkingInWorldOfAi.Controllers

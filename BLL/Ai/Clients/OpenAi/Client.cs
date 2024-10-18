@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace BLL.Services.OpenAi
+namespace BLL.Ai.Clients.OpenAi
 {
     public class Client : IClient
     {

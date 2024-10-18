@@ -1,6 +1,6 @@
-using BLL.Services;
+using BLL.Ai.Services;
+using BLL.Ai.Clients;
 using Microsoft.Extensions.DependencyInjection;
-using Shared.interfaces;
 using Shared.Interfaces;
 using System;
 using System.Windows.Forms;
@@ -40,16 +40,13 @@ namespace HabitTracker
                 throw new InvalidOperationException("API key(s) is missing in environment variables.");
             }
 
-            services.AddSingleton(new BLL.Services.OpenAi.Client(openAiKey));
-            services.AddSingleton(new BLL.Services.MicrosoftAi.Client(msAiKey, msAiDeploymentId));
+            // register clients
+            services.AddScoped<IClient>(provider => new BLL.Ai.Clients.MicrosoftAi.Client(msAiKey, msAiDeploymentId));
+            services.AddScoped<IClient>(provider => new BLL.Ai.Clients.OpenAi.Client(openAiKey));
 
-            //services.AddScoped<IClient, OpenAiClient>();
-
-            //// Or for MsAiClient
-            //services.AddScoped<IClient, MsAiClient>();
-
-            // Register the AI Service
-            services.AddSingleton<IThirdPartyAiService, Service>();
+            services.AddScoped<IClientFactory, ClientFactory>();                // Register the factory
+            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Service2
+            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Servic
 
             // Register the HabitTrackerForm
             services.AddSingleton<HabitTrackerForm>();

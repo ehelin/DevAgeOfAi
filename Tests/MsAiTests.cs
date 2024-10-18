@@ -1,20 +1,21 @@
-using Shared.interfaces;
-using BLL.Services.MicrosoftAi;
+using Shared.Interfaces;
+using MsAiClient = BLL.Ai.Clients.MicrosoftAi;
+using MsAiService = BLL.Ai.Services;
 
 namespace Tests
 {
     public class MsAiTests
     {
         private readonly IThirdPartyAiService service;
-        private readonly Client client;
+        private readonly MsAiClient.Client client;
 
         public MsAiTests()
         {
             var aiKey = EnvironmentManager.GetVariable("MsAiKey"); 
             var msAiDeploymentId = EnvironmentManager.GetVariable("MsAiDeploymentId");
 
-            client = new Client(aiKey, msAiDeploymentId);
-            service = new BLL.Services.Service(client);
+            client = new MsAiClient.Client(aiKey, msAiDeploymentId);
+            service = new MsAiService.MicrosoftAiService(client);
         }
 
         [Fact]

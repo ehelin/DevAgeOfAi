@@ -2,7 +2,7 @@
 using Shared.Interfaces;
 using System.Text;
 
-namespace BLL.Services.MicrosoftAi
+namespace BLL.Ai.Clients.MicrosoftAi
 {
     public class Client : IClient
     {
