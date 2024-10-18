@@ -9,9 +9,9 @@ namespace HabitTracker
         private const string FileName = "data.json";
         private readonly IThirdPartyAiService thirdPartyAiService;
 
-        public HabitTrackerForm(IThirdPartyAiService thirdPartyAiService)
+        public HabitTrackerForm(IEnumerable<IThirdPartyAiService> thirdPartyAiServices)
         {
-            this.thirdPartyAiService = thirdPartyAiService; // Injected AI service
+            this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.OpenAiService);
 
             this.TopMost = false;
 

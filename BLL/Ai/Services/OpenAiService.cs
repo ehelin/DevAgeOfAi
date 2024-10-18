@@ -8,9 +8,9 @@ namespace BLL.Ai.Services
 
         private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
 
-        public OpenAiService(IClient client)
+        public OpenAiService(IEnumerable<IClient> clients)
         {
-            this.client = client;
+            this.client = clients.First(x => x is BLL.Ai.Clients.OpenAi.Client);
         }
 
         public async Task<string> GetHabitToTrackSuggestion()

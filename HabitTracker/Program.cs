@@ -1,9 +1,9 @@
-using BLL.Ai.Services;
 using BLL.Ai.Clients;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Interfaces;
 using System;
 using System.Windows.Forms;
+using BLL.Ai.Services;
 
 namespace HabitTracker
 {
@@ -44,9 +44,8 @@ namespace HabitTracker
             services.AddScoped<IClient>(provider => new BLL.Ai.Clients.MicrosoftAi.Client(msAiKey, msAiDeploymentId));
             services.AddScoped<IClient>(provider => new BLL.Ai.Clients.OpenAi.Client(openAiKey));
 
-            services.AddScoped<IClientFactory, ClientFactory>();                // Register the factory
-            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Service2
-            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Servic
+            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Service(s)
+            services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>();  // Register the AI Service(s)
 
             // Register the HabitTrackerForm
             services.AddSingleton<HabitTrackerForm>();
