@@ -1,19 +1,22 @@
+using BLL.Ai.Services;
 using Shared.Interfaces;
-using BLL.Ai.Clients.OpenAi;
+using OpenAiClient = BLL.Ai.Clients.OpenAi;
 
 namespace Tests
 {
     public class OpenAiTests
     {
         private readonly IThirdPartyAiService service;
-        private readonly Client client;
+        private readonly OpenAiClient.Client client;
 
         public OpenAiTests()
         {
             var aiKey = EnvironmentManager.GetVariable("OpenAiKey");
 
-            client = new Client(aiKey);
-            service = new BLL.Ai.Services.OpenAiService(client);
+            IClient client = new OpenAiClient.Client(aiKey);
+            IEnumerable<IClient> clients = new List<IClient> { client };
+
+            service = new OpenAiService(clients);
         }
 
         [Fact]

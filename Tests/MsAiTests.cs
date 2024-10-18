@@ -1,6 +1,6 @@
 using Shared.Interfaces;
 using MsAiClient = BLL.Ai.Clients.MicrosoftAi;
-using MsAiService = BLL.Ai.Services;
+using BLL.Ai.Services;
 
 namespace Tests
 {
@@ -14,8 +14,10 @@ namespace Tests
             var aiKey = EnvironmentManager.GetVariable("MsAiKey"); 
             var msAiDeploymentId = EnvironmentManager.GetVariable("MsAiDeploymentId");
 
-            client = new MsAiClient.Client(aiKey, msAiDeploymentId);
-            service = new MsAiService.MicrosoftAiService(client);
+            IClient client = new MsAiClient.Client(aiKey, msAiDeploymentId);
+            IEnumerable<IClient> clients = new List<IClient> { client };
+
+            service = new MicrosoftAiService(clients);
         }
 
         [Fact]
