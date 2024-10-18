@@ -10,9 +10,10 @@ namespace Tests
 
         public MsAiTests()
         {
-            var aiKey = EnvironmentManager.GetVariable("MsAiKey");
+            var aiKey = EnvironmentManager.GetVariable("MsAiKey"); 
+            var msAiDeploymentId = EnvironmentManager.GetVariable("MsAiDeploymentId");
 
-            client = new Client(aiKey);
+            client = new Client(aiKey, msAiDeploymentId);
             service = new BLL.Services.Service(client);
         }
 

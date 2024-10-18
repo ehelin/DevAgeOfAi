@@ -19,5 +19,14 @@
             Assert.NotNull(result);
             Assert.NotEmpty(result);
         }
+
+        [Fact]
+        public void GetMsAiDeploymentId_Test()
+        {
+            var result = EnvironmentManager.GetVariable("MsAiDeploymentId");
+
+            Assert.NotNull(result);
+            Assert.NotEmpty(result);
+        }
     }
 }

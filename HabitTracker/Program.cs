@@ -33,6 +33,7 @@ namespace HabitTracker
             // Retrieve the API key from environment variables
             var openAiKey = EnvironmentManager.GetVariable("OpenAiKey");
             var msAiKey = EnvironmentManager.GetVariable("MsAiKey");
+            var msAiDeploymentId = EnvironmentManager.GetVariable("MsAiDeploymentId");
 
             if (string.IsNullOrEmpty(openAiKey) || string.IsNullOrEmpty(msAiKey))
             {
@@ -40,8 +41,7 @@ namespace HabitTracker
             }
 
             services.AddSingleton(new BLL.Services.OpenAi.Client(openAiKey));
-            services.AddSingleton(new BLL.Services.MicrosoftAi.Client(msAiKey));
-
+            services.AddSingleton(new BLL.Services.MicrosoftAi.Client(msAiKey, msAiDeploymentId));
 
             //services.AddScoped<IClient, OpenAiClient>();
 
