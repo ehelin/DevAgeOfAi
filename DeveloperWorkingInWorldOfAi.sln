@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker", "HabitTracker\HabitTracker.csproj", "{89D5EA5B-61F5-4085-949E-81B2194440B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTracker", "HabitTrackerApps\HabitTracker\HabitTracker.csproj", "{470F02BC-29D6-4A17-8545-79753B1B762E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTrackerMvc", "HabitTrackerMvc\HabitTrackerMvc.csproj", "{EF3CF48D-95EC-4327-8D81-C2726ED52537}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HabitTrackerApps", "HabitTrackerApps", "{1BDA70EC-3DA4-423E-97A7-08B1ECDD234A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HabitTrackerMvc", "HabitTrackerApps\HabitTrackerMvc\HabitTrackerMvc.csproj", "{A564B327-D505-4E7F-A290-19FA4929A710}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,17 +39,21 @@ Global
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBB4C2C5-896D-49D3-8351-A8E9E00C32ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89D5EA5B-61F5-4085-949E-81B2194440B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF3CF48D-95EC-4327-8D81-C2726ED52537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470F02BC-29D6-4A17-8545-79753B1B762E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470F02BC-29D6-4A17-8545-79753B1B762E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470F02BC-29D6-4A17-8545-79753B1B762E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470F02BC-29D6-4A17-8545-79753B1B762E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A564B327-D505-4E7F-A290-19FA4929A710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A564B327-D505-4E7F-A290-19FA4929A710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A564B327-D505-4E7F-A290-19FA4929A710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A564B327-D505-4E7F-A290-19FA4929A710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{470F02BC-29D6-4A17-8545-79753B1B762E} = {1BDA70EC-3DA4-423E-97A7-08B1ECDD234A}
+		{A564B327-D505-4E7F-A290-19FA4929A710} = {1BDA70EC-3DA4-423E-97A7-08B1ECDD234A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA2EDCC8-FC83-4CCE-9D0F-2FF2E0EB6807}
