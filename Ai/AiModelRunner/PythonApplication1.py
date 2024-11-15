@@ -7,10 +7,10 @@ model_name = "microsoft/Phi-3.5-mini-instruct"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name)
 
-def generate_response(input_text):
+def generate_response(prompt):
     try:
         # Prepend a reset command or instruction to clarify context for the model
-        prompt = f"Please respond to the following question independently:\n{input_text}"
+        # prompt = f"Please respond to the following question independently:\n{input_text}"
 
         # Encode the input text
         inputs = tokenizer(prompt, return_tensors="pt")
@@ -37,12 +37,15 @@ def generate_response(input_text):
 
 
 def main():
-    print("Python model ready")  # Signal to C# that Python is ready
+    print("Python model ready2")  # Signal to C# that Python is ready
     sys.stdout.flush()
 
     while True:
+        print("waiting...")  # Signal to C# that Python is ready
         # Read input from standard input
         input_line = sys.stdin.readline().strip()
+        
+        print(f"input_line - {input_line}")
         
         # Exit condition
         if input_line == "exit":
@@ -51,24 +54,46 @@ def main():
             break
         
         # Generate response
-        response = generate_response(input_line)
+        prompt = f"Please respond to the following question independently:\n{input_line}"
+        response = generate_response(prompt)
+        # response = generate_response(input_line)
         
-        # Output the response as JSON to handle special characters
-        print(json.dumps({"response": response}))
+        # Ensure both `prompt` and `response` are included in the output
+        output = {
+            "prompt": prompt,
+            "response": response
+        }
+
+        # Debugging information (optional)
+        sys.stderr.write(f"DEBUG: Output generated: {output}\n")
+        sys.stderr.flush()
+
+        # Output the response as JSON, including the prompt
+        print(json.dumps(output))
         sys.stdout.flush()
 
 if __name__ == "__main__":
     # Check if running in an interactive console
+    print("Starting python script...")
+
     if sys.stdin.isatty():
         # Interactive mode
-        print("Running in interactive mode. Type 'exit' to quit.")
+        print("Running in interactive mode. Type 'exit' to quit2.")
         while True:
             input_text = input("You: ")
             if input_text.lower() == "exit":
                 print("Exiting interactive mode.")
                 break
-            response = generate_response(input_text)
-            print("Model:", response)
+            
+            prompt = f"Please respond to the following question independently:\n{input_text}"
+            response = generate_response(prompt)
+            output = {
+                "prompt": prompt,
+                "response": response
+            }
+            #print("Model:", json.dumps(output))
+            print("Model:", "blow me")
     else:
         # Running from the C# command-line app
+        print("Running in main mode2.")
         main()

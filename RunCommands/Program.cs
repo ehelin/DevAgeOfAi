@@ -1,60 +1,110 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Diagnostics;
 using System.IO;
-using Newtonsoft.Json.Linq;
 
 class Program
 {
-	static void Main(string[] args)
-	{
-		var psi = new ProcessStartInfo
-		{
-			FileName = "python",
-			Arguments = "C:\\Users\\QuesoCheese\\source\\repos\\PythonApplication1\\PythonApplication1.py", // TODO - how to make the arguments path relative?
-			RedirectStandardInput = true,
-			RedirectStandardOutput = true,
-			RedirectStandardError = true,
-			UseShellExecute = false,
-			CreateNoWindow = true
-		};
+    static void Main(string[] args)
+    {
+        // Define the script path
+        var scriptPath = "C:\\temp\\New folder\\Ai\\AiModelRunner\\PythonApplication1.py";
 
-		using var process = new Process { StartInfo = psi };
-		process.Start();
+        if (!File.Exists(scriptPath))
+        {
+            Console.WriteLine($"Error: Python script not found at {scriptPath}");
+            return;
+        }
 
-		// Read initial ready message from Python
-		var reader = process.StandardOutput;
-		var writer = process.StandardInput;
-		Console.WriteLine(reader.ReadLine());
+        var psi = new ProcessStartInfo
+        {
+            FileName = "python",
+            Arguments = $"\"{scriptPath}\"",
+            RedirectStandardInput = true,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
 
-		while (true)
-		{
-			Console.Write("You: ");
-			var userInput = Console.ReadLine();
+        using var process = new Process { StartInfo = psi };
 
-			// Exit condition
-			if (userInput?.ToLower() == "exit")
-			{
-				writer.WriteLine("exit");
-				writer.Flush();
-				Console.WriteLine("Exiting the chat. Goodbye!");
-				break;
-			}
+        try
+        {
+            process.Start();
 
-			// Send input to Python
-			writer.WriteLine(userInput);
-			writer.Flush();
+            // Create readers for stdout and stderr
+            var reader = process.StandardOutput;
+            var errorReader = process.StandardError;
+            var writer = process.StandardInput;
 
-			// Read response from Python
-			var responseJson = reader.ReadLine();
-			if (responseJson != null)
-			{
-				// Parse JSON response
-				var responseObj = JObject.Parse(responseJson);
-				var response = responseObj["response"]?.ToString();
-				Console.WriteLine($"Model: {response}\n");
-			}
-		}
+            // Read and print the initial "ready" message
+            Console.WriteLine(reader.ReadLine());
 
-		process.WaitForExit();
-	}
+            while (true)
+            {
+                Console.Write("You: ");
+                var userInput = Console.ReadLine();
+
+                if (userInput?.ToLower() == "exit")
+                {
+                    writer.WriteLine("exit");
+                    writer.Flush();
+                    Console.WriteLine("Exiting the chat. Goodbye!");
+                    break;
+                }
+
+                // Send user input to Python
+                writer.WriteLine(userInput);
+                writer.Flush();
+
+                // Read Python's stdout
+                while (!reader.EndOfStream)
+                {
+                    string outputLine = reader.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(outputLine))
+                    {
+                        try
+                        {
+                            // Parse the output line as JSON
+                            var json = JObject.Parse(outputLine);
+
+                            // Extract and display JSON fields
+                            var prompt = json["prompt"]?.ToString();
+                            var response = json["response"]?.ToString();
+
+                            Console.WriteLine($"Python stdout (parsed):");
+                            Console.WriteLine($"  Prompt: {prompt}");
+                            Console.WriteLine($"  Response: {response}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error parsing JSON: {ex.Message}");
+                            Console.WriteLine($"Raw Output: {outputLine}");
+                        }
+                    }
+                }
+
+                // Read Python's stderr
+                while (!errorReader.EndOfStream)
+                {
+                    string errorLine = errorReader.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(errorLine))
+                    {
+                        Console.WriteLine($"Python stderr: {errorLine}");
+                    }
+                }
+            }
+
+            process.WaitForExit();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        finally
+        {
+            process.Close();
+        }
+    }
 }
