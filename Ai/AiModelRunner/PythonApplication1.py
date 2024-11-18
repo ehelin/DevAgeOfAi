@@ -37,7 +37,7 @@ def generate_response(prompt):
 
 
 def main():
-    print("Python model ready2")  # Signal to C# that Python is ready
+    print("Python model ready")  # Signal to C# that Python is ready
     sys.stdout.flush()
 
     while True:
@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
     if sys.stdin.isatty():
         # Interactive mode
-        print("Running in interactive mode. Type 'exit' to quit2.")
+        print("Running in interactive mode. Type 'exit' to quit.")
         while True:
             input_text = input("You: ")
             if input_text.lower() == "exit":
@@ -91,9 +91,8 @@ if __name__ == "__main__":
                 "prompt": prompt,
                 "response": response
             }
-            #print("Model:", json.dumps(output))
-            print("Model:", "blow me")
+            print("Model:", json.dumps(output))
     else:
         # Running from the C# command-line app
-        print("Running in main mode2.")
+        print("Running in main mode.")
         main()

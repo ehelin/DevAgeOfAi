@@ -62,7 +62,7 @@ class Program
                 while (!reader.EndOfStream)
                 {
                     string outputLine = reader.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(outputLine))
+                    if (!string.IsNullOrEmpty(outputLine) && outputLine.Contains("Please respond to the following question independently"))
                     {
                         try
                         {
