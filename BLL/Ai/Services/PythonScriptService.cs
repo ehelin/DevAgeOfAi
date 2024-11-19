@@ -1,10 +1,11 @@
 ﻿using Shared.Interfaces;
 using System.Diagnostics;
 using System.Text;
+using Shared;
 
 namespace BLL.Ai.Services
 {
-    public class PythonScriptService : IPythonScriptService, IDisposable
+    public class PythonScriptService : IThirdPartyAiService, IPythonScriptService, IDisposable
     {
         private readonly string _scriptPath;
         private Process _process;
@@ -21,6 +22,28 @@ namespace BLL.Ai.Services
                 throw new FileNotFoundException($"Python script not found at {_scriptPath}");
             }
         }
+
+        #region IThirdPartyAiService
+
+        public async Task<string> GetHabitToTrackSuggestion()
+        {
+            var result = await SendInputAsync(Constants.HABIT_TO_TRACK_PROMPT);
+
+            result = result.Replace("{", "");
+            result = result.Replace("}", "");
+
+            var srcString = "Answer";
+            var pos = result.IndexOf(srcString);
+            result = result.Substring(pos + srcString.Length);
+
+            result = result.Replace("\\n", ""); 
+
+            return result;
+        }
+
+        #endregion
+
+        #region IPythonScriptService
 
         public async Task StartAsync()
         {
@@ -43,24 +66,6 @@ namespace BLL.Ai.Services
             _errorReader = _process.StandardError;
 
             await WaitForReadinessAsync();
-        }
-
-        private async Task WaitForReadinessAsync()
-        {
-            var isReady = false;
-            while (!isReady && !_reader.EndOfStream)
-            {
-                var line = await _reader.ReadLineAsync();
-                if (line != null && line.Contains("Python model ready", StringComparison.OrdinalIgnoreCase))
-                {
-                    isReady = true;
-                }
-            }
-
-            if (!isReady)
-            {
-                throw new InvalidOperationException("Python script did not become ready.");
-            }
         }
 
         public async Task<string> SendInputAsync(string input)
@@ -108,5 +113,29 @@ namespace BLL.Ai.Services
             _errorReader?.Dispose();
             _process?.Dispose();
         }
+
+        #endregion
+
+        #region Private Methods
+
+        private async Task WaitForReadinessAsync()
+        {
+            var isReady = false;
+            while (!isReady && !_reader.EndOfStream)
+            {
+                var line = await _reader.ReadLineAsync();
+                if (line != null && line.Contains("Python model ready", StringComparison.OrdinalIgnoreCase))
+                {
+                    isReady = true;
+                }
+            }
+
+            if (!isReady)
+            {
+                throw new InvalidOperationException("Python script did not become ready.");
+            }
+        }
+
+        #endregion
     }
 }

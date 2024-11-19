@@ -10,11 +10,13 @@ namespace HabitTracker
     static class Program
     {
         [STAThread]
-        static void Main()
+        static async Task Main()
         {
             // Create a service collection and configure our DI
             var services = ConfigureServices();
             var serviceProvider = services.BuildServiceProvider();
+
+            await InitializeServicesAsync(serviceProvider);
 
             // Start the application
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
@@ -34,23 +36,55 @@ namespace HabitTracker
             var openAiKey = EnvironmentManager.GetVariable("OpenAiKey");
             var msAiKey = EnvironmentManager.GetVariable("MsAiKey");
             var msAiDeploymentId = EnvironmentManager.GetVariable("MsAiDeploymentId");
+            var pythonScriptPath = EnvironmentManager.GetVariable("PythonScriptPath"); // New environment variable
 
-            if (string.IsNullOrEmpty(openAiKey) || string.IsNullOrEmpty(msAiKey))
-            {
-                throw new InvalidOperationException("API key(s) is missing in environment variables.");
-            }
+            ValidateInput(openAiKey, msAiKey, msAiDeploymentId, pythonScriptPath);
 
             // register clients
             services.AddScoped<IClient>(provider => new BLL.Ai.Clients.MicrosoftAi.Client(msAiKey, msAiDeploymentId));
             services.AddScoped<IClient>(provider => new BLL.Ai.Clients.OpenAi.Client(openAiKey));
 
-            services.AddSingleton<IThirdPartyAiService, OpenAiService>();       // Register the AI Service(s)
-            services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>();  // Register the AI Service(s)
+            // Register the AI Service(s)
+            services.AddSingleton<IThirdPartyAiService, OpenAiService>();        
+            services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>(); 
+            services.AddSingleton(provider => new PythonScriptService(pythonScriptPath));
+            services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
+            services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
 
             // Register the HabitTrackerForm
             services.AddSingleton<HabitTrackerForm>();
 
             return services;
+        }
+
+        private static void ValidateInput(string openAiKey, string msAiKey, string msAiDeploymentId, string pythonScriptPath)
+        {
+            if (string.IsNullOrEmpty(openAiKey))
+            {
+                throw new InvalidOperationException("openAiKey is missing in environment variables.");
+            }
+
+            if (string.IsNullOrEmpty(msAiKey))
+            {
+                throw new InvalidOperationException("msAiKey is missing in environment variables.");
+            }
+
+            if (string.IsNullOrEmpty(msAiDeploymentId))
+            {
+                throw new InvalidOperationException("msAiDeploymentId is missing in environment variables.");
+            }
+
+            if (string.IsNullOrEmpty(pythonScriptPath))
+            {
+                throw new InvalidOperationException("Python script path is missing in environment variables.");
+            }
+        }
+
+        private static async Task InitializeServicesAsync(IServiceProvider serviceProvider)
+        {
+            // Resolve and start the PythonScriptService
+            var pythonScriptService = serviceProvider.GetRequiredService<IPythonScriptService>();
+            await pythonScriptService.StartAsync();
         }
     }
 }

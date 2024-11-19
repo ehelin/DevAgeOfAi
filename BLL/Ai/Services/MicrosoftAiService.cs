@@ -1,4 +1,5 @@
 ﻿using BLL.Ai.Clients.MicrosoftAi;
+using Shared;
 using Shared.Interfaces;
 
 namespace BLL.Ai.Services
@@ -7,8 +8,6 @@ namespace BLL.Ai.Services
     {
         private readonly IClient client;
 
-        private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
-
         public MicrosoftAiService(IEnumerable<IClient> clients)
         {
             this.client = clients.First(x => x is BLL.Ai.Clients.MicrosoftAi.Client);
@@ -16,7 +15,7 @@ namespace BLL.Ai.Services
 
         public async Task<string> GetHabitToTrackSuggestion()
         {
-            var response = await GetSuggestion(HABIT_TO_TRACK_PROMPT);
+            var response = await GetSuggestion(Constants.HABIT_TO_TRACK_PROMPT);
 
             return response;
         }

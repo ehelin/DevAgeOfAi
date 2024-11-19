@@ -1,12 +1,11 @@
-﻿using Shared.Interfaces;
+﻿using Shared;
+using Shared.Interfaces;
 
 namespace BLL.Ai.Services
 {
     public class OpenAiService : IThirdPartyAiService
     {
         private readonly IClient client;
-
-        private const string HABIT_TO_TRACK_PROMPT = "Please suggest a habit that can be tracked";
 
         public OpenAiService(IEnumerable<IClient> clients)
         {
@@ -15,7 +14,7 @@ namespace BLL.Ai.Services
 
         public async Task<string> GetHabitToTrackSuggestion()
         {
-            var response = await GetSuggestion(HABIT_TO_TRACK_PROMPT);
+            var response = await GetSuggestion(Constants.HABIT_TO_TRACK_PROMPT);
 
             return response;
         }

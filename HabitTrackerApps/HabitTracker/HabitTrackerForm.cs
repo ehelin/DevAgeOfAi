@@ -11,7 +11,7 @@ namespace HabitTracker
 
         public HabitTrackerForm(IEnumerable<IThirdPartyAiService> thirdPartyAiServices)
         {
-            this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.OpenAiService);
+            this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.PythonScriptService);
 
             this.TopMost = false;
 
