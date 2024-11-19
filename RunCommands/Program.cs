@@ -38,8 +38,26 @@ class Program
             var errorReader = process.StandardError;
             var writer = process.StandardInput;
 
-            // Read and print the initial "ready" message
-            Console.WriteLine(reader.ReadLine());
+            Console.WriteLine("Starting Python script. Waiting for it to be ready...");
+
+            // Wait for "Running in main mode." message
+            bool isReady = false;
+            while (!isReady)
+            {
+                if (!reader.EndOfStream)
+                {
+                    var outputLine = reader.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(outputLine))
+                    {
+                        if (outputLine.Contains("Python model ready", StringComparison.OrdinalIgnoreCase))
+                        {
+                            isReady = true;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine("Python script is ready!");
 
             while (true)
             {
@@ -62,7 +80,7 @@ class Program
                 while (!reader.EndOfStream)
                 {
                     string outputLine = reader.ReadLine();
-                    if (!string.IsNullOrEmpty(outputLine) && outputLine.Contains("Please respond to the following question independently"))
+                    if (!string.IsNullOrWhiteSpace(outputLine) && outputLine.Contains("Please respond to the following question independently:"))
                     {
                         try
                         {
@@ -70,28 +88,19 @@ class Program
                             var json = JObject.Parse(outputLine);
 
                             // Extract and display JSON fields
-                            var prompt = json["prompt"]?.ToString();
                             var response = json["response"]?.ToString();
 
-                            Console.WriteLine($"Python stdout (parsed):");
-                            Console.WriteLine($"  Prompt: {prompt}");
-                            Console.WriteLine($"  Response: {response}");
+                            var subStringStart = "Answer\n";
+                            var filteredResponse = response.Substring(response.IndexOf(subStringStart) + subStringStart.Length);
+
+                            Console.WriteLine($"Response: {filteredResponse}");
+                            break;
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine($"Error parsing JSON: {ex.Message}");
                             Console.WriteLine($"Raw Output: {outputLine}");
                         }
-                    }
-                }
-
-                // Read Python's stderr
-                while (!errorReader.EndOfStream)
-                {
-                    string errorLine = errorReader.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(errorLine))
-                    {
-                        Console.WriteLine($"Python stderr: {errorLine}");
                     }
                 }
             }
