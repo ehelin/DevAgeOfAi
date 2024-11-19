@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Shared.Interfaces;
 using System.Diagnostics;
-using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Tests.Helpers
+namespace BLL.Ai.Services
 {
-    public class PythonScriptRunner : IDisposable
+    public class PythonScriptService : IPythonScriptService, IDisposable
     {
         private readonly string _scriptPath;
         private Process _process;
@@ -14,7 +12,7 @@ namespace Tests.Helpers
         private StreamReader _reader;
         private StreamReader _errorReader;
 
-        public PythonScriptRunner(string scriptPath)
+        public PythonScriptService(string scriptPath)
         {
             _scriptPath = scriptPath ?? throw new ArgumentNullException(nameof(scriptPath));
 
@@ -22,11 +20,9 @@ namespace Tests.Helpers
             {
                 throw new FileNotFoundException($"Python script not found at {_scriptPath}");
             }
-
-            StartPythonProcess();
         }
 
-        private void StartPythonProcess()
+        public async Task StartAsync()
         {
             var psi = new ProcessStartInfo
             {
@@ -46,16 +42,16 @@ namespace Tests.Helpers
             _reader = _process.StandardOutput;
             _errorReader = _process.StandardError;
 
-            WaitForReadiness();
+            await WaitForReadinessAsync();
         }
 
-        private void WaitForReadiness()
+        private async Task WaitForReadinessAsync()
         {
             var isReady = false;
             while (!isReady && !_reader.EndOfStream)
             {
-                var line = _reader.ReadLine();
-                if (line != null && line.Contains("Running in main mode.", StringComparison.OrdinalIgnoreCase))
+                var line = await _reader.ReadLineAsync();
+                if (line != null && line.Contains("Python model ready", StringComparison.OrdinalIgnoreCase))
                 {
                     isReady = true;
                 }
@@ -74,11 +70,9 @@ namespace Tests.Helpers
                 throw new InvalidOperationException("Python process is not running.");
             }
 
-            // Send input to the Python script
             await _writer.WriteLineAsync(input);
             await _writer.FlushAsync();
 
-            // Read the response
             var responseBuilder = new StringBuilder();
             while (!_reader.EndOfStream)
             {
@@ -88,12 +82,16 @@ namespace Tests.Helpers
 
                 responseBuilder.AppendLine(line);
 
-                // Exit the loop if the response indicates completion
                 if (line.Contains("}", StringComparison.OrdinalIgnoreCase))
                     break;
             }
 
             return responseBuilder.ToString();
+        }
+
+        public void Stop()
+        {
+            Dispose();
         }
 
         public void Dispose()
