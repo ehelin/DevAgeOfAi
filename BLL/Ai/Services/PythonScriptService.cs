@@ -29,15 +29,6 @@ namespace BLL.Ai.Services
         {
             var result = await SendInputAsync(Constants.HABIT_TO_TRACK_PROMPT);
 
-            //result = result.Replace("{", "");
-            //result = result.Replace("}", "");
-
-            //var srcString = "Answer";
-            //var pos = result.IndexOf(srcString);
-            //result = result.Substring(pos + srcString.Length);
-
-            //result = result.Replace("\\n", ""); 
-
             return result;
         }
 
