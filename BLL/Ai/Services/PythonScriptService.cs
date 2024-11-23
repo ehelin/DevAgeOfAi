@@ -29,14 +29,14 @@ namespace BLL.Ai.Services
         {
             var result = await SendInputAsync(Constants.HABIT_TO_TRACK_PROMPT);
 
-            result = result.Replace("{", "");
-            result = result.Replace("}", "");
+            //result = result.Replace("{", "");
+            //result = result.Replace("}", "");
 
-            var srcString = "Answer";
-            var pos = result.IndexOf(srcString);
-            result = result.Substring(pos + srcString.Length);
+            //var srcString = "Answer";
+            //var pos = result.IndexOf(srcString);
+            //result = result.Substring(pos + srcString.Length);
 
-            result = result.Replace("\\n", ""); 
+            //result = result.Replace("\\n", ""); 
 
             return result;
         }
@@ -78,20 +78,9 @@ namespace BLL.Ai.Services
             await _writer.WriteLineAsync(input);
             await _writer.FlushAsync();
 
-            var responseBuilder = new StringBuilder();
-            while (!_reader.EndOfStream)
-            {
-                var line = await _reader.ReadLineAsync();
-                if (string.IsNullOrEmpty(line))
-                    break;
+            var line = await _reader.ReadLineAsync();
 
-                responseBuilder.AppendLine(line);
-
-                if (line.Contains("}", StringComparison.OrdinalIgnoreCase))
-                    break;
-            }
-
-            return responseBuilder.ToString();
+            return line;
         }
 
         public void Stop()
