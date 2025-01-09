@@ -22,9 +22,10 @@ def filter_response(response, src_string, add_length):
 
 def generate_response(input_line, max_attempts=3):
     try:
-        prompt = "Please respond to the following question independently:"
-        promptWithInput = f"{prompt}\n{input_line}"
-    
+        # prompt = "Please respond to the following question independently:"
+        # promptWithInput = "Suggest a habit to track for improving mental health. Respond strictly in this format and do not repeat this instruction or provide an example:\nHabit Name: [Name of the habit]\nBrief Description: [Brief explanation of how it benefits mental health]"
+        promptWithInput = "Suggest a habit to track for improving health. Provide the response only in this exact format:\nHabit Name:[Name of the habit]\nDo not repeat the prompt or provide any additional context."
+
         # Check if this prompt has been processed before
         if promptWithInput in seen_responses:
             previous_responses = seen_responses[promptWithInput]
@@ -43,7 +44,7 @@ def generate_response(input_line, max_attempts=3):
             # Generate a response with adjusted parameters
             outputs = model.generate(
                 **inputs,
-                max_length=60,
+                max_length=100,
                 do_sample=True,  # Enable sampling for varied responses
                 temperature=0.9,  # Add randomness
                 top_p=0.9,  # Enable nucleus sampling
@@ -56,9 +57,10 @@ def generate_response(input_line, max_attempts=3):
                 response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
                 # Filter and clean up the response
-                response = filter_response(response, "Answer", True)
-                response = filter_response(response, "Question", False)      
-                response = response.replace(prompt, "")
+                response = filter_response(response, "Habit Name:[", True)
+                response = filter_response(response, "Habit Name:", True)
+                response = filter_response(response, "\n", False)      
+                # response = response.replace(prompt, "")
                 response = response.replace(input_line, "")
                 response = response.replace(":", "")
                 response = response.replace("\n", "")
@@ -72,7 +74,7 @@ def generate_response(input_line, max_attempts=3):
 
         # Store the response for this prompt
         previous_responses.add(response)
-        seen_responses[prompt] = previous_responses
+        seen_responses[promptWithInput] = previous_responses
 
         return response
 

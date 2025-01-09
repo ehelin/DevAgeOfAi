@@ -1,4 +1,5 @@
 ﻿using BLL.Ai.Services;
+using Shared;
 using Shared.Interfaces;
 
 namespace Tests
@@ -13,6 +14,18 @@ namespace Tests
             // Initialize the Python script service
             _scriptService = new PythonScriptService(ScriptPath);
             _scriptService.StartAsync().GetAwaiter().GetResult();
+        }
+
+        [Fact]
+        public async Task TestPythonScriptResponseHabits_ToTrack()
+        {
+            var input = Constants.HABIT_TO_TRACK_PROMPT;
+            // Send input to the Python script and get the response
+            var response = await _scriptService.SendInputAsync(input);
+
+            // Validate the response
+            Assert.NotNull(response);
+            Assert.True(response.Length > 0);
         }
 
         [Theory]
