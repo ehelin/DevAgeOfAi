@@ -19,13 +19,22 @@ namespace Tests
         [Fact]
         public async Task TestPythonScriptResponseHabits_ToTrack()
         {
-            var input = Constants.HABIT_TO_TRACK_PROMPT;
-            // Send input to the Python script and get the response
-            var response = await _scriptService.SendInputAsync(input);
+            var responses = new List<string>();
+            for (var i = 0; i < 11; i++)
+            {
+                var input = Constants.HABIT_TO_TRACK_PROMPT;
 
-            // Validate the response
-            Assert.NotNull(response);
-            Assert.True(response.Length > 0);
+                // Send input to the Python script and get the response
+                var response = await _scriptService.SendInputAsync(input);
+
+                // Validate the response
+                Assert.NotNull(response);
+                Assert.True(response.Length > 0);
+
+                responses.Add(response);
+            }
+
+            var done = 1;
         }
 
         [Theory]
