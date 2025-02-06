@@ -1,43 +1,79 @@
 import ollama
+import sys
 
 # Select the model to use
 model_name = "mistral"  # Change to "llama2" or another model if needed
 
-print(f"Interactive chat with {model_name}. Type 'exit' to quit.\n")
+# Store previous responses to avoid repetition
+previous_responses = set()
 
-conversation = []  # Store messages for context
-previous_responses = set()  # Track previous responses to avoid repetition
+def generate_response(max_attempts=3):
+    """Generate a response using the Mistral model while avoiding repetition."""
+    attempts = 0
+    response = None
 
-while True:
-    user_input = input("You: ").strip()
-    # user_input = "Provide a 5 word response only."
-    user_input = "Provide a 5 word habit to track only without description."
-    
-    if user_input.lower() == "exit":
-        print("Goodbye!")
-        break
+    promptWithInput = "Provide a 5 word habit to track only without description."
 
-    # Ensure the model generates a 5-word response
-    system_prompt = user_input # Provide a 5-word response only."
-    
-    # Add system prompt and previous responses to prevent repetition
-    filtered_responses = " ".join(previous_responses)
-    conversation = [
-        {"role": "system", "content": f"{system_prompt} Avoid repeating: {filtered_responses}"},
-        {"role": "user", "content": user_input}
-    ]
+    while attempts < max_attempts:
+        attempts += 1
 
-    # Get model response
-    response = ollama.chat(model=model_name, messages=conversation)
+        # Build the conversation context with prior responses
+        filtered_responses = " ".join(previous_responses)
+        conversation = [
+            {"role": "system", "content": f"{promptWithInput} Avoid repeating: {filtered_responses}"},
+            {"role": "user", "content": promptWithInput}
+        ]
 
-    bot_reply = response['message']['content'].strip()
+        # Get model response
+        response_data = ollama.chat(model=model_name, messages=conversation)
+        response = response_data['message']['content'].strip()
 
-    # Prevent duplicate responses
-    if bot_reply in previous_responses:
-        print(f"{model_name}: (Duplicate response detected, retrying...)\n")
-        continue
+        # Clean up response
+        response = response.replace("\n", " ").strip()
+        response = response.replace(promptWithInput, "").strip()
 
-    print(f"{model_name}: {bot_reply}\n")
+        # Ensure response is exactly 5 words
+        response_words = response.split()
+        if len(response_words) >= 5:
+            response = " ".join(response_words[:5])  # Truncate to exactly 5 words
+        
+        # Ensure response is unique
+        if response and response not in previous_responses:
+            previous_responses.add(response)
+            break
 
-    # Store response to prevent future repetition
-    previous_responses.add(bot_reply)
+    return response if response else "No valid response found."
+
+def main():
+    """Handles interaction via standard input for integration with PythonScriptService.cs."""
+    print("Python model ready")
+    sys.stdout.flush()
+
+    while True:
+        input_line = sys.stdin.readline().strip()
+        
+        if input_line.lower() == "exit":
+            print("Python exiting")
+            sys.stdout.flush()
+            break
+        
+        response = generate_response()
+        print(response)
+        sys.stdout.flush()
+
+if __name__ == "__main__":
+    print("Starting python script...")
+
+    if sys.stdin.isatty():
+        print("Running in interactive mode. Type 'exit' to quit.")
+        while True:
+            input_text = input("You: ")
+            if input_text.lower() == "exit":
+                print("Exiting interactive mode.")
+                break
+            
+            response = generate_response()
+            print("Model:", response)
+    else:
+        print("Running in main mode.")
+        main()
