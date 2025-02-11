@@ -2,7 +2,8 @@ import ollama
 import sys
 
 # Select the model to use
-model_name = "mistral"  # Change to "llama2" or another model if needed
+# model_name = "mistral"  # Change to "llama2" or another model if needed
+model_name = "mistral:7b"
 
 # Store previous responses to avoid repetition
 previous_responses = set()
