@@ -2,18 +2,18 @@ import ollama
 import sys
 
 # Select the model to use
-# model_name = "mistral"  # Change to "llama2" or another model if needed
 model_name = "mistral:7b"
 
 # Store previous responses to avoid repetition
 previous_responses = set()
 
-def generate_response(max_attempts=3):
+def generate_response(prompt, max_attempts=3):
     """Generate a response using the Mistral model while avoiding repetition."""
+    if not prompt:
+        return "Error: Prompt cannot be empty."
+
     attempts = 0
     response = None
-
-    promptWithInput = "Provide a 5 word habit to track only without description."
 
     while attempts < max_attempts:
         attempts += 1
@@ -21,8 +21,8 @@ def generate_response(max_attempts=3):
         # Build the conversation context with prior responses
         filtered_responses = " ".join(previous_responses)
         conversation = [
-            {"role": "system", "content": f"{promptWithInput} Avoid repeating: {filtered_responses}"},
-            {"role": "user", "content": promptWithInput}
+            {"role": "system", "content": f"{prompt} Avoid repeating: {filtered_responses}"},
+            {"role": "user", "content": prompt}
         ]
 
         # Get model response
@@ -31,13 +31,13 @@ def generate_response(max_attempts=3):
 
         # Clean up response
         response = response.replace("\n", " ").strip()
-        response = response.replace(promptWithInput, "").strip()
+        response = response.replace(prompt, "").strip()
 
-        # Ensure response is exactly 5 words
+        # Ensure response is exactly 5 words (if applicable)
         response_words = response.split()
         if len(response_words) >= 5:
             response = " ".join(response_words[:5])  # Truncate to exactly 5 words
-        
+
         # Ensure response is unique
         if response and response not in previous_responses:
             previous_responses.add(response)
@@ -57,8 +57,8 @@ def main():
             print("Python exiting")
             sys.stdout.flush()
             break
-        
-        response = generate_response()
+
+        response = generate_response(input_line)
         print(response)
         sys.stdout.flush()
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                 print("Exiting interactive mode.")
                 break
             
-            response = generate_response()
+            response = generate_response(input_text)
             print("Model:", response)
     else:
         print("Running in main mode.")
