@@ -21,16 +21,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="chatModelX.py" />
-    <Compile Include="chatMsPhi1_5 - Copy.py" />
-    <Compile Include="chatMsDialoGPT-small.py" />
-    <Compile Include="chatLlama2.py" />
-    <Compile Include="chat.py" />
-    <Compile Include="commandpromptinterface.py" />
-    <Compile Include="PythonApplication1 - Copy %282%29.py" />
-    <Compile Include="PythonApplication1-DiaplogGPT-small.py" />
-    <Compile Include="PythonApplication1 - Copy.py" />
+    <Compile Include="Old\chatModelX.py" />
+    <Compile Include="Old\chatMsPhi1_5 - Copy.py" />
+    <Compile Include="Old\chatMsDialoGPT-small.py" />
+    <Compile Include="Old\chatLlama2.py" />
+    <Compile Include="Old\chat.py" />
+    <Compile Include="Old\commandpromptinterface.py" />
+    <Compile Include="Old\PythonApplication1 - Copy %282%29.py" />
+    <Compile Include="Old\PythonApplication1-DiaplogGPT-small.py" />
+    <Compile Include="Old\PythonApplication1 - Copy.py" />
+    <Compile Include="PythonApplication1_Training.py" />
     <Compile Include="PythonApplication1.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Old\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

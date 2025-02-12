@@ -13,6 +13,9 @@ namespace BLL.Ai.Services
         private StreamReader _reader;
         private StreamReader _errorReader;
 
+        private string modelName = "mistral:7b";
+        private string prompt = Constants.HABIT_TO_TRACK_PROMPT;
+
         public PythonScriptService(string scriptPath)
         {
             _scriptPath = scriptPath ?? throw new ArgumentNullException(nameof(scriptPath));
@@ -41,7 +44,7 @@ namespace BLL.Ai.Services
             var psi = new ProcessStartInfo
             {
                 FileName = "python",
-                Arguments = $"\"{_scriptPath}\"",
+                Arguments = $"\"{_scriptPath}\" \"{modelName}\" \"{prompt}\"",
                 RedirectStandardInput = true,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,

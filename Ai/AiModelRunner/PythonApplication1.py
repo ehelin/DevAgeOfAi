@@ -1,14 +1,14 @@
 import ollama
 import sys
 
-# Select the model to use
-model_name = "mistral:7b"
+# Default model if none is specified
+DEFAULT_MODEL = "mistral:7b"
 
 # Store previous responses to avoid repetition
 previous_responses = set()
 
-def generate_response(prompt, max_attempts=3):
-    """Generate a response using the Mistral model while avoiding repetition."""
+def generate_response(model_name, prompt, max_attempts=3):
+    """Generate a response using the specified model while avoiding repetition."""
     if not prompt:
         return "Error: Prompt cannot be empty."
 
@@ -34,9 +34,9 @@ def generate_response(prompt, max_attempts=3):
         response = response.replace(prompt, "").strip()
 
         # Ensure response is exactly 5 words (if applicable)
-        response_words = response.split()
-        if len(response_words) >= 5:
-            response = " ".join(response_words[:5])  # Truncate to exactly 5 words
+        # response_words = response.split()
+        # if len(response_words) >= 5:
+        #     response = " ".join(response_words[:5])  # Truncate to exactly 5 words
 
         # Ensure response is unique
         if response and response not in previous_responses:
@@ -45,36 +45,32 @@ def generate_response(prompt, max_attempts=3):
 
     return response if response else "No valid response found."
 
-def main():
-    """Handles interaction via standard input for integration with PythonScriptService.cs."""
+def interactive_mode(model_name):
+    """Handles interaction via standard input from the C# wrapper."""
     print("Python model ready")
-    sys.stdout.flush()
+    sys.stdout.flush()  # Ensure the output is sent immediately
 
     while True:
-        input_line = sys.stdin.readline().strip()
-        
-        if input_line.lower() == "exit":
-            print("Python exiting")
-            sys.stdout.flush()
-            break
-
-        response = generate_response(input_line)
-        print(response)
-        sys.stdout.flush()
-
-if __name__ == "__main__":
-    print("Starting python script...")
-
-    if sys.stdin.isatty():
-        print("Running in interactive mode. Type 'exit' to quit.")
-        while True:
-            input_text = input("You: ")
+        try:
+            input_text = sys.stdin.readline().strip()  # Read from C# process
+            if not input_text:
+                continue  # Ignore empty input
+            
             if input_text.lower() == "exit":
                 print("Exiting interactive mode.")
+                sys.stdout.flush()
                 break
-            
-            response = generate_response(input_text)
-            print("Model:", response)
-    else:
-        print("Running in main mode.")
-        main()
+
+            response = generate_response(model_name, input_text)
+            print(response)
+            sys.stdout.flush()  # Ensure C# receives output immediately
+
+        except Exception as e:
+            print(f"Error: {str(e)}")
+            sys.stdout.flush()
+
+if __name__ == "__main__":
+    model_name = DEFAULT_MODEL  # Default model
+
+    # Start interactive mode to continuously accept input
+    interactive_mode(model_name)
