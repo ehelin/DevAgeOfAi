@@ -1,11 +1,20 @@
 import ollama
 import sys
+import re
 
 # Default model if none is specified
 DEFAULT_MODEL = "mistral:7b"
 
 # Store previous responses to avoid repetition
 previous_responses = set()
+
+def normalize_text(text):
+    """Normalize text to prevent duplicates with minor differences."""
+    text = text.lower().strip()  # Convert to lowercase and strip whitespace
+    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
+    text = text.replace("steps", "step")  # Normalize similar words
+    text = re.sub(r'\s+', ' ', text)  # Remove extra spaces
+    return text
 
 def generate_response(model_name, prompt, max_attempts=3):
     """Generate a response using the specified model while avoiding repetition."""
@@ -37,22 +46,12 @@ def generate_response(model_name, prompt, max_attempts=3):
         response_data = ollama.chat(model=model_name, messages=conversation)
         response = response_data['message']['content'].strip()
 
-        # # Clean up response
-        # response = response.replace("\"", " ").strip()
-        # response = response.replace("\n", " ").strip()
-        # response = response.replace(prompt, "").strip()
-
-        # Extract only the first valid 5-word response
-        response_lines = response.split("\n")
-        for line in response_lines:
-            response_words = line.split()
-            if len(response_words) == 5:
-                response = " ".join(response_words)
-                break
+        # Normalize response to check for duplicates
+        normalized_response = normalize_text(response)
 
         # Ensure response is unique
-        if response and response not in previous_responses:
-            previous_responses.add(response)
+        if normalized_response and normalized_response not in previous_responses:
+            previous_responses.add(normalized_response)  # Store normalized version
             break
 
     return response if response else "No valid response found."
@@ -64,8 +63,7 @@ def interactive_mode(model_name):
 
     while True:
         try:
-            # Only show "You: " prompt if running in a terminal
-            if sys.stdin.isatty():
+            if sys.stdin.isatty():  # Show prompt only if in command line
                 print("You: ", end="", flush=True)
 
             input_text = sys.stdin.readline().strip()  # Read input

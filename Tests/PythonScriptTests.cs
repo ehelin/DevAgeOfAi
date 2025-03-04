@@ -28,8 +28,8 @@ namespace Tests
                 var response = await _scriptService.SendInputAsync(input);
 
                 // Validate the response
-                //Assert.NotNull(response);
-                //Assert.True(response.Length > 0);
+                Assert.NotNull(response);
+                Assert.True(response.Length > 0);
 
                 responses.Add(response);
             }
