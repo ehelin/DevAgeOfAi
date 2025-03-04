@@ -30,6 +30,7 @@ def generate_response(model_name, prompt, max_attempts=3):
         response = response_data['message']['content'].strip()
 
         # Clean up response
+        response = response.replace("\"", " ").strip()
         response = response.replace("\n", " ").strip()
         response = response.replace(prompt, "").strip()
 
@@ -52,7 +53,10 @@ def interactive_mode(model_name):
 
     while True:
         try:
-            input_text = sys.stdin.readline().strip()  # Read from C# process
+            print("You: ", end="", flush=True)  # Prevents newline and ensures immediate output
+            input_text = sys.stdin.readline().strip()  # Read input
+            # print("You: ")
+            # input_text = sys.stdin.readline().strip()  # Read from C# process
             if not input_text:
                 continue  # Ignore empty input
             

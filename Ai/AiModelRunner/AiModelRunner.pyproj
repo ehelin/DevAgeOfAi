@@ -30,7 +30,7 @@
     <Compile Include="Old\PythonApplication1 - Copy %282%29.py" />
     <Compile Include="Old\PythonApplication1-DiaplogGPT-small.py" />
     <Compile Include="Old\PythonApplication1 - Copy.py" />
-    <Compile Include="PythonApplication1_Training.py" />
+    <Compile Include="Old\PythonApplication1_Training.py" />
     <Compile Include="PythonApplication1.py" />
   </ItemGroup>
   <ItemGroup>
