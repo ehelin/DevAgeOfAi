@@ -18,10 +18,18 @@ def generate_response(model_name, prompt, max_attempts=3):
     while attempts < max_attempts:
         attempts += 1
 
+        # Updated system instruction to enforce a single response
+        system_instruction = (
+            "Respond with only ONE habit in exactly 5 words. "
+            "Return nothing else. Do not list multiple habits. "
+            "Example: 'Read One Chapter Every Day'. "
+            "Ensure responses are unique and actionable."
+        )
+
         # Build the conversation context with prior responses
         filtered_responses = " ".join(previous_responses)
         conversation = [
-            {"role": "system", "content": f"{prompt} Avoid repeating: {filtered_responses}"},
+            {"role": "system", "content": f"{system_instruction} Avoid repeating: {filtered_responses}"},
             {"role": "user", "content": prompt}
         ]
 
@@ -29,15 +37,18 @@ def generate_response(model_name, prompt, max_attempts=3):
         response_data = ollama.chat(model=model_name, messages=conversation)
         response = response_data['message']['content'].strip()
 
-        # Clean up response
-        response = response.replace("\"", " ").strip()
-        response = response.replace("\n", " ").strip()
-        response = response.replace(prompt, "").strip()
+        # # Clean up response
+        # response = response.replace("\"", " ").strip()
+        # response = response.replace("\n", " ").strip()
+        # response = response.replace(prompt, "").strip()
 
-        # Ensure response is exactly 5 words (if applicable)
-        # response_words = response.split()
-        # if len(response_words) >= 5:
-        #     response = " ".join(response_words[:5])  # Truncate to exactly 5 words
+        # Extract only the first valid 5-word response
+        response_lines = response.split("\n")
+        for line in response_lines:
+            response_words = line.split()
+            if len(response_words) == 5:
+                response = " ".join(response_words)
+                break
 
         # Ensure response is unique
         if response and response not in previous_responses:
@@ -47,16 +58,18 @@ def generate_response(model_name, prompt, max_attempts=3):
     return response if response else "No valid response found."
 
 def interactive_mode(model_name):
-    """Handles interaction via standard input from the C# wrapper."""
+    """Handles interaction via standard input from the C# wrapper or command prompt."""
     print("Python model ready")
     sys.stdout.flush()  # Ensure the output is sent immediately
 
     while True:
         try:
-            print("You: ", end="", flush=True)  # Prevents newline and ensures immediate output
+            # Only show "You: " prompt if running in a terminal
+            if sys.stdin.isatty():
+                print("You: ", end="", flush=True)
+
             input_text = sys.stdin.readline().strip()  # Read input
-            # print("You: ")
-            # input_text = sys.stdin.readline().strip()  # Read from C# process
+            
             if not input_text:
                 continue  # Ignore empty input
             
@@ -75,6 +88,4 @@ def interactive_mode(model_name):
 
 if __name__ == "__main__":
     model_name = DEFAULT_MODEL  # Default model
-
-    # Start interactive mode to continuously accept input
-    interactive_mode(model_name)
+    interactive_mode(model_name)  # Start interactive mode
