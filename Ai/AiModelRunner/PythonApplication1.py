@@ -1,6 +1,7 @@
 import ollama
 import sys
 import re
+from difflib import SequenceMatcher
 
 # Default model if none is specified
 DEFAULT_MODEL = "mistral:7b"
@@ -10,11 +11,34 @@ previous_responses = set()
 
 def normalize_text(text):
     """Normalize text to prevent duplicates with minor differences."""
-    text = text.lower().strip()  # Convert to lowercase and strip whitespace
+    text = text.lower().strip()
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
-    text = text.replace("steps", "step")  # Normalize similar words
+    text = re.sub(r'\bsteps?\b', 'step', text)  # Normalize variations of "step"
+    text = re.sub(r'\bminutes?\b', 'minute', text)  # Normalize time units
+    text = re.sub(r'\bhours?\b', 'hour', text)
+    text = re.sub(r'\bdaily\b', 'day', text)  # Standardize "daily" to "day"
+    text = re.sub(r'\bweekly\b', 'week', text)
+    text = re.sub(r'\btrack\b', 'log', text)  # Reduce verb variations
+    text = re.sub(r'\bmonitor\b', 'log', text)
+    text = re.sub(r'\bjournalize\b', 'journal', text)  # Avoid unnecessary variations
+    text = re.sub(r'\bmeditate\b', 'meditation', text)  # Catch meditation phrasing
+    text = re.sub(r'\bgratitudes?\b', 'gratitude', text)  # Singular form normalization
     text = re.sub(r'\s+', ' ', text)  # Remove extra spaces
     return text
+
+def is_similar(a, b, threshold=0.8):
+    """Check if two phrases are similar based on a threshold."""
+    return SequenceMatcher(None, a, b).ratio() > threshold
+
+def is_unique_response(response):
+    """Check if a response is unique compared to previous ones."""
+    normalized_response = normalize_text(response)
+
+    for prev in previous_responses:
+        if is_similar(normalized_response, prev):
+            return False  # Too similar, reject
+
+    return True
 
 def generate_response(model_name, prompt, max_attempts=3):
     """Generate a response using the specified model while avoiding repetition."""
@@ -30,15 +54,15 @@ def generate_response(model_name, prompt, max_attempts=3):
         # Updated system instruction to enforce a single response
         system_instruction = (
             "Respond with only ONE habit in exactly 5 words. "
-            "Return nothing else. Do not list multiple habits. "
+            "Ensure responses are unique in meaning, not just wording. "
+            "Do not rephrase an existing response. "
             "Example: 'Read One Chapter Every Day'. "
-            "Ensure responses are unique and actionable."
+            f"Avoid repeating any habits related to: {', '.join(previous_responses)}"
         )
 
         # Build the conversation context with prior responses
-        filtered_responses = " ".join(previous_responses)
         conversation = [
-            {"role": "system", "content": f"{system_instruction} Avoid repeating: {filtered_responses}"},
+            {"role": "system", "content": system_instruction},
             {"role": "user", "content": prompt}
         ]
 
@@ -50,7 +74,7 @@ def generate_response(model_name, prompt, max_attempts=3):
         normalized_response = normalize_text(response)
 
         # Ensure response is unique
-        if normalized_response and normalized_response not in previous_responses:
+        if normalized_response and is_unique_response(normalized_response):
             previous_responses.add(normalized_response)  # Store normalized version
             break
 
