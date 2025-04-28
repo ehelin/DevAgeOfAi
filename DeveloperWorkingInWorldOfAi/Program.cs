@@ -9,9 +9,9 @@ namespace DeveloperWorkingInWorldOfAi
             // Add services to the container.
             //builder.Services.AddTransient<IThirdPartyAiService, OpenAiService>();
             builder.Services.AddControllersWithViews();
-
+            // space   
             var app = builder.Build();
-
+               //test
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -19,11 +19,11 @@ namespace DeveloperWorkingInWorldOfAi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+              
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            app.UseRouting();  // Dummy update to fix Git history.
 
             app.UseAuthorization();
 
