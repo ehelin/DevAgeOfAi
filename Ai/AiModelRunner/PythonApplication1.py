@@ -1,113 +1,142 @@
-import ollama
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
-import re
-from difflib import SequenceMatcher
+import json
+import torch
 
-# Default model if none is specified
-DEFAULT_MODEL = "mistral:7b"
+# Load the tokenizer and model from Hugging Face
+model_name = "microsoft/Phi-3.5-mini-instruct"
+# model_name = "./phi3_finetuned_model"
+# model_name = "./phi3_finetuned_long"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
 
-# Store previous responses to avoid repetition
-previous_responses = set()
+# Dictionary to store prompts and their responses
+seen_responses = {}
 
-def normalize_text(text):
-    """Normalize text to prevent duplicates with minor differences."""
-    text = text.lower().strip()
-    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
-    text = re.sub(r'\bsteps?\b', 'step', text)  # Normalize variations of "step"
-    text = re.sub(r'\bminutes?\b', 'minute', text)  # Normalize time units
-    text = re.sub(r'\bhours?\b', 'hour', text)
-    text = re.sub(r'\bdaily\b', 'day', text)  # Standardize "daily" to "day"
-    text = re.sub(r'\bweekly\b', 'week', text)
-    text = re.sub(r'\btrack\b', 'log', text)  # Reduce verb variations
-    text = re.sub(r'\bmonitor\b', 'log', text)
-    text = re.sub(r'\bjournalize\b', 'journal', text)  # Avoid unnecessary variations
-    text = re.sub(r'\bmeditate\b', 'meditation', text)  # Catch meditation phrasing
-    text = re.sub(r'\bgratitudes?\b', 'gratitude', text)  # Singular form normalization
-    text = re.sub(r'\s+', ' ', text)  # Remove extra spaces
-    return text
+def filter_response(response, src_string, add_length):    
+    """Removes or trims response based on a given source string."""
+    pos = response.find(src_string)
+    if pos != -1:
+        if add_length:
+            response = response[pos + len(src_string):]
+        else:    
+            response = response[:pos]
+    return response
 
-def is_similar(a, b, threshold=0.8):
-    """Check if two phrases are similar based on a threshold."""
-    return SequenceMatcher(None, a, b).ratio() > threshold
+def generate_response(input_line, max_attempts=3):
+    """Generates a response using Phi-3.5-mini while ensuring uniqueness."""
+    try:
+        promptWithInput = input_line #"Please give a response of less than 5 words"
 
-def is_unique_response(response):
-    """Check if a response is unique compared to previous ones."""
-    normalized_response = normalize_text(response)
+        # Check if this prompt has been processed before
+        if promptWithInput in seen_responses:
+            previous_responses = seen_responses[promptWithInput]
+        else:
+            previous_responses = set()
 
-    for prev in previous_responses:
-        if is_similar(normalized_response, prev):
-            return False  # Too similar, reject
+        response = None
+        attempts = 0
 
-    return True
+        while attempts < max_attempts:
+            attempts += 1
 
-def generate_response(model_name, prompt, max_attempts=3):
-    """Generate a response using the specified model while avoiding repetition."""
-    if not prompt:
-        return "Error: Prompt cannot be empty."
+            # Encode the input text
+            inputs = tokenizer(promptWithInput, return_tensors="pt")
 
-    attempts = 0
-    response = None
+            # Ensure model is running on the correct device (CPU/GPU)
+            inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
-    while attempts < max_attempts:
-        attempts += 1
+            # Generate a response with adjusted parameters
+            # outputs = model.generate(
+            #     **inputs,
+            #     max_length=30,  # Reduce long, unfocused outputs
+            #     temperature=0.5,  # Makes responses more controlled
+            #     top_p=0.85,  # Prevents overly random responses
+            #     num_return_sequences=1,
+            #     pad_token_id=tokenizer.eos_token_id
+            # )
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=30,
+                num_beams=5,  # Still ensures structure
+                do_sample=True,  # Enable sampling to avoid repetition
+                temperature=0.7,  # Slight randomness (adjust as needed)
+                top_p=0.9  # Nucleus sampling
+            )
 
-        # Updated system instruction to enforce a single response
-        system_instruction = (
-            "Respond with only ONE habit in exactly 5 words. "
-            "Ensure responses are unique in meaning, not just wording. "
-            "Do not rephrase an existing response. "
-            "Example: 'Read One Chapter Every Day'. "
-            f"Avoid repeating any habits related to: {', '.join(previous_responses)}"
-        )
 
-        # Build the conversation context with prior responses
-        conversation = [
-            {"role": "system", "content": system_instruction},
-            {"role": "user", "content": prompt}
-        ]
+            # Decode the response
+            if outputs.size(0) > 0:
+                response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-        # Get model response
-        response_data = ollama.chat(model=model_name, messages=conversation)
-        response = response_data['message']['content'].strip()
+                # Clean up the response
+                # response = filter_response(response, "Habit Name:[", True)
+                # response = filter_response(response, "Habit Name:", True)
+                response = response.replace(input_line, "")
+                # response = filter_response(response, "\n", False)
+                # response = response.replace(":", "")
+                # response = response.replace("\n", "")
 
-        # Normalize response to check for duplicates
-        normalized_response = normalize_text(response)
+                # Ensure response is unique
+                if response not in previous_responses:
+                    break  # Unique response found
 
-        # Ensure response is unique
-        if normalized_response and is_unique_response(normalized_response):
-            previous_responses.add(normalized_response)  # Store normalized version
-            break
+        if response is None or response in previous_responses:
+            response = "No new unique response could be generated."
 
-    return response if response else "No valid response found."
+        # Store the response for this prompt
+        previous_responses.add(response)
+        seen_responses[promptWithInput] = previous_responses
 
-def interactive_mode(model_name):
-    """Handles interaction via standard input from the C# wrapper or command prompt."""
-    print("Python model ready")
-    sys.stdout.flush()  # Ensure the output is sent immediately
+        return response
+
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
+
+def main():
+    """Handles interaction with C# via stdin/stdout."""
+    print("Python model ready")  # Signal to C# that Python is ready
+    sys.stdout.flush()
 
     while True:
         try:
-            if sys.stdin.isatty():  # Show prompt only if in command line
-                print("You: ", end="", flush=True)
+            # Read input from standard input
+            input_line = sys.stdin.readline().strip()
 
-            input_text = sys.stdin.readline().strip()  # Read input
-            
-            if not input_text:
-                continue  # Ignore empty input
-            
-            if input_text.lower() == "exit":
-                print("Exiting interactive mode.")
+            # Exit condition
+            if input_line.lower() == "exit":
+                print("Python exiting")
                 sys.stdout.flush()
                 break
 
-            response = generate_response(model_name, input_text)
+            # Generate response
+            response = generate_response(input_line)
+
+            # Debugging information (optional)
+            sys.stderr.write(f"DEBUG: Output generated: {response}\n")
+            sys.stderr.flush()
+
             print(response)
-            sys.stdout.flush()  # Ensure C# receives output immediately
+            sys.stdout.flush()
 
         except Exception as e:
             print(f"Error: {str(e)}")
             sys.stdout.flush()
 
 if __name__ == "__main__":
-    model_name = DEFAULT_MODEL  # Default model
-    interactive_mode(model_name)  # Start interactive mode
+    print("Starting Python script...")
+
+    if sys.stdin.isatty():  # Running in CLI mode
+        print("Running in interactive mode. Type 'exit' to quit.")
+        while True:
+            input_text = input("You: ")
+            if input_text.lower() == "exit":
+                print("Exiting interactive mode.")
+                break
+
+            response = generate_response(input_text)
+            print("Model:", response)
+
+    else:  # Running inside C# service
+        print("Running in main mode (C# integration).")
+        main()

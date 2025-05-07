@@ -6,7 +6,7 @@ namespace Tests
 {
     public class PythonScriptTests
     {
-        private const string ScriptPath = "C:\\temp\\New folder\\Ai\\AiModelRunner\\PythonApplication1.py";
+        private const string ScriptPath = "C:\\temp\\DevAgeTraining\\Ai\\AiModelRunner\\PythonApplication1.py";
         private readonly IPythonScriptService _scriptService;
 
         public PythonScriptTests()

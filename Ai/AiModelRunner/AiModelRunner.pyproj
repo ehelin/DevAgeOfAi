@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="fine_tune_phi3.py" />
     <Compile Include="Old\chatModelX.py" />
     <Compile Include="Old\chatMsPhi1_5 - Copy.py" />
     <Compile Include="Old\chatMsDialoGPT-small.py" />
