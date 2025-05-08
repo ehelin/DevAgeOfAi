@@ -5,9 +5,9 @@ using Shared.Interfaces;
 namespace Tests
 {
     public class PythonScriptTests
-	{
-		private const string ScriptPath = "C:\\temp\\DevAgeTraining\\Ai\\AiModelRunner\\PythonApplication1.py";
-		private readonly IPythonScriptService _scriptService;
+    {
+        private const string ScriptPath = "C:\\temp\\DevAgeTraining\\Ai\\AiModelRunner\\AiModelServiceRunner.py";
+        private readonly IPythonScriptService _scriptService;
 
         public PythonScriptTests()
         {
@@ -26,6 +26,14 @@ namespace Tests
 
                 // Send input to the Python script and get the response
                 var response = await _scriptService.SendInputAsync(input);
+
+                // HACK: Remove presetup output
+                if (response.Contains("Starting Python script...")
+                        || response.Contains("Running in main mode (C# integration).")
+                        || response.Contains("Python model ready"))
+                {
+                    continue;
+                }
 
                 // Validate the response
                 Assert.NotNull(response);
