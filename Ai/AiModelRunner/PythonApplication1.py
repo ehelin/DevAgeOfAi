@@ -30,6 +30,7 @@ def generate_response(input_line):
         # Decode and format response to ensure single-line output
         if outputs.size(0) > 0:
             response = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+            response = response[len(promptWithInput):].strip()
             response = " ".join(response.splitlines())  # Flatten response into one line
 
         print(f"DEBUG: Generated Response: {response}", file=sys.stderr)  # Debug output
