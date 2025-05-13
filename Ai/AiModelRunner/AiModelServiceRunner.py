@@ -1,6 +1,7 @@
 ﻿import sys
 import io
 import torch
+import re
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # Ensure UTF-8 output (especially for C# or console)
@@ -15,7 +16,7 @@ try:
     sys.stderr.flush()
 
     # Load fine-tuned model and tokenizer from local directory
-    model_path = "./fine_tuned_phi_v2/"
+    model_path = "./fine_tuned_phi_v3/"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForCausalLM.from_pretrained(model_path)
 
@@ -28,23 +29,35 @@ except Exception as e:
     sys.exit(1)
 
 def filter_output(response, promptWithInput):
-    response = response[len(promptWithInput):].strip()
-    for ch in ["[", ",", "-", "Γ"]:
-        index = response.find(ch)
-        if index != -1:
+    # Step 1: Remove everything before or including "Habit ="
+    response = response.split("Habit =")[-1].strip()
+    response = response.split("\\")[0].strip()
+
+    # Step 2: Strip tabs, quotes, artifacts
+    for token in ["\\", "\"", "'", "�", "*", "=", "•", "—"]:
+        response = response.replace(token, "")
+
+    # Step 3: Normalize spacing and remove bullets
+    response = re.sub(r"\s+", " ", response)
+    response = re.sub(r"^(a\)|b\)|c\)|-+|\d+\.)", "", response, flags=re.IGNORECASE)
+
+    # Step 4: Cut off at noise markers
+    for end_marker in ["support", "output", "frequency", "goal", "purpose"]:
+        index = response.lower().find(end_marker)
+        if index > 0:
             response = response[:index]
-    return " ".join(response.splitlines()).strip()
+
+    # Step 5: Remove punctuation and limit to 5 words
+    response = re.sub(r"[^\w\s]", "", response)
+    words = response.strip().split()
+    response = " ".join(words[:5])
+
+    return response.strip()
 
 def generate_response(promptWithInput):
     try:
-        # print("DEBUG: Inside generate_response", file=sys.stderr)
-        sys.stderr.flush()
-
         inputs = tokenizer(promptWithInput, return_tensors="pt")
         inputs = {k: v.to(model.device) for k, v in inputs.items()}
-
-        # print("DEBUG: Running model.generate with do_sample=True and NO num_beams", file=sys.stderr)
-        sys.stderr.flush()
 
         outputs = model.generate(
             **inputs,
@@ -55,7 +68,7 @@ def generate_response(promptWithInput):
             temperature=0.7,
             no_repeat_ngram_size=4,
             pad_token_id=tokenizer.eos_token_id,
-            # force_words_ids=[[tokenizer(word).input_ids[0]] for word in ["Track", "Write", "Drink", "Exercise", "Read", "Meditate", "Sleep"]],
+            # force_words_ids disabled to allow sampling
             bad_words_ids=[[tokenizer(word).input_ids[0]] for word in ["How", "Why", "What", "When", "Where", "Who", "?"]],
             repetition_penalty=2.0
         )

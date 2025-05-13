@@ -42,7 +42,7 @@ tokenized_dataset = formatted_dataset.map(tokenize_function, batched=True)
 
 # 6. Training arguments
 training_args = TrainingArguments(
-    output_dir="./fine_tuned_phi_v2",
+    output_dir="./fine_tuned_phi_v3",
     per_device_train_batch_size=2,
     gradient_accumulation_steps=4,
     num_train_epochs=3,
@@ -64,5 +64,5 @@ trainer = SFTTrainer(
 trainer.train()
 
 # 8. Save model
-model.save_pretrained("./fine_tuned_phi_v2")
-tokenizer.save_pretrained("./fine_tuned_phi_v2")
+model.save_pretrained("./fine_tuned_phi_v3")
+tokenizer.save_pretrained("./fine_tuned_phi_v3")

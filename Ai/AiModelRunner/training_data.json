@@ -1,206 +1,1002 @@
 [
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Drink 8 glasses of water."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink a single focus"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Exercise for 30 minutes daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise sleep quality"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Meditate for 10 minutes now."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your steps"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Sleep for 7+ hours tonight."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write steps and movement"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Eat protein and healthy fats."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink intentional movement"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Track progress daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate before checking phone"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Stretch, breathe, and relax."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep simple routines"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Limit distractions, take breaks."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write bedtime readiness"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Drink water and stretch."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write your top priority"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Write reflections every night."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep calm moments"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Deep breathing and exercise."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate your emotional state"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Start small and stay consistent."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate mindful breathing"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Read, stretch, and avoid screens."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate time on each task"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Eat whole foods, reduce sugar."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write stretching regularly"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Use time blocks for tasks."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink growth mindset"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Take breaks and move often."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write your calendar"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Hydrate and set goals."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your emotional state"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Read for 20 minutes daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate mood every evening"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Practice gratitude and learning."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read without distractions"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "I am improving every day."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read time on each task"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Set small, achievable goals."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise mood every evening"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Listen to music or meditate."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate a single focus"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Breathe deeply for 5 minutes."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep 3 daily wins"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Prioritize tasks and plan ahead."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track morning focus"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Read, learn, and reflect."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track restful moments"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Consistent bedtime and no screens."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read stillness before sleep"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Walk 10 minutes after meals."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write with purpose"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Pause and observe surroundings."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track for 15 minutes daily"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Use a habit tracker daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate hydration reminders"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Focus on breathing and surroundings."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise energy after waking"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Avoid multitasking, use timers."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink distraction-free reading"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Practice gratitude and kindness."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write gratitude daily"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Stretch for 5 minutes daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink progress each week"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Celebrate small wins."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write morning focus"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Plan ahead and wake up early."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate positive thoughts"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Write 3 things daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep water each morning"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Limit negativity and focus on growth."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write mood every evening"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Move, hydrate, and breathe deeply."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep steps and movement"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Pause and observe sensations."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track mood every evening"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Use the Pomodoro technique."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate 3 daily wins"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Create something daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read your posture"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Breathe deeply and relax shoulders."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise growth mindset"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Close eyes, breathe, reset thoughts."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write consistency in journaling"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Create routines and remove distractions."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read before breakfast"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Stretch, hydrate, and plan."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep intentional movement"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Schedule workouts and start small."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep before checking phone"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Hydrate, move, and set goals."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write hydration reminders"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Declutter and use a planner."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track daily writing habits"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Sit quietly for 5 minutes daily."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your meals"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Reflect and prepare for tomorrow."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track 3 daily wins"
   },
   {
-    "input": "Provide a habit to track only without description.\nHabit:",
-    "output": "Limit distractions and meditate."
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track sleep quality"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise hydration reminders"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track stillness before sleep"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate intentional movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep stillness before sleep"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep consistency in journaling"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read stretching regularly"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track mindful breathing"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep restful moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your evening routine"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate daily writing habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep 3 key goals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write time on each task"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your calendar"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write screen time"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate progress each week"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep distraction-free reading"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink 10 minutes before bed"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read morning focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read 3 key goals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate stillness before sleep"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your posture"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track progress each week"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep fitness habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise time on each task"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink with purpose"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read hydration levels"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track mindful eating"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read habits in the morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read progress each week"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track without distractions"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise morning focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise mindful breathing"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write energy after waking"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink mindful breathing"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep 10 minutes before bed"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep daily writing habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write before breakfast"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your steps"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep for 15 minutes daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise your posture"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink stillness before sleep"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track screen time"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write habits in the morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise daily writing habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise before checking phone"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track calm moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track consistency in journaling"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track water each morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep gratitude daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise your calendar"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write without distractions"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink fitness habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write your steps"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep stretching regularly"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track before checking phone"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read water each morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate gratitude daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track gratitude daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track bedtime readiness"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise mindful eating"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink positive thoughts"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate bedtime readiness"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your posture"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your steps"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise steps and movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read growth mindset"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink time on each task"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track 10 minutes before bed"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write progress each week"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write distraction-free reading"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink sleep quality"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise stillness before sleep"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track with purpose"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read screen time"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate stretching regularly"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep sleep quality"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read your calendar"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep morning focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your emotional state"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write hydration levels"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your evening routine"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your evening routine"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your top priority"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read steps and movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise your top priority"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read for 15 minutes daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate fitness habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate habits in the morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise without distractions"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink 3 key goals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write fitness habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep a single focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your top priority"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise progress each week"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep before breakfast"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track hydration reminders"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise for 15 minutes daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink before checking phone"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read calm moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep your calendar"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read with purpose"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write positive thoughts"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate without distractions"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise screen time"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track intentional movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read positive thoughts"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink bedtime readiness"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track positive thoughts"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write mindful breathing"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write sleep quality"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise water each morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink screen time"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate distraction-free reading"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read 3 daily wins"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise calm moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink consistency in journaling"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write task completion"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate steps and movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise habits in the morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read intentional movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read gratitude daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write 3 daily wins"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep daily reflections"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink stretching regularly"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink water each morning"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track growth mindset"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep with purpose"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink hydration reminders"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise your emotional state"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read daily checklist"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise 3 key goals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep mood every evening"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink before breakfast"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise creative habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise simple routines"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink daily writing habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Sleep without distractions"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink restful moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate your steps"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate your posture"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate your evening routine"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise 10 minutes before bed"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink calm moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track a single focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track distraction-free reading"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink for 15 minutes daily"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your meals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink morning focus"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write calm moments"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink your top priority"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate simple routines"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate before breakfast"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read your meals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate protein intake"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Meditate consistency in journaling"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write your emotional state"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise bedtime readiness"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track hydration levels"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Write breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track steps and movement"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track time on each task"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track 3 key goals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Read before checking phone"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track your meals"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Drink hydration levels"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Track fitness habits"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise breathing deeply"
+  },
+  {
+    "input": "Provide a habit to track only without description.\nHabit =",
+    "output": "Exercise stretching regularly"
   }
 ]
