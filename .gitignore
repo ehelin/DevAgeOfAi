@@ -364,3 +364,5 @@ FodyWeavers.xsd
 /Shared/Environment/config.txt
 /Ai/AiModelRunner/phi3_finetuned_long
 /Ai/AiModelRunner/phi3_finetuned_model
+/Ai/AiModelRunner/fine_tuned_phi_v3
+/Ai/AiModelRunner/qlora-output/checkpoint-18
