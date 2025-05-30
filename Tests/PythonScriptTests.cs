@@ -12,28 +12,23 @@ namespace Tests
         public PythonScriptTests()
         {
             // Initialize the Python script service
-            _scriptService = new PythonScriptService(ScriptPath);
-            _scriptService.StartAsync().GetAwaiter().GetResult();
+           // _scriptService = new PythonScriptService(ScriptPath);
+            //_scriptService.StartAsync().GetAwaiter().GetResult();
         }
 
         [Fact]
         public async Task TestPythonScriptResponseHabits_ToTrack()
         {
+            string prompt = Constants.HABIT_TO_TRACK_PROMPT;
+            var aiService = new AiModelApiService();
+
             var responses = new List<string>();
-            for (var i = 0; i < 50; i++)
+            for (var i = 0; i < 20; i++)
             {
-                var input = Constants.HABIT_TO_TRACK_PROMPT;
-
                 // Send input to the Python script and get the response
-                var response = await _scriptService.SendInputAsync(input);
-
-                // HACK: Remove presetup output
-                if (response.Contains("Starting Python script...")
-                        || response.Contains("Running in main mode (C# integration).")
-                        || response.Contains("Python model ready"))
-                {
-                    continue;
-                }
+                //var response = await _scriptService.SendInputAsync(input);
+                //var response = _scriptService.RunModelAndReadOutput();
+                var response = await aiService.GenerateResponseAsync(prompt);
 
                 // Validate the response
                 Assert.NotNull(response);

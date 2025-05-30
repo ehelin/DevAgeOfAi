@@ -22,6 +22,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AiModelServiceRunner.py" />
+    <Compile Include="ai_model_api.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="model_runner.py" />
     <Compile Include="Old\chatModelX.py" />
     <Compile Include="Old\chatMsPhi1_5 - Copy.py" />
     <Compile Include="Old\chatMsDialoGPT-small.py" />

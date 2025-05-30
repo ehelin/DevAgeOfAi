@@ -7,5 +7,6 @@ namespace Shared.Interfaces
         Task StartAsync();
         Task<string> SendInputAsync(string input);
         void Stop();
+        string RunModelAndReadOutput();
     }
 }

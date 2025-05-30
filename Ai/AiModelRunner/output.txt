@@ -1,0 +1,1 @@
+Start: Habit = 'A' AND Type != 1) AS A_Count, -- Count of type=0 for habit='B', but not hab :End

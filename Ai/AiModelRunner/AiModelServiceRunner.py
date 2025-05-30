@@ -1,10 +1,11 @@
 ﻿import sys
 import io
-import torch
+import os
 import re
+import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# Ensure UTF-8 output (especially for C# or console)
+# Force UTF-8 output
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
@@ -12,10 +13,9 @@ print("DEBUG: Python script starting...", file=sys.stderr)
 sys.stderr.flush()
 
 try:
-    print("DEBUG: Loading fine-tuned model...", file=sys.stderr)
+    print("DEBUG: Loading model...", file=sys.stderr)
     sys.stderr.flush()
 
-    # Load fine-tuned model and tokenizer from local directory
     model_path = "./fine_tuned_phi_v3/"
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = AutoModelForCausalLM.from_pretrained(model_path)
@@ -24,38 +24,36 @@ try:
     sys.stdout.flush()
 
 except Exception as e:
-    print(f"ERROR: Failed to load model: {str(e)}", file=sys.stderr)
+    print(f"ERROR: {str(e)}", file=sys.stderr)
     sys.stderr.flush()
     sys.exit(1)
 
 def filter_output(response, promptWithInput):
-    # Step 1: Remove everything before or including "Habit ="
+    # Remove prefix text
     response = response.split("Habit =")[-1].strip()
-    response = response.split("\\")[0].strip()
+    response = response.replace("\\", "")
 
-    # Step 2: Strip tabs, quotes, artifacts
     for token in ["\\", "\"", "'", "�", "*", "=", "•", "—"]:
         response = response.replace(token, "")
 
-    # Step 3: Normalize spacing and remove bullets
     response = re.sub(r"\s+", " ", response)
     response = re.sub(r"^(a\)|b\)|c\)|-+|\d+\.)", "", response, flags=re.IGNORECASE)
 
-    # Step 4: Cut off at noise markers
     for end_marker in ["support", "output", "frequency", "goal", "purpose"]:
         index = response.lower().find(end_marker)
         if index > 0:
             response = response[:index]
 
-    # Step 5: Remove punctuation and limit to 5 words
     response = re.sub(r"[^\w\s]", "", response)
     words = response.strip().split()
-    response = " ".join(words[:5])
+    response = " ".join(words)
 
     return response.strip()
 
 def generate_response(promptWithInput):
     try:
+        # print(f"PROMPT: {repr(promptWithInput)}", file=sys.stderr)
+
         inputs = tokenizer(promptWithInput, return_tensors="pt")
         inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
@@ -68,13 +66,17 @@ def generate_response(promptWithInput):
             temperature=0.7,
             no_repeat_ngram_size=4,
             pad_token_id=tokenizer.eos_token_id,
-            # force_words_ids disabled to allow sampling
             bad_words_ids=[[tokenizer(word).input_ids[0]] for word in ["How", "Why", "What", "When", "Where", "Who", "?"]],
             repetition_penalty=2.0
         )
 
         response = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
-        return filter_output(response, promptWithInput)
+        response = response.replace("\n", " ").replace("\r", " ").strip()
+        response = re.sub(r"\s+", " ", response)
+
+        filtered = filter_output(response, promptWithInput)
+        final = f"Start: {filtered} :End"
+        return final
 
     except Exception as e:
         print(f"ERROR: Failed to generate response: {str(e)}", file=sys.stderr)
@@ -84,6 +86,7 @@ def generate_response(promptWithInput):
 def main():
     print("Python model ready")
     sys.stdout.flush()
+
     while True:
         try:
             input_line = sys.stdin.readline().strip()
@@ -93,8 +96,20 @@ def main():
                 print("Python exiting")
                 sys.stdout.flush()
                 break
-            print(generate_response(input_line))
+
+            result = generate_response(input_line)
+
+            # # Output to file (optional)
+            # with open("C:/temp/DevAgeTraining/Ai/AiModelRunner/output.txt", "w", encoding="utf-8") as f:
+            #     f.write(result)
+            #     f.flush()
+            #     os.fsync(f.fileno())
+
+            # Also output to stdout for C# to read
+            print(result)
+            print("<<END>>")
             sys.stdout.flush()
+
         except Exception as e:
             print(f"ERROR: {str(e)}", file=sys.stderr)
             sys.stderr.flush()
@@ -107,6 +122,6 @@ if __name__ == "__main__":
             if input_text.lower() == "exit":
                 print("Exiting interactive mode.")
                 break
-            print("Model:", generate_response(input_text))
+            print(generate_response(input_text))
     else:
         main()
