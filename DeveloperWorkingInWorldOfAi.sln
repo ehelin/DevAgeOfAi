@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonModelApi", "PythonModelApi\PythonModelApi.pyproj", "{865464C2-0EC5-4D8E-9E3D-258D50DD53A1}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonModelApi", "Ai\PythonModelApi\PythonModelApi.pyproj", "{865464C2-0EC5-4D8E-9E3D-258D50DD53A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
