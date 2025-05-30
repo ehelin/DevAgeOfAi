@@ -25,9 +25,6 @@ namespace Tests
             var responses = new List<string>();
             for (var i = 0; i < 20; i++)
             {
-                // Send input to the Python script and get the response
-                //var response = await _scriptService.SendInputAsync(input);
-                //var response = _scriptService.RunModelAndReadOutput();
                 var response = await aiService.GenerateResponseAsync(prompt);
 
                 // Validate the response

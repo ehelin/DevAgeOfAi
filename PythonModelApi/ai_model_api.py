@@ -74,4 +74,8 @@ async def generate(prompt_input: PromptInput):
 
 # --- Entry point ---
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    try:
+        uvicorn.run(app, host="127.0.0.1", port=8000)
+    except Exception as e:
+        test = {"error": str(e)}
+
