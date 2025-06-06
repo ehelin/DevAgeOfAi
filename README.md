@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/ehelin/DevAgeOfAi/raw/master/banner.png" alt="Eric Helin Dev & AI Projects banner" />
+</p>
+
+
 # 📜 DevAgeOfAi
 
 **An experimental playground exploring the intersection of AI, automation, and software craftsmanship.**
