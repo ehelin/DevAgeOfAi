@@ -20,10 +20,10 @@ namespace BLL.Ai.Services
         {
             _scriptPath = scriptPath ?? throw new ArgumentNullException(nameof(scriptPath));
 
-            if (!File.Exists(_scriptPath))
-            {
-                throw new FileNotFoundException($"Python script not found at {_scriptPath}");
-            }
+            //if (!File.Exists(_scriptPath))
+            //{
+            //    throw new FileNotFoundException($"Python script not found at {_scriptPath}");
+            //}
         }
 
         #region IThirdPartyAiService

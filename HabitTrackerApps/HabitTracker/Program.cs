@@ -83,8 +83,8 @@ namespace HabitTracker
         private static async Task InitializeServicesAsync(IServiceProvider serviceProvider)
         {
             // Resolve and start the PythonScriptService
-            var pythonScriptService = serviceProvider.GetRequiredService<IPythonScriptService>();
-            await pythonScriptService.StartAsync();
+            //var pythonScriptService = serviceProvider.GetRequiredService<IPythonScriptService>();
+            //await pythonScriptService.StartAsync();
         }
     }
 }
