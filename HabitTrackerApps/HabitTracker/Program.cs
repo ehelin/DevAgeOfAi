@@ -51,6 +51,8 @@ namespace HabitTracker
             services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
             services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
 
+            services.AddSingleton<IHabitPromptService, HabitPromptService>();
+
             // Register the HabitTrackerForm
             services.AddSingleton<HabitTrackerForm>();
 

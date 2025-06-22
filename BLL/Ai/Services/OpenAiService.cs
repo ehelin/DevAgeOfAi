@@ -6,15 +6,18 @@ namespace BLL.Ai.Services
     public class OpenAiService : IThirdPartyAiService
     {
         private readonly IClient client;
+        private readonly IHabitPromptService habitPromptService;
 
-        public OpenAiService(IEnumerable<IClient> clients)
+        public OpenAiService(IEnumerable<IClient> clients, IHabitPromptService habitPromptService)
         {
             this.client = clients.First(x => x is BLL.Ai.Clients.OpenAi.Client);
+            this.habitPromptService = habitPromptService;
         }
 
         public async Task<string> GetHabitToTrackSuggestion()
         {
-            var response = await GetSuggestion(Constants.HABIT_TO_TRACK_PROMPT);
+            var augmentedPrompt = this.habitPromptService.BuildHabitPrompt(Constants.HABIT_TO_TRACK_PROMPT);
+            var response = await GetSuggestion(augmentedPrompt);
 
             return response;
         }
