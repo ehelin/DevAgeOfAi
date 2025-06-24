@@ -1,6 +1,8 @@
 using HabitTracker.Models;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Shared.Interfaces;
+using shared = Shared;
 
 namespace HabitTracker
 {
@@ -18,6 +20,7 @@ namespace HabitTracker
 
             InitializeComponent();
             LoadHabitsFromFile(); // Load habits on start
+            LoadSuggestedHabits();  // load suggested habits from agent
         }
 
         private void btnAddHabit_Click(object sender, EventArgs e)
@@ -179,6 +182,27 @@ namespace HabitTracker
                         item.SubItems.Add(habit.Category); // Load Category
                         lstHabits.Items.Add(item);
                     }
+                }
+            }
+        }
+
+        private void LoadSuggestedHabits()
+        {
+            if (!File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
+                return;
+
+            var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
+            var suggestions = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+            lstSuggestions.Items.Clear();
+            foreach (var kvp in suggestions)
+            {
+                lstSuggestions.Items.Add($">>> {kvp.Key}");
+                foreach (var line in kvp.Value.Split('\n'))
+                {
+                    var habit = line.Trim('-', '*', ' ', '\t');
+                    if (!string.IsNullOrWhiteSpace(habit))
+                        lstSuggestions.Items.Add($"  - {habit}");
                 }
             }
         }

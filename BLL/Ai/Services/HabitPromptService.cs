@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Shared.Interfaces;
+using System.Text;
 
 namespace BLL.Ai.Services
 {
@@ -25,8 +26,23 @@ namespace BLL.Ai.Services
 
         public string BuildHabitPrompt(string userPrompt, int numberOfHabits = 5)
         {
-            return $"The user is currently focused on the goal: {userPrompt}. " +
-                    $"Suggest {numberOfHabits} short, specific daily habits that would support this goal.";
+            var selectedHabits = _habits
+               .OrderBy(_ => _random.Next())
+               .Take(numberOfHabits)
+               .ToList();
+
+            var choices = string.Join(", ", selectedHabits);
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"User prompt: \"{userPrompt}\"");
+            sb.AppendLine();
+            sb.AppendLine($"Choose one: {choices}");
+            sb.AppendLine();
+            sb.AppendLine("Return exactly one habit from the list above.");
+            sb.AppendLine("Do not add dashes, punctuation, or descriptions.");
+            sb.AppendLine("Return only the habit text exactly as written.");
+
+            return sb.ToString();
         }
     }
 }

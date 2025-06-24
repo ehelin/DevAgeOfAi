@@ -26,11 +26,7 @@ namespace BLL.Ai.Services
 
         public async Task<string> GetHabitsFromPrompt(string prompt)
         {
-            // Optional: add habit-specific system instruction if needed
-            var fullPrompt = $"The user is working on the goal: {prompt}. " +
-                             "Suggest 5 short, specific daily habits that support this goal.";
-
-            return await client.GetCompletionAsync(fullPrompt);
+            return await client.GetCompletionAsync(prompt);
         }
 
         #region Private Methods

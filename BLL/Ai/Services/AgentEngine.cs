@@ -14,8 +14,7 @@ namespace BLL.Ai.Services
         private readonly IGoalMemoryService _memoryService;
         private readonly OpenAiService _aiService;
         private Timer _timer;
-
-        private readonly string _filePath = @"C:\temp\DevAgeTraining\BLL\Ai\Data\suggestedHabits.json"; // TODO - make dynamic
+        private bool isRunning = false;
 
         public AgentEngine(IHabitPromptService promptService, IGoalMemoryService memoryService, OpenAiService aiService)
         {
@@ -27,10 +26,20 @@ namespace BLL.Ai.Services
         public void Start()
         {
             _timer = new Timer(AgentLoop, null, TimeSpan.Zero, TimeSpan.FromSeconds(15));
+            isRunning = true;
         }
 
         private async void AgentLoop(object state)
         {
+            if (isRunning)
+            {
+                isRunning = false;
+            }
+            else
+            {
+                return;
+            }
+            
             var goals = await _memoryService.GetTrackedGoalsAsync();
 
             // if no goals, seed with the agent's core directive
@@ -42,7 +51,9 @@ namespace BLL.Ai.Services
 
             foreach (var goal in goals)
             {
-                var prompt = _promptService.BuildHabitPrompt(goal);
+                var prompt = $"The user is currently focused on the goal: {goal}. " +
+                    $"Suggest {3} short, specific daily habits that would support this goal.";
+
                 var response = await _aiService.GetHabitsFromPrompt(prompt);
 
                 var habits = response.Split('\n', StringSplitOptions.RemoveEmptyEntries);
@@ -57,6 +68,8 @@ namespace BLL.Ai.Services
                 }
 
                 await SaveSuggestedHabitsAsync(goal, response);
+
+                isRunning = true;
             }
         }
 
@@ -64,21 +77,21 @@ namespace BLL.Ai.Services
         {
             var suggestions = new Dictionary<string, string>();
 
-            if (File.Exists(_filePath))
+            if (File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
             {
-                var json = await File.ReadAllTextAsync(_filePath);
+                var json = await File.ReadAllTextAsync(shared.Constants.PATH_SUGGESTED_HABITS);
                 suggestions = JsonSerializer.Deserialize<Dictionary<string, string>>(json)
                               ?? new Dictionary<string, string>();
             }
             else
             {
-                File.Create(_filePath);
+                using (File.Create(shared.Constants.PATH_SUGGESTED_HABITS)) { }
             }
 
             suggestions[goal] = response;
 
             var updatedJson = JsonSerializer.Serialize(suggestions, new JsonSerializerOptions { WriteIndented = true });
-            await File.WriteAllTextAsync(_filePath, updatedJson);
+            await File.WriteAllTextAsync(shared.Constants.PATH_SUGGESTED_HABITS, updatedJson);
         }
 
         public void Stop()

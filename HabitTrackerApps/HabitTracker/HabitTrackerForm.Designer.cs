@@ -11,6 +11,7 @@
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnGenerateHabit;
+        private System.Windows.Forms.ListBox lstSuggestions;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -40,6 +41,7 @@
             this.btnRemoveCompleted = new System.Windows.Forms.Button();
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.lstSuggestions = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
 
             // 
@@ -144,6 +146,15 @@
             this.btnGenerateHabit.UseVisualStyleBackColor = true;
             this.btnGenerateHabit.Click += new System.EventHandler(this.btnGenerateHabit_Click);
 
+
+            this.lstSuggestions = new System.Windows.Forms.ListBox();
+            this.lstSuggestions.FormattingEnabled = true;
+            this.lstSuggestions.Location = new System.Drawing.Point(600, 30);
+            this.lstSuggestions.Name = "lstSuggestions";
+            this.lstSuggestions.Size = new System.Drawing.Size(300, 400);
+            this.Controls.Add(this.lstSuggestions);
+
+
             // 
             // HabitTrackerForm
             // 
@@ -162,6 +173,7 @@
             this.Text = "Habit Tracker";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

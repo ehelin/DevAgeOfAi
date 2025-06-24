@@ -14,7 +14,7 @@ namespace BLL.Ai.Services
         {
             if (!File.Exists(_filePath))
             {
-                File.Create(_filePath);
+                using (File.Create(_filePath)) { }
                 return new List<string>();
             }
 
