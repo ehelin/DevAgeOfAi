@@ -4,6 +4,7 @@ using Shared.Interfaces;
 using System;
 using System.Windows.Forms;
 using BLL.Ai.Services;
+using System.Linq;
 
 namespace HabitTracker
 {
@@ -22,6 +23,13 @@ namespace HabitTracker
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
+            var openAiService = allAiServices.OfType<OpenAiService>().First();
+            var engine = new AgentEngine(serviceProvider.GetRequiredService<IHabitPromptService>(),
+                serviceProvider.GetRequiredService<IGoalMemoryService>(),
+                openAiService);
+            engine.Start();
 
             // Create and run the main form, injecting the required dependencies
             var mainForm = serviceProvider.GetRequiredService<HabitTrackerForm>();
@@ -46,11 +54,12 @@ namespace HabitTracker
 
             // Register the AI Service(s)
             services.AddSingleton<IThirdPartyAiService, OpenAiService>();        
-            services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>(); 
-            services.AddSingleton(provider => new PythonScriptService(pythonScriptPath));
-            services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
-            services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
+            services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>();
+            //services.AddSingleton(provider => new PythonScriptService(pythonScriptPath));
+            //services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
+            //services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
 
+            services.AddSingleton<IGoalMemoryService, GoalMemoryService>();
             services.AddSingleton<IHabitPromptService, HabitPromptService>();
 
             // Register the HabitTrackerForm

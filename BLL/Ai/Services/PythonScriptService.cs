@@ -35,6 +35,11 @@ namespace BLL.Ai.Services
             return result;
         }
 
+        public Task<string> GetHabitsFromPrompt(string prompt)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region IPythonScriptService

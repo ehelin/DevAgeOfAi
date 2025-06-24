@@ -13,6 +13,11 @@ namespace BLL.Ai.Services
             this.client = clients.First(x => x is BLL.Ai.Clients.MicrosoftAi.Client);
         }
 
+        public Task<string> GetHabitsFromPrompt(string prompt)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<string> GetHabitToTrackSuggestion()
         {
             var response = await GetSuggestion(Constants.HABIT_TO_TRACK_PROMPT);

@@ -16,7 +16,7 @@ namespace Tests
             IClient client = new OpenAiClient.Client(aiKey);
             IEnumerable<IClient> clients = new List<IClient> { client };
 
-            service = new OpenAiService(clients);
+            service = new OpenAiService(clients, null);
         }
 
         [Fact]
