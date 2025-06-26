@@ -11,7 +11,7 @@
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnGenerateHabit;
-        private System.Windows.Forms.ListBox lstSuggestions;
+        //private System.Windows.Forms.ListBox lstSuggestions;
         private System.Windows.Forms.ComboBox cmbSuggestedHabits;
 
         /// <summary>
@@ -42,7 +42,7 @@
             this.btnRemoveCompleted = new System.Windows.Forms.Button();
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.lstSuggestions = new System.Windows.Forms.ListBox();
+            //this.lstSuggestions = new System.Windows.Forms.ListBox();
             this.cmbSuggestedHabits = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
 
@@ -148,19 +148,11 @@
             this.btnGenerateHabit.UseVisualStyleBackColor = true;
             this.btnGenerateHabit.Click += new System.EventHandler(this.btnGenerateHabit_Click);
 
-
-            this.lstSuggestions = new System.Windows.Forms.ListBox();
-            this.lstSuggestions.FormattingEnabled = true;
-            this.lstSuggestions.Location = new System.Drawing.Point(600, 30);
-            this.lstSuggestions.Name = "lstSuggestions";
-            this.lstSuggestions.Size = new System.Drawing.Size(300, 400);
-            this.Controls.Add(this.lstSuggestions);
-
             this.cmbSuggestedHabits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSuggestedHabits.FormattingEnabled = true;
-            this.cmbSuggestedHabits.Location = new System.Drawing.Point(600, 10); // Just above lstSuggestions
+            this.cmbSuggestedHabits.Location = new System.Drawing.Point(320, 30); 
             this.cmbSuggestedHabits.Name = "cmbSuggestedHabits";
-            this.cmbSuggestedHabits.Size = new System.Drawing.Size(300, 23);
+            this.cmbSuggestedHabits.Size = new System.Drawing.Size(200, 23);
             this.Controls.Add(this.cmbSuggestedHabits);
 
             // 
