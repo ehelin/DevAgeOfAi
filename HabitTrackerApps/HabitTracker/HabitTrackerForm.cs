@@ -192,24 +192,15 @@ namespace HabitTracker
                 return;
 
             var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
-            var suggestions = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            var suggestions = JsonConvert.DeserializeObject<List<string>>(json);
 
             cmbSuggestedHabits.Items.Clear();
             cmbSuggestedHabits.Items.Add(">> Select a suggested habit <<");
             cmbSuggestedHabits.SelectedIndex = 0;
 
-            foreach (var kvp in suggestions)
+            foreach (var suggestion in suggestions)
             {
-                cmbSuggestedHabits.Items.Add($">>> {kvp.Key}");
-
-                foreach (var line in kvp.Value.Split('\n'))
-                {
-                    var habit = line.Trim('-', '*', ' ', '\t');
-                    if (!string.IsNullOrWhiteSpace(habit))
-                    {
-                        cmbSuggestedHabits.Items.Add(habit); 
-                    }
-                }
+                cmbSuggestedHabits.Items.Add($"{suggestion}");
             }
         }
     }

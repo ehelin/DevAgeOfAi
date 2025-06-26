@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using Shared.Interfaces;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using shared = Shared;
 
 namespace BLL.Ai.Services
@@ -58,40 +59,48 @@ namespace BLL.Ai.Services
 
                 var habits = response.Split('\n', StringSplitOptions.RemoveEmptyEntries);
 
+                var cleanHabits = new List<string>();
                 foreach (var habit in habits)
                 {
-                    var cleaned = habit.TrimStart('-', '*', ' ', '1', '.', ')').Trim();
+                    var cleaned = Regex.Replace(habit, @"^\s*[\d]+\s*[\.\)\-]*\s*", "").Trim();
+                    cleaned = cleaned.Replace("\"", "");
+
                     if (!string.IsNullOrWhiteSpace(cleaned))
                     {
                         await _memoryService.AddGoalAsync(cleaned); // Agent-generated sub-goals
+                        cleanHabits.Add(cleaned);
                     }
                 }
 
-                await SaveSuggestedHabitsAsync(goal, response);
+                await SaveSuggestedHabitsAsync(goal, cleanHabits);
 
                 isRunning = true;
             }
         }
 
-        private async Task SaveSuggestedHabitsAsync(string goal, string response)
+        private async Task SaveSuggestedHabitsAsync(string goal, List<string> cleanHabits)
         {
-            var suggestions = new Dictionary<string, string>();
-
+            var suggestedHabits = new List<string>();
             if (File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
             {
-                var json = await File.ReadAllTextAsync(shared.Constants.PATH_SUGGESTED_HABITS);
-                suggestions = JsonSerializer.Deserialize<Dictionary<string, string>>(json)
-                              ?? new Dictionary<string, string>();
+                var readJson = await File.ReadAllTextAsync(shared.Constants.PATH_SUGGESTED_HABITS);
+                suggestedHabits = JsonSerializer.Deserialize<List<string>>(readJson) ?? new List<string>();
             }
             else
             {
                 using (File.Create(shared.Constants.PATH_SUGGESTED_HABITS)) { }
             }
 
-            suggestions[goal] = response;
+            foreach (var cleanHabit in cleanHabits)
+            {
+                if (!suggestedHabits.Contains(cleanHabit, StringComparer.OrdinalIgnoreCase))
+                {
+                    suggestedHabits.Add(cleanHabit);
+                }
+            }
 
-            var updatedJson = JsonSerializer.Serialize(suggestions, new JsonSerializerOptions { WriteIndented = true });
-            await File.WriteAllTextAsync(shared.Constants.PATH_SUGGESTED_HABITS, updatedJson);
+            var json = JsonSerializer.Serialize(suggestedHabits, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(shared.Constants.PATH_SUGGESTED_HABITS, json);
         }
 
         public void Stop()
