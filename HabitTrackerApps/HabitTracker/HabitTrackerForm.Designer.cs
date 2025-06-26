@@ -174,6 +174,7 @@
             this.Controls.Add(this.btnGenerateHabit);
             this.Name = "HabitTrackerForm";
             this.Text = "Habit Tracker";
+            this.MaximizeBox = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
