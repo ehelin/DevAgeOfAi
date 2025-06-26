@@ -12,6 +12,7 @@
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnGenerateHabit;
         private System.Windows.Forms.ListBox lstSuggestions;
+        private System.Windows.Forms.ComboBox cmbSuggestedHabits;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -42,6 +43,7 @@
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lstSuggestions = new System.Windows.Forms.ListBox();
+            this.cmbSuggestedHabits = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
 
             // 
@@ -154,6 +156,12 @@
             this.lstSuggestions.Size = new System.Drawing.Size(300, 400);
             this.Controls.Add(this.lstSuggestions);
 
+            this.cmbSuggestedHabits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSuggestedHabits.FormattingEnabled = true;
+            this.cmbSuggestedHabits.Location = new System.Drawing.Point(600, 10); // Just above lstSuggestions
+            this.cmbSuggestedHabits.Name = "cmbSuggestedHabits";
+            this.cmbSuggestedHabits.Size = new System.Drawing.Size(300, 23);
+            this.Controls.Add(this.cmbSuggestedHabits);
 
             // 
             // HabitTrackerForm

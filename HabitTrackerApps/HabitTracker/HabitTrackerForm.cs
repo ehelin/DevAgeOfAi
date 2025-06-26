@@ -195,14 +195,20 @@ namespace HabitTracker
             var suggestions = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
 
             lstSuggestions.Items.Clear();
+            //cmbSuggestedHabits.Items.Clear(); // Clear old entries
+
             foreach (var kvp in suggestions)
             {
                 lstSuggestions.Items.Add($">>> {kvp.Key}");
+
                 foreach (var line in kvp.Value.Split('\n'))
                 {
                     var habit = line.Trim('-', '*', ' ', '\t');
                     if (!string.IsNullOrWhiteSpace(habit))
+                    {
                         lstSuggestions.Items.Add($"  - {habit}");
+                        //cmbSuggestedHabits.Items.Add(habit); // Add to dropdown
+                    }
                 }
             }
         }
