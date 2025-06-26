@@ -52,6 +52,7 @@
             this.txtHabitName.Size = new System.Drawing.Size(200, 20);
             this.txtHabitName.TabIndex = 0;
 
+
             // 
             // btnAddHabit
             // 

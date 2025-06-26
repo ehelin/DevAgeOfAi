@@ -23,6 +23,31 @@ namespace HabitTracker
             LoadSuggestedHabits();  // load suggested habits from agent
 
             cmbSuggestedHabits.SelectedIndexChanged += CmbSuggestedHabits_SelectedIndexChanged;
+            SetPlaceholder(txtHabitName, "Enter name & click 'Add Habit'...");
+        }
+
+        private void SetPlaceholder(TextBox box, string placeholder)
+        {
+            box.Text = placeholder;
+            box.ForeColor = Color.Gray;
+
+            box.GotFocus += (s, e) =>
+            {
+                if (box.Text == placeholder)
+                {
+                    box.Text = "";
+                    box.ForeColor = Color.Black;
+                }
+            };
+
+            box.LostFocus += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    box.Text = placeholder;
+                    box.ForeColor = Color.Gray;
+                }
+            };
         }
 
         private void CmbSuggestedHabits_SelectedIndexChanged(object? sender, EventArgs e)
