@@ -11,7 +11,6 @@
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnGenerateHabit;
-        //private System.Windows.Forms.ListBox lstSuggestions;
         private System.Windows.Forms.ComboBox cmbSuggestedHabits;
 
         /// <summary>
@@ -42,8 +41,7 @@
             this.btnRemoveCompleted = new System.Windows.Forms.Button();
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
-            //this.lstSuggestions = new System.Windows.Forms.ListBox();
-            this.cmbSuggestedHabits = new System.Windows.Forms.ComboBox();
+            cmbSuggestedHabits = new ComboBox();
             this.SuspendLayout();
 
             // 
@@ -148,12 +146,16 @@
             this.btnGenerateHabit.UseVisualStyleBackColor = true;
             this.btnGenerateHabit.Click += new System.EventHandler(this.btnGenerateHabit_Click);
 
-            this.cmbSuggestedHabits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSuggestedHabits.FormattingEnabled = true;
-            this.cmbSuggestedHabits.Location = new System.Drawing.Point(320, 30); 
-            this.cmbSuggestedHabits.Name = "cmbSuggestedHabits";
-            this.cmbSuggestedHabits.Size = new System.Drawing.Size(200, 23);
-            this.Controls.Add(this.cmbSuggestedHabits);
+            // 
+            // cmbSuggestedHabits
+            // 
+            cmbSuggestedHabits.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSuggestedHabits.FormattingEnabled = true;
+            cmbSuggestedHabits.Location = new Point(11, 30);
+            cmbSuggestedHabits.Margin = new Padding(4, 5, 4, 5);
+            cmbSuggestedHabits.Name = "cmbSuggestedHabits";
+            cmbSuggestedHabits.Size = new Size(512, 28);
+            cmbSuggestedHabits.TabIndex = 0;
 
             // 
             // HabitTrackerForm
@@ -161,6 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 400);  // Initial form size
+            Controls.Add(cmbSuggestedHabits);
             this.Controls.Add(this.cmbPriority);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.lstHabits);

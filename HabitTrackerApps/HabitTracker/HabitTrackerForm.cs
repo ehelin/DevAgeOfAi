@@ -21,6 +21,50 @@ namespace HabitTracker
             InitializeComponent();
             LoadHabitsFromFile(); // Load habits on start
             LoadSuggestedHabits();  // load suggested habits from agent
+
+            cmbSuggestedHabits.SelectedIndexChanged += CmbSuggestedHabits_SelectedIndexChanged;
+        }
+
+        private void CmbSuggestedHabits_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            var selected = cmbSuggestedHabits.SelectedItem?.ToString();
+
+            if (string.IsNullOrWhiteSpace(selected) || selected.StartsWith(">>"))
+                return;
+
+            var result = MessageBox.Show(
+                $"What would you like to do with the suggested habit? 'Yes' to add to list, 'No' to remove or 'Cancel' to close.\n\n{selected}",
+                "Suggested Habit",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button3);
+
+            if (result == DialogResult.Yes) // Add to tracker
+            {
+                RemoveSuggestedHabit(selected);
+                AddHabitToTracker(selected);
+                SaveHabitsToFile();
+                LoadHabitsFromFile();
+            }
+            else if (result == DialogResult.No) // Remove from list
+            {
+                RemoveSuggestedHabit(selected);
+                LoadSuggestedHabits();
+            }
+
+            cmbSuggestedHabits.SelectedIndex = 0; // Reset dropdown
+        }
+        private void RemoveSuggestedHabit(string habit)
+        {
+            if (!File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
+                return;
+
+            var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
+            var suggestions = JsonConvert.DeserializeObject<List<string>>(json);
+            if (suggestions == null) return;
+
+            suggestions.RemoveAll(x => x.Equals(habit, StringComparison.OrdinalIgnoreCase));
+            File.WriteAllText(shared.Constants.PATH_SUGGESTED_HABITS, JsonConvert.SerializeObject(suggestions, Formatting.Indented));
         }
 
         private void btnAddHabit_Click(object sender, EventArgs e)
