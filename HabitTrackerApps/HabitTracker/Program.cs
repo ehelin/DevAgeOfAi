@@ -24,12 +24,12 @@ namespace HabitTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
-            //var openAiService = allAiServices.OfType<OpenAiService>().First();
-            //var engine = new AgentEngine(serviceProvider.GetRequiredService<IHabitPromptService>(),
-            //    serviceProvider.GetRequiredService<IGoalMemoryService>(),
-            //    openAiService);
-            //engine.Start();
+            var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
+            var openAiService = allAiServices.OfType<OpenAiService>().First();
+            var engine = new AgentEngine(serviceProvider.GetRequiredService<IHabitPromptService>(),
+                serviceProvider.GetRequiredService<IGoalMemoryService>(),
+                openAiService);
+            engine.Start();
 
             // Create and run the main form, injecting the required dependencies
             var mainForm = serviceProvider.GetRequiredService<HabitTrackerForm>();
