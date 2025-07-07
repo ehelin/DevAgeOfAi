@@ -2,6 +2,7 @@ using HabitTracker.Models;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Shared.Interfaces;
+using Shared.Models;
 using shared = Shared;
 
 namespace HabitTracker
@@ -261,7 +262,7 @@ namespace HabitTracker
                 return;
 
             var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
-            var suggestions = JsonConvert.DeserializeObject<List<string>>(json);
+            var suggestions = JsonConvert.DeserializeObject<List<SuggestedHabit>>(json);
 
             cmbSuggestedHabits.Items.Clear();
             cmbSuggestedHabits.Items.Add(">> Select a suggested habit <<");

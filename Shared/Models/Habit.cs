@@ -13,5 +13,11 @@ namespace HabitTracker.Models
         public int Streak { get; set; }
         public string Priority { get; set; } // New property for Priority
         public string Category { get; set; } // New property for Category
+
+
+        public string Id { get; set; }  // TODO - add seed generator
+
+        public int SuccessCount { get; set; }
+        public int TotalAttempts { get; set; }
     }
 }

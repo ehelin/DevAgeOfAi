@@ -5,6 +5,7 @@ using System;
 using System.Windows.Forms;
 using BLL.Ai.Services;
 using System.Linq;
+using BLL.Ai.Agents;
 
 namespace HabitTracker
 {
@@ -26,7 +27,7 @@ namespace HabitTracker
 
             var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
             var openAiService = allAiServices.OfType<OpenAiService>().First();
-            var engine = new AgentEngine(serviceProvider.GetRequiredService<IHabitPromptService>(),
+            var engine = new HistorianAgent(serviceProvider.GetRequiredService<IHabitPromptService>(),
                 serviceProvider.GetRequiredService<IGoalMemoryService>(),
                 openAiService);
             engine.Start();
@@ -59,7 +60,6 @@ namespace HabitTracker
             //services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
             //services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
 
-            services.AddSingleton<IGoalMemoryService, GoalMemoryService>();
             services.AddSingleton<IHabitPromptService, HabitPromptService>();
 
             // Register the HabitTrackerForm

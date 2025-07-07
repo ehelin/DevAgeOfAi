@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shared.Interfaces
 {
-    public interface IGoalMemoryService
+    public interface IAgent
     {
-        Task<List<string>> GetTrackedGoalsAsync();
-        Task AddGoalAsync(string goal);
+        void Run();
     }
 }
