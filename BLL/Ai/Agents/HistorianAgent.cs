@@ -1,45 +1,74 @@
 ﻿using HabitTracker.Models;
-using Shared.Interfaces;
 using Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace BLL.Ai.Agents
 {
-    public class HistorianAgent : IAgent
+    public class HistorianAgent : BaseAgent
     {
-        private const string DataFile = "data.json";
-        private const string SuggestionsFile = "suggestedHabits.json";
         private const string StateFile = "historian.json";
 
-        private List<Habit> currentHabits = new();
         private HistorianState state = new();
 
-        public void Run()
+        public override void Start()
         {
-            LoadData();
-            AnalyzePatterns();
-            SaveState();
-            UpdateSuggestions();
+            _timer = new System.Threading.Timer(AgentLoop, null, System.TimeSpan.Zero, TimeSpan.FromSeconds(15));
+            isRunning = true;
         }
 
-        private void LoadData()
+        public override void Stop()
         {
+            _timer?.Dispose();
+        }
+
+        public async void AgentLoop(object state)
+        {
+            if (isRunning)
+            {
+                isRunning = false;
+            }
+            else
+            {
+                return;
+            }
+
+            var habits = LoadData();
+            if (habits != null && habits.Count() > 0)
+            {
+                habits = AnalyzePatterns(habits);
+                SaveState();
+                UpdateSuggestions();
+            }
+
+            isRunning = true;
+        }
+
+        private List<Habit> LoadData()
+        {
+            var currentHabits = new List<Habit>();
+
             if (File.Exists(DataFile))
             {
-                var json = File.ReadAllText(DataFile);
-                currentHabits = JsonSerializer.Deserialize<List<Habit>>(json) ?? new();
+                var json = File.ReadAllText(DataFile); 
+                
+                if (!string.IsNullOrWhiteSpace(json))
+                {
+                    currentHabits = JsonSerializer.Deserialize<List<Habit>>(json) ?? new List<Habit>();
+                }
             }
+            // If file doesn't exist, create it
+            else 
+            {
+                File.Create(DataFile).Close();
+            }
+
+            return currentHabits;
         }
 
-        private void AnalyzePatterns()
+        private List<Habit> AnalyzePatterns(List<Habit> habits)
         {
             // Example logic: find habits with consistent streaks or repeated failures
-            foreach (var habit in currentHabits)
+            foreach (var habit in habits)
             {
                 var history = state.HabitHistory.FirstOrDefault(h => h.Id == habit.Id);
                 if (history == null)
@@ -51,11 +80,19 @@ namespace BLL.Ai.Agents
                 // Update pattern stats (placeholder logic)
                 history.SuccessRate = CalculateSuccessRate(habit);
             }
+
+            return habits;
         }
 
         private void SaveState()
         {
             var json = JsonSerializer.Serialize(state, new JsonSerializerOptions { WriteIndented = true });
+
+            if (!File.Exists(DataFile))
+            {
+                File.Create(DataFile).Close();
+            }
+
             File.WriteAllText(StateFile, json);
         }
 
@@ -67,6 +104,14 @@ namespace BLL.Ai.Agents
                 .ToList();
 
             var json = JsonSerializer.Serialize(strongHabits, new JsonSerializerOptions { WriteIndented = true });
+            if (string.IsNullOrWhiteSpace(json) || json == "[]")
+                return;
+
+            if (!File.Exists(SuggestionsFile))
+            {
+                File.Create(SuggestionsFile).Close();
+            }
+
             File.WriteAllText(SuggestionsFile, json);
         }
 

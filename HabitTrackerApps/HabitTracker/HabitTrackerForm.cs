@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using Shared.Interfaces;
 using Shared.Models;
+using Shared.Utilties;
 using shared = Shared;
 
 namespace HabitTracker
@@ -216,7 +217,8 @@ namespace HabitTracker
                     Status = item.SubItems[1].Text,
                     Streak = int.Parse(item.SubItems[2].Text),
                     Priority = item.SubItems[3].Text, // Save Priority
-                    Category = item.SubItems[4].Text  // Save Category
+                    Category = item.SubItems[4].Text,  // Save Category
+                    Id = HabitIdGenerator.GetNextId()
                 };
                 habits.Add(habit);
             }

@@ -11,7 +11,7 @@ namespace BLL.Ai.Services
 
         public HabitPromptService()
         {
-            var habitFilePath = @"C:\temp\DevAgeTraining\BLL\Ai\Data\habits.json"; // TODO - make dynamic
+            var habitFilePath = "habits.json"; 
             if (File.Exists(habitFilePath))
             {
                 var json = File.ReadAllText(habitFilePath);

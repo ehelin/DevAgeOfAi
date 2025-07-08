@@ -8,6 +8,6 @@ namespace Shared.Interfaces
 {
     public interface IAgent
     {
-        void Run();
+        void AgentLoop();
     }
 }

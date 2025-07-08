@@ -25,11 +25,9 @@ namespace HabitTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
-            var openAiService = allAiServices.OfType<OpenAiService>().First();
-            var engine = new HistorianAgent(serviceProvider.GetRequiredService<IHabitPromptService>(),
-                serviceProvider.GetRequiredService<IGoalMemoryService>(),
-                openAiService);
+            //var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
+            //var openAiService = allAiServices.OfType<OpenAiService>().First();
+            var engine = new HistorianAgent();
             engine.Start();
 
             // Create and run the main form, injecting the required dependencies
