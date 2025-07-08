@@ -4,9 +4,6 @@ namespace BLL.Ai.Agents
 {
     public class BaseAgent : IAgent
     {
-        protected const string DataFile = "data.json";
-        protected const string SuggestionsFile = "suggestedHabits.json";
-
         protected System.Threading.Timer _timer;
         protected bool isRunning = false;
 

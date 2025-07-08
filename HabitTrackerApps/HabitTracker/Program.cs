@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using BLL.Ai.Services;
 using System.Linq;
 using BLL.Ai.Agents;
+using Shared.Utilties;
 
 namespace HabitTracker
 {
@@ -25,10 +26,10 @@ namespace HabitTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //var allAiServices = serviceProvider.GetServices<IThirdPartyAiService>();
-            //var openAiService = allAiServices.OfType<OpenAiService>().First();
-            var engine = new HistorianAgent();
-            engine.Start();
+            var historyAgent = new HistorianAgent();
+            var strategyAgent = new StrategistAgent();
+            historyAgent.Start();
+            strategyAgent.Start();
 
             // Create and run the main form, injecting the required dependencies
             var mainForm = serviceProvider.GetRequiredService<HabitTrackerForm>();
@@ -58,6 +59,7 @@ namespace HabitTracker
             //services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
             //services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());
 
+            services.AddSingleton<IDataFileService, DataFileService>();
             services.AddSingleton<IHabitPromptService, HabitPromptService>();
 
             // Register the HabitTrackerForm

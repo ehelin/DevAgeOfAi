@@ -1,4 +1,4 @@
-﻿using HabitTracker.Models;
+﻿using Shared.Models;
 
 namespace Shared.Utilties
 {
