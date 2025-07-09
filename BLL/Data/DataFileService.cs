@@ -14,10 +14,13 @@ namespace Shared.Utilties
         public List<HistorianState> LoadHistorianNotes() => HistorianAgentFile.Load();
         public void SaveHistorianNotes(List<HistorianState> notes) => HistorianAgentFile.Save(notes);
 
-        //public StrategistState LoadStrategistState() => StrategistFile.Load();
-        //public void SaveStrategistState(StrategistState state) => StrategistFile.Save(state);
+        public StrategistState LoadStrategistState() => StrategistAgentFile.Load();
+        public void SaveStrategistState(StrategistState state) => StrategistAgentFile.Save(state);
 
         public List<SuggestedHabit> LoadSuggestions() => SuggestedDataFile.Load();
         public void SaveSuggestions(List<SuggestedHabit> suggestions) => SuggestedDataFile.Save(suggestions);
+
+        public BuilderState LoadBuilderState() => BuilderAgentFile.Load();
+        public void SaveBuilderState(BuilderState state) => BuilderAgentFile.Save(state);
     }
 }

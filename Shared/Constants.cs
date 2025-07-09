@@ -9,5 +9,6 @@
         public const string SuggestionsFile = "suggestedHabits.json";
         public const string HistorianStateFile = "historian.json";
         public const string StrategistStateFile = "strategist.json";
+        public const string BuilderStateFile = "builder.json";
     }
 }

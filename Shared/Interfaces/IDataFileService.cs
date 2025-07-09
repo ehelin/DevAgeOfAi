@@ -10,10 +10,13 @@ namespace Shared.Interfaces
         List<HistorianState> LoadHistorianNotes();
         void SaveHistorianNotes(List<HistorianState> notes);
 
-        //StrategistState LoadStrategistState();
-        //void SaveStrategistState(StrategistState state);
+        StrategistState LoadStrategistState();
+        void SaveStrategistState(StrategistState state);
 
         List<SuggestedHabit> LoadSuggestions();
         void SaveSuggestions(List<SuggestedHabit> suggestions);
+
+        BuilderState LoadBuilderState();
+        void SaveBuilderState(BuilderState state);
     }
 }

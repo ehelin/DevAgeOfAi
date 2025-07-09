@@ -6,6 +6,7 @@ namespace BLL.Ai.Agents
     {
         protected System.Threading.Timer _timer;
         protected bool isRunning = false;
+        protected IDataFileService dataFileService;
 
         public virtual void Start()
         {
@@ -20,6 +21,19 @@ namespace BLL.Ai.Agents
         public virtual void AgentLoop()
         {
             throw new NotImplementedException();
+        }
+
+        protected bool ShouldContinueRunning()
+        {
+            if (isRunning)
+            {
+                isRunning = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

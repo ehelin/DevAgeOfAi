@@ -6,7 +6,6 @@ namespace BLL.Ai.Agents
     public class HistorianAgent : BaseAgent
     {
         private HistorianState state = new();
-        private readonly IDataFileService dataFileService;
 
         public HistorianAgent(IDataFileService dataFileService) : base()
         {
@@ -26,14 +25,8 @@ namespace BLL.Ai.Agents
 
         public async void AgentLoop(object state)
         {
-            if (isRunning)
-            {
-                isRunning = false;
-            }
-            else
-            {
+            if (!ShouldContinueRunning())
                 return;
-            }
 
             var habits = dataFileService.LoadHabits();
             if (habits != null && habits.Count() > 0)

@@ -1,122 +1,60 @@
-﻿//using HabitTracker.Models;
-//using Shared.Models;
-//using System.Text.Json;
+﻿using Shared.Interfaces;
+using Shared.Models;
+using System.Text.Json;
 
-//namespace BLL.Ai.Agents
-//{
-//    public class StrategistAgent : BaseAgent
-//    {
-//        private HistorianState state = new();
+namespace BLL.Ai.Agents
+{
+    public class StrategistAgent : BaseAgent
+    {
+        private HistorianState state = new();
 
-//        public override void Start()
-//        {
-//            _timer = new System.Threading.Timer(AgentLoop, null, System.TimeSpan.Zero, TimeSpan.FromSeconds(15));
-//            isRunning = true;
-//        }
+        public StrategistAgent(IDataFileService dataFileService) : base()
+        {
+            this.dataFileService = dataFileService;
+        }
 
-//        public override void Stop()
-//        {
-//            _timer?.Dispose();
-//        }
+        public override void Start()
+        {
+            _timer = new System.Threading.Timer(AgentLoop, null, System.TimeSpan.Zero, TimeSpan.FromSeconds(15));  //60
+            isRunning = true;
+        }
 
-//        public async void AgentLoop(object state)
-//        {
-//            if (isRunning)
-//            {
-//                isRunning = false;
-//            }
-//            else
-//            {
-//                return;
-//            }
+        public override void Stop()
+        {
+            _timer?.Dispose();
+        }
 
-//            var habits = LoadData();
-//            if (habits != null && habits.Count() > 0)
-//            {
-//                habits = AnalyzePatterns(habits);
-//                SaveState();
-//                UpdateSuggestions();
-//            }
+        public async void AgentLoop(object state)
+        {
+            if (!ShouldContinueRunning())
+                return;
 
-//            isRunning = true;
-//        }
+            var habits = dataFileService.LoadHabits();
+            var historianInsights = dataFileService.LoadHistorianNotes();
+            var strategistState = dataFileService.LoadStrategistState();
 
-//        private List<Habit> LoadData()
-//        {
-//            var currentHabits = new List<Habit>();
+            var suggestions = new List<string>();
 
-//            if (File.Exists(DataFile))
-//            {
-//                var json = File.ReadAllText(DataFile); 
-                
-//                if (!string.IsNullOrWhiteSpace(json))
-//                {
-//                    currentHabits = JsonSerializer.Deserialize<List<Habit>>(json) ?? new List<Habit>();
-//                }
-//            }
-//            // If file doesn't exist, create it
-//            else 
-//            {
-//                File.Create(DataFile).Close();
-//            }
+            // Example logic
+            foreach (var habit in habits)
+            {
+                if (habit.Streak >= 5 && !habit.IsPaused)
+                {
+                    suggestions.Add($"Pause habit: {habit.Name}");
+                }
+                else if (habit.Streak == 0 && !habit.IsPaused)
+                {
+                    suggestions.Add($"Reinforce habit: {habit.Name}");
+                }
+            }
 
-//            return currentHabits;
-//        }
+            // Save strategist state and suggestions
+            strategistState.GeneratedAt = DateTime.UtcNow;
+            strategistState.Suggestions = suggestions;
 
-//        private List<Habit> AnalyzePatterns(List<Habit> habits)
-//        {
-//            // Example logic: find habits with consistent streaks or repeated failures
-//            foreach (var habit in habits)
-//            {
-//                var history = state.HabitHistory.FirstOrDefault(h => h.Id == habit.Id);
-//                if (history == null)
-//                {
-//                    history = new HabitPattern { Id = habit.Id, Name = habit.Name };
-//                    state.HabitHistory.Add(history);
-//                }
+            this.dataFileService.SaveStrategistState(strategistState);
 
-//                // Update pattern stats (placeholder logic)
-//                history.SuccessRate = CalculateSuccessRate(habit);
-//            }
-
-//            return habits;
-//        }
-
-//        private void SaveState()
-//        {
-//            var json = JsonSerializer.Serialize(state, new JsonSerializerOptions { WriteIndented = true });
-
-//            if (!File.Exists(DataFile))
-//            {
-//                File.Create(DataFile).Close();
-//            }
-
-//            File.WriteAllText(StateFile, json);
-//        }
-
-//        private void UpdateSuggestions()
-//        {
-//            var strongHabits = state.HabitHistory
-//                .Where(h => h.SuccessRate > 0.8)
-//                .Select(h => new SuggestedHabit { Name = h.Name, Reason = "High success rate" })
-//                .ToList();
-
-//            var json = JsonSerializer.Serialize(strongHabits, new JsonSerializerOptions { WriteIndented = true });
-//            if (string.IsNullOrWhiteSpace(json) || json == "[]")
-//                return;
-
-//            if (!File.Exists(SuggestionsFile))
-//            {
-//                File.Create(SuggestionsFile).Close();
-//            }
-
-//            File.WriteAllText(SuggestionsFile, json);
-//        }
-
-//        private double CalculateSuccessRate(Habit habit)
-//        {
-//            if (habit.TotalAttempts == 0) return 0;
-//            return (double)habit.SuccessCount / habit.TotalAttempts;
-//        }
-//    }
-//}
+            isRunning = true;
+        }
+    }
+}
