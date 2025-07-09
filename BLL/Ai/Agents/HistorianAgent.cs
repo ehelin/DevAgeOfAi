@@ -47,7 +47,10 @@ namespace BLL.Ai.Agents
                     .Select(h => new SuggestedHabit { Name = h.Name, Reason = "High success rate" })
                     .ToList();
 
-                this.dataFileService.SaveSuggestions(strongHabits);
+                if (strongHabits != null && strongHabits.Count() > 0)
+                {
+                    this.dataFileService.SaveSuggestions(strongHabits);
+                }
             }
 
             isRunning = true;

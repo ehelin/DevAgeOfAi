@@ -11,11 +11,14 @@ namespace HabitTracker
     {
         private const string FileName = "data.json";
         private readonly IThirdPartyAiService thirdPartyAiService;
+        private readonly IDataFileService dataFileService;
 
-        public HabitTrackerForm(IEnumerable<IThirdPartyAiService> thirdPartyAiServices)
+        public HabitTrackerForm(IEnumerable<IThirdPartyAiService> thirdPartyAiServices, IDataFileService dataFileService)
         {
             //this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.PythonScriptService);
             this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.OpenAiService);
+
+            this.dataFileService = dataFileService;
 
             this.TopMost = false;
 
@@ -82,15 +85,11 @@ namespace HabitTracker
         }
         private void RemoveSuggestedHabit(string habit)
         {
-            if (!File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
-                return;
+            var suggestions = this.dataFileService.LoadSuggestions();
 
-            var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
-            var suggestions = JsonConvert.DeserializeObject<List<string>>(json);
-            if (suggestions == null) return;
+            suggestions.RemoveAll(x => x.Name.Equals(habit, StringComparison.OrdinalIgnoreCase));
 
-            suggestions.RemoveAll(x => x.Equals(habit, StringComparison.OrdinalIgnoreCase));
-            File.WriteAllText(shared.Constants.PATH_SUGGESTED_HABITS, JsonConvert.SerializeObject(suggestions, Formatting.Indented));
+            this.dataFileService.SaveSuggestions(suggestions);
         }
 
         private void btnAddHabit_Click(object sender, EventArgs e)
@@ -222,48 +221,32 @@ namespace HabitTracker
                 habits.Add(habit);
             }
 
-            // Serialize the habits to JSON and save to file
-            File.WriteAllText(FileName, JsonConvert.SerializeObject(habits, Formatting.Indented));
+            this.dataFileService.SaveHabits(habits);
         }
 
         private void LoadHabitsFromFile()
         {
-            // If file doesn't exist, create it
-            if (!File.Exists(FileName))
-            {
-                File.Create(FileName).Close();
-                return; // No data to load yet
-            }
+            var habits = this.dataFileService.LoadHabits();
 
-            // Load habits from the JSON file
-            string json = File.ReadAllText(FileName);
-            if (!string.IsNullOrEmpty(json))
+            if (habits != null)
             {
-                var habits = JsonConvert.DeserializeObject<List<Habit>>(json);
-                if (habits != null)
+                lstHabits.Items.Clear();
+
+                foreach (var habit in habits)
                 {
-                    lstHabits.Items.Clear();
-
-                    foreach (var habit in habits)
-                    {
-                        ListViewItem item = new ListViewItem(habit.Name);
-                        item.SubItems.Add(habit.Status);
-                        item.SubItems.Add(habit.Streak.ToString());
-                        item.SubItems.Add(habit.Priority); // Load Priority
-                        item.SubItems.Add(habit.Category); // Load Category
-                        lstHabits.Items.Add(item);
-                    }
+                    ListViewItem item = new ListViewItem(habit.Name);
+                    item.SubItems.Add(habit.Status);
+                    item.SubItems.Add(habit.Streak.ToString());
+                    item.SubItems.Add(habit.Priority); // Load Priority
+                    item.SubItems.Add(habit.Category); // Load Category
+                    lstHabits.Items.Add(item);
                 }
-            }
+            }            
         }
 
         private void LoadSuggestedHabits()
         {
-            if (!File.Exists(shared.Constants.PATH_SUGGESTED_HABITS))
-                return;
-
-            var json = File.ReadAllText(shared.Constants.PATH_SUGGESTED_HABITS);
-            var suggestions = JsonConvert.DeserializeObject<List<SuggestedHabit>>(json);
+            var suggestions = this.dataFileService.LoadSuggestions();
 
             cmbSuggestedHabits.Items.Clear();
             cmbSuggestedHabits.Items.Add(">> Select a suggested habit <<");
