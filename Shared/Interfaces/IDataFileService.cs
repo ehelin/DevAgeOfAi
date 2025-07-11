@@ -18,5 +18,7 @@ namespace Shared.Interfaces
 
         BuilderState LoadBuilderState();
         void SaveBuilderState(BuilderState state);
+
+        void LogAgentActivity(string message);
     }
 }

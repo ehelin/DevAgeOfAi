@@ -1,4 +1,5 @@
 ﻿using Shared.Interfaces;
+using System.Text;
 
 namespace BLL.Ai.Agents
 {
@@ -7,6 +8,7 @@ namespace BLL.Ai.Agents
         protected System.Threading.Timer _timer;
         protected bool isRunning = false;
         protected IDataFileService dataFileService;
+        protected StringBuilder sb;
 
         public virtual void Start()
         {

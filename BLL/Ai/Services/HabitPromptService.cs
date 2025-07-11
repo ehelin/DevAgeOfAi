@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Shared.Interfaces;
+using Shared.Models;
 using System.Text;
 
 namespace BLL.Ai.Services
@@ -15,7 +16,9 @@ namespace BLL.Ai.Services
             if (File.Exists(habitFilePath))
             {
                 var json = File.ReadAllText(habitFilePath);
-                _habits = JsonConvert.DeserializeObject<List<string>>(json) ?? new List<string>();
+                var fullHabits = JsonConvert.DeserializeObject<List<Habit>>(json) ?? new List<Habit>();
+                _habits = fullHabits.Select(h => h.Name).ToList(); // Extract just the names
+                //_habits = JsonConvert.DeserializeObject<List<string>>(json) ?? new List<string>();
             }
             else
             {

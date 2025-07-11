@@ -1,5 +1,6 @@
 ﻿using Shared.Interfaces;
 using Shared.Models;
+using System.Text;
 
 namespace BLL.Ai.Agents
 {
@@ -28,7 +29,13 @@ namespace BLL.Ai.Agents
             if (!ShouldContinueRunning())
                 return;
 
+            this.sb = new StringBuilder();
             var habits = dataFileService.LoadHabits();
+
+            this.sb.AppendLine($"");
+            this.sb.AppendLine($"=======================================");
+            this.sb.AppendLine($"HistorianAgent {DateTime.Now}");
+            this.sb.AppendLine($"HistorianAgent: Loaded files - habits: {habits.Count()}");
             if (habits != null && habits.Count() > 0)
             {
                 var agentState = AnalyzePatterns(habits);
@@ -42,9 +49,15 @@ namespace BLL.Ai.Agents
 
                 if (strongHabits != null && strongHabits.Count() > 0)
                 {
+                    this.sb.AppendLine($"HistorianAgent: saving strong Habits: {strongHabits.Count()}...");
                     this.dataFileService.SaveSuggestions(strongHabits);
                 }
             }
+
+            this.sb.AppendLine($"");
+            this.sb.AppendLine($"");
+
+            this.dataFileService.LogAgentActivity(sb.ToString());
 
             isRunning = true;
         }
@@ -54,15 +67,19 @@ namespace BLL.Ai.Agents
             // Example logic: find habits with consistent streaks or repeated failures
             foreach (var habit in habits)
             {
+                this.sb.AppendLine($"HistorianAgent: Analyzing habit: {habit.Name}...");
                 var history = state.HabitHistory.FirstOrDefault(h => h.Id == habit.Id);
                 if (history == null)
                 {
                     history = new HabitPattern { Id = habit.Id, Name = habit.Name };
                     state.HabitHistory.Add(history);
+                    this.sb.AppendLine($"HistorianAgent: Saving habit: {habit.Name} history {history.Name} ...");
                 }
 
                 // Update pattern stats (placeholder logic)
                 history.SuccessRate = CalculateSuccessRate(habit);
+
+                this.sb.AppendLine($"HistorianAgent: habit: {habit.Name} calculated success rate {history.SuccessRate}...");
             }
 
             return state;

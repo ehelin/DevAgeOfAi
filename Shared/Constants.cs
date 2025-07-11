@@ -10,5 +10,6 @@
         public const string HistorianStateFile = "historian.json";
         public const string StrategistStateFile = "strategist.json";
         public const string BuilderStateFile = "builder.json";
+        public const string AgentActivityLogFile = "agent_log.txt";
     }
 }

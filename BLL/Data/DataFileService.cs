@@ -22,5 +22,27 @@ namespace Shared.Utilties
 
         public BuilderState LoadBuilderState() => BuilderAgentFile.Load();
         public void SaveBuilderState(BuilderState state) => BuilderAgentFile.Save(state);
+
+        public void LogAgentActivity(string message)
+        {
+            var timestampedMessage = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}";
+
+            try
+            {
+                var path = Constants.AgentActivityLogFile;
+
+                if (!File.Exists(path))
+                {
+                    File.Create(path).Close();
+                }
+
+                File.AppendAllText(path, timestampedMessage + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                // Optionally handle logging error
+                Console.WriteLine($"Logging failed: {ex.Message}");
+            }
+        }
     }
 }
