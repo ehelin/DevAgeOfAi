@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "1",
+    "Name": "Drink Water",
+    "Streak": 4,
+    "Category": "Health",
+    "Priority": "High",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-09T07:30:00Z",
+    "SuccessCount": 25,
+    "TotalAttempts": 30,
+    "Status": "Active"
+  },
+  {
+    "Id": "2",
+    "Name": "Read Books",
+    "Streak": 1,
+    "Category": "Mind",
+    "Priority": "Medium",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-10T19:31:46.3878048-05:00",
+    "SuccessCount": 10,
+    "TotalAttempts": 15,
+    "Status": "Active"
+  },
+  {
+    "Id": "3",
+    "Name": "Walk 10k Steps",
+    "Streak": 6,
+    "Category": "Fitness",
+    "Priority": "High",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-10T19:31:46.3879654-05:00",
+    "SuccessCount": 28,
+    "TotalAttempts": 30,
+    "Status": "Active"
+  },
+  {
+    "Id": "4",
+    "Name": "Sleep 8 Hours",
+    "Streak": 1,
+    "Category": "Health",
+    "Priority": "Low",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-09T07:00:00Z",
+    "SuccessCount": 15,
+    "TotalAttempts": 20,
+    "Status": "Active"
+  },
+  {
+    "Id": "5",
+    "Name": "Write Journal",
+    "Streak": 0,
+    "Category": "Mind",
+    "Priority": "Medium",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-05T09:00:00Z",
+    "SuccessCount": 5,
+    "TotalAttempts": 10,
+    "Status": "Paused"
+  },
+  {
+    "Id": "6",
+    "Name": "No Sugar",
+    "Streak": 7,
+    "Category": "Diet",
+    "Priority": "High",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-10T19:31:46.3880312-05:00",
+    "SuccessCount": 20,
+    "TotalAttempts": 25,
+    "Status": "Active"
+  },
+  {
+    "Id": "7",
+    "Name": "Meditate",
+    "Streak": 3,
+    "Category": "Mind",
+    "Priority": "Medium",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-09T08:30:00Z",
+    "SuccessCount": 17,
+    "TotalAttempts": 21,
+    "Status": "Active"
+  },
+  {
+    "Id": "8",
+    "Name": "Stretch",
+    "Streak": 2,
+    "Category": "Fitness",
+    "Priority": "Low",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-08T07:30:00Z",
+    "SuccessCount": 12,
+    "TotalAttempts": 15,
+    "Status": "Active"
+  },
+  {
+    "Id": "9",
+    "Name": "Declutter Workspace",
+    "Streak": 1,
+    "Category": "Environment",
+    "Priority": "Low",
+    "IsPaused": false,
+    "LastUpdated": "2025-07-10T19:31:46.3880357-05:00",
+    "SuccessCount": 3,
+    "TotalAttempts": 5,
+    "Status": "Active"
+  },
+  {
+    "Id": "10",
+    "Name": "Practice Spanish",
+    "Streak": 5,
+    "Category": "Learning",
+    "Priority": "Medium",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-10T19:31:46.3880537-05:00",
+    "SuccessCount": 22,
+    "TotalAttempts": 26,
+    "Status": "Active"
+  }
+]
