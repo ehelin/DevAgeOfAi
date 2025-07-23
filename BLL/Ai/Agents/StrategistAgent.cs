@@ -43,20 +43,31 @@ namespace BLL.Ai.Agents
             this.sb.AppendLine($"StrategistAgent: Loaded files - habits: {habits.Count()}/ strategistState: {strategistStateValue} / historianState: {historianInsights.Count()}");
 
             var suggestions = new List<string>();
+            var strongHistory = historianInsights
+                .SelectMany(h => h.HabitHistory)
+                .Where(h => h.SuccessRate > 0.8)
+                .ToDictionary(h => h.Name, StringComparer.OrdinalIgnoreCase);
 
             // Example logic
             foreach (var habit in habits)
             {
                 this.sb.AppendLine($"StrategistAgent: Analyzing habit: {habit.Name}...");
-                if (habit.Streak >= 5 && !habit.IsPaused)
+                bool isHistoricallyStrong = strongHistory.ContainsKey(habit.Name);
+
+                if (habit.Streak >= 5 && !habit.IsPaused && !isHistoricallyStrong)
                 {
-                    this.sb.AppendLine($"StrategistAgent: Pausing habit: {habit.Name}...");
                     suggestions.Add($"Pause habit: {habit.Name}");
+                    sb.AppendLine($"StrategistAgent: Pausing habit: {habit.Name}...");
+                }
+                else if (habit.Streak == 0 && !habit.IsPaused && isHistoricallyStrong)
+                {
+                    suggestions.Add($"Resume strong past habit: {habit.Name}");
+                    sb.AppendLine($"StrategistAgent: Resuming historically strong habit: {habit.Name}...");
                 }
                 else if (habit.Streak == 0 && !habit.IsPaused)
                 {
                     suggestions.Add($"Reinforce habit: {habit.Name}");
-                    this.sb.AppendLine($"StrategistAgent: Reinforcing habit: {habit.Name}...");
+                    sb.AppendLine($"StrategistAgent: Reinforcing habit: {habit.Name}...");
                 }
             }
 
