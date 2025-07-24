@@ -62,6 +62,7 @@ namespace BLL.Ai.Agents
                     if (habit != null && !habit.IsPaused)
                     {
                         habit.IsPaused = true;
+                        habit.Status = "Paused";
                         habit.LastUpdated = DateTime.Now;
                         applied = true;
 
@@ -76,6 +77,7 @@ namespace BLL.Ai.Agents
                     {
                         habit.Streak += 1;
                         habit.LastUpdated = DateTime.Now;
+                        habit.Status = "Reinforced";
                         applied = true;
                         this.sb.AppendLine($"BuilderAgent: Analyzing suggestion: {suggestion} is reinforced {habit.Streak}");
                     }
