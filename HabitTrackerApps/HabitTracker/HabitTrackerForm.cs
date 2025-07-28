@@ -254,7 +254,7 @@ namespace HabitTracker
 
             foreach (var suggestion in suggestions)
             {
-                cmbSuggestedHabits.Items.Add($"{suggestion}");
+                cmbSuggestedHabits.Items.Add($"{suggestion.Name}");
             }
         }
     }

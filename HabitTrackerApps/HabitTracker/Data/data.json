@@ -14,14 +14,14 @@
   {
     "Id": "2",
     "Name": "Read Books",
-    "Streak": 0,
+    "Streak": 1,
     "Category": "Mind",
     "Priority": "Medium",
     "IsPaused": false,
-    "LastUpdated": "2025-07-19T10:00:00Z",
+    "LastUpdated": "2025-07-28T17:25:13.5257154-05:00",
     "SuccessCount": 0,
     "TotalAttempts": 5,
-    "Status": "Active"
+    "Status": "Reinforced"
   },
   {
     "Id": "3",
@@ -29,23 +29,23 @@
     "Streak": 6,
     "Category": "Fitness",
     "Priority": "High",
-    "IsPaused": false,
-    "LastUpdated": "2025-07-20T07:00:00Z",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-28T17:25:13.5257745-05:00",
     "SuccessCount": 28,
     "TotalAttempts": 30,
-    "Status": "Active"
+    "Status": "Paused"
   },
   {
     "Id": "4",
     "Name": "Sleep 8 Hours",
-    "Streak": 0,
+    "Streak": 1,
     "Category": "Health",
     "Priority": "High",
     "IsPaused": false,
-    "LastUpdated": "2025-07-21T01:00:00Z",
+    "LastUpdated": "2025-07-28T17:25:13.5258084-05:00",
     "SuccessCount": 2,
     "TotalAttempts": 15,
-    "Status": "Active"
+    "Status": "Reinforced"
   },
   {
     "Id": "5",
@@ -65,11 +65,11 @@
     "Streak": 7,
     "Category": "Diet",
     "Priority": "High",
-    "IsPaused": false,
-    "LastUpdated": "2025-07-21T06:00:00Z",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-28T17:25:13.52581-05:00",
     "SuccessCount": 24,
     "TotalAttempts": 25,
-    "Status": "Active"
+    "Status": "Paused"
   },
   {
     "Id": "7",
@@ -86,26 +86,26 @@
   {
     "Id": "8",
     "Name": "Stretch",
-    "Streak": 0,
+    "Streak": 1,
     "Category": "Fitness",
     "Priority": "Low",
     "IsPaused": false,
-    "LastUpdated": "2025-07-08T07:30:00Z",
+    "LastUpdated": "2025-07-28T17:25:13.5258117-05:00",
     "SuccessCount": 2,
     "TotalAttempts": 15,
-    "Status": "Active"
+    "Status": "Reinforced"
   },
   {
     "Id": "9",
     "Name": "Declutter Workspace",
-    "Streak": 0,
+    "Streak": 1,
     "Category": "Environment",
     "Priority": "Low",
     "IsPaused": false,
-    "LastUpdated": "2025-07-05T07:30:00Z",
+    "LastUpdated": "2025-07-28T17:25:13.5258133-05:00",
     "SuccessCount": 1,
     "TotalAttempts": 10,
-    "Status": "Inactive"
+    "Status": "Reinforced"
   },
   {
     "Id": "10",
@@ -113,22 +113,22 @@
     "Streak": 5,
     "Category": "Learning",
     "Priority": "Medium",
-    "IsPaused": false,
-    "LastUpdated": "2025-07-10T19:31:46.3880537-05:00",
+    "IsPaused": true,
+    "LastUpdated": "2025-07-28T17:25:13.525815-05:00",
     "SuccessCount": 22,
     "TotalAttempts": 26,
-    "Status": "Active"
+    "Status": "Paused"
   },
   {
     "Id": "11",
     "Name": "Organize Email",
-    "Streak": 0,
+    "Streak": 1,
     "Category": "Productivity",
     "Priority": "Low",
     "IsPaused": false,
-    "LastUpdated": "2025-07-18T11:00:00Z",
+    "LastUpdated": "2025-07-28T17:25:13.5258196-05:00",
     "SuccessCount": 0,
     "TotalAttempts": 4,
-    "Status": "Active"
+    "Status": "Reinforced"
   }
 ]

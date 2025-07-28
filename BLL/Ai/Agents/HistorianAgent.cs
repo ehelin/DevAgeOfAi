@@ -42,7 +42,10 @@ namespace BLL.Ai.Agents
                 var list = new List<HistorianState>() { agentState };
                 this.dataFileService.SaveHistorianNotes(list);
 
-                var activeHabitNames = habits.Select(h => h.Name).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                var activeHabitNames = habits
+                    .Where(h => h.Status == "Active")
+                    .Select(h => h.Name)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
                 var strongHabits = agentState.HabitHistory
                     .Where(h => h.SuccessRate > 0.8 && !activeHabitNames.Contains(h.Name))
                     .Select(h => new SuggestedHabit { Name = h.Name, Reason = "High success rate" })
