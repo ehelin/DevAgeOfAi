@@ -368,3 +368,5 @@ FodyWeavers.xsd
 /Ai/AiModelRunner/qlora-output/checkpoint-18
 /BLL/Ai/Data/goals.json
 /BLL/Ai/Data/suggestedHabits.json
+/Ai/AiModelRunner/fine_tuned_phi_habits
+/Ai/AiModelRunner/model_cache/models--microsoft--Phi-3.5-mini-instruct
