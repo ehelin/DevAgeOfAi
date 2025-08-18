@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e50e4a3f-c769-4014-bc63-72b39ce110e0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>AiModelServiceRunner.py</StartupFile>
+    <StartupFile>AiModelServiceRunner_finetuned.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AiModelServiceRunner.py" />
-    <Compile Include="ai_model_api.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="model_runner.py" />
+    <Compile Include="AiModelServiceRunner_finetuned.py" />
+    <Compile Include="improved_qlora_train.py" />
+    <Compile Include="Old\model_runner.py" />
     <Compile Include="Old\chatModelX.py" />
     <Compile Include="Old\chatMsPhi1_5 - Copy.py" />
     <Compile Include="Old\chatMsDialoGPT-small.py" />
@@ -37,13 +36,13 @@
     <Compile Include="Old\PythonApplication1 - Copy.py" />
     <Compile Include="Old\PythonApplication1_Training.py" />
     <Compile Include="Old\PythonApplication1.py" />
-    <Compile Include="qlora_train.py" />
+    <Compile Include="Old\qlora_train.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Old\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="training_data.json" />
+    <Content Include="Old\training_data.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

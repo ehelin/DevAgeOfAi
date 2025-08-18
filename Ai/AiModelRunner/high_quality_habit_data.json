@@ -1,0 +1,1502 @@
+[
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five screen breaks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice mindfulness during every meal daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nAvoid all junk food completely today<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake vitamins with breakfast every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nLearn five new words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo fifty squats each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nMeditate ten minutes every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPractice piano thirty minutes every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead thirty minutes before sleeping nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nExercise thirty minutes each morning daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nFloss teeth every single night consistently<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nApply sunscreen every morning without fail<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSleep full eight hours every night<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave meaningful conversation every single day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite three gratitudes every night daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake twenty minute afternoon nap daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nHave healthy breakfast every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSpend quality time with family daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete morning yoga routine every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDo twenty pushups before breakfast daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nComplete three tasks before noon daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRead twenty pages of book daily<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStudy one hour without any distractions<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWalk ten thousand steps every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nJournal fifteen minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStand up every hour during work<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nEat five vegetables servings every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSend three thank you notes weekly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nSkip all sugary drinks every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nPack nutritious lunch all week days<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nGo to bed by ten nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nTake five deep breaths every hour<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nCall one friend every single week<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nStretch ten minutes before bed nightly<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWake up at six every morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nWrite five hundred words every day<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nNo screens one hour before bedtime<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nRun three miles every single morning<|end|>\n<|endoftext|>"
+  },
+  {
+    "text": "<|user|>\nPlease suggest a habit that can be tracked<|end|>\n<|assistant|>\nDrink eight glasses of water daily<|end|>\n<|endoftext|>"
+  }
+]

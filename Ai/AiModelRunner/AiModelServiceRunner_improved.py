@@ -1,36 +1,23 @@
-﻿from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import sys
 import torch
 
 # Load the tokenizer and model from Hugging Face
 model_name = "microsoft/Phi-3.5-mini-instruct"
-MODEL_REVISION = "main"  # Pin to specific revision for security consistency
-
-# Load with security settings
-print(f"Loading model: {model_name}", file=sys.stderr)
-print(f"Revision: {MODEL_REVISION}", file=sys.stderr)
-
-tokenizer = AutoTokenizer.from_pretrained(
-    model_name,
-    revision=MODEL_REVISION,
-    trust_remote_code=True  # Required for Phi-3.5's custom architecture
-)
-
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    revision=MODEL_REVISION,
-    trust_remote_code=True,  # Required for Phi-3.5's custom architecture
     torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
     device_map="auto"
 )
 
 def generate_response(input_line):
     try:
-        # Create proper chat template with strict instructions for SHORT habits
+        # Create a proper chat template for Phi-3.5
         messages = [
             {
                 "role": "system", 
-                "content": "You are a habit tracker. Reply with ONLY a 5-6 word habit. Examples: 'Drink eight glasses of water daily', 'Walk ten thousand steps daily', 'Read twenty pages before bed'. No explanations, no extra text."
+                "content": "You are a habit tracking assistant. When asked for habit suggestions, provide specific, actionable, trackable habits. Examples: 'Walk 10000 steps daily', 'Drink 8 glasses of water', 'Read for 30 minutes before bed', 'Meditate for 10 minutes each morning'. Be concise and provide only the habit without explanation."
             },
             {
                 "role": "user", 
@@ -38,7 +25,7 @@ def generate_response(input_line):
             }
         ]
         
-        # Apply chat template
+        # Apply the chat template
         prompt = tokenizer.apply_chat_template(
             messages, 
             tokenize=False, 
@@ -51,13 +38,13 @@ def generate_response(input_line):
         # Ensure model is running on the correct device (CPU/GPU)
         inputs = {k: v.to(model.device) for k, v in inputs.items()}
             
-        # Generate with strict constraints for SHORT output
+        # Generate a response with optimized parameters for habit generation
         outputs = model.generate(
             **inputs,
-            max_new_tokens=15,  # Very short for 5-6 words
-            do_sample=True,
-            temperature=0.7,
-            top_p=0.9,
+            max_new_tokens=30,  # Habits are short
+            do_sample=True,      # Enable sampling for variety
+            temperature=0.7,     # Balanced creativity
+            top_p=0.9,          # Nucleus sampling
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
         )
@@ -65,19 +52,25 @@ def generate_response(input_line):
         # Decode the response
         full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
         
-        # Extract only assistant response
+        # Extract only the assistant's response
         if "<|assistant|>" in full_response:
             response = full_response.split("<|assistant|>")[-1].strip()
         else:
+            # Fallback: remove the input prompt from response
             response = full_response[len(prompt):].strip()
         
-        # Clean up - take only first sentence/line
-        response = response.split('.')[0].strip()
-        response = response.split('\n')[0].strip()
+        # Clean up response - remove any system message if it leaked
+        if response.startswith("You are a habit"):
+            # Find where the actual habit starts
+            lines = response.split(".")
+            for i, line in enumerate(lines):
+                if any(keyword in line.lower() for keyword in ["walk", "drink", "read", "exercise", "meditate", "sleep", "eat", "write", "study", "practice"]):
+                    response = ".".join(lines[i:]).strip()
+                    break
         
         # Ensure single-line output
         response = " ".join(response.splitlines()).strip()
-
+        
         print(f"DEBUG: Generated Response: {response}", file=sys.stderr)  # Debug output
         return response
 
@@ -119,6 +112,8 @@ if __name__ == "__main__":
 
     if sys.stdin.isatty():  # Running in CLI mode
         print("Running in interactive mode. Type 'exit' to quit.")
+        print("\nTip: Try asking 'Please suggest a habit that can be tracked'\n")
+        
         while True:
             input_text = input("You: ")
             if input_text.lower() == "exit":

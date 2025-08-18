@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python test_habit_model.py:*)",
+      "Bash(python:*)",
+      "Bash(del \"C:\\temp\\DevAgeTraining\\Ai\\AiModelRunner\\simple_train.py\")",
+      "Bash(rm:*)",
+      "Bash(where python)"
+    ],
+    "defaultMode": "acceptEdits",
+    "additionalDirectories": [
+      "C:\\mnt\\c\\temp\\DevAgeTraining\\Ai",
+      "C:\\Users\\QuesoCheese\\.cache\\huggingface\\hub"
+    ]
+  }
+}
