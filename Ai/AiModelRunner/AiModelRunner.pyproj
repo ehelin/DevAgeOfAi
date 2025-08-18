@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e50e4a3f-c769-4014-bc63-72b39ce110e0</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PythonApplication1.py</StartupFile>
+    <StartupFile>AiModelServiceRunner.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,20 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Old\chatModelX.py" />
-    <Compile Include="Old\chatMsPhi1_5 - Copy.py" />
-    <Compile Include="Old\chatMsDialoGPT-small.py" />
-    <Compile Include="Old\chatLlama2.py" />
-    <Compile Include="Old\chat.py" />
-    <Compile Include="Old\commandpromptinterface.py" />
-    <Compile Include="Old\PythonApplication1 - Copy %282%29.py" />
-    <Compile Include="Old\PythonApplication1-DiaplogGPT-small.py" />
-    <Compile Include="Old\PythonApplication1 - Copy.py" />
-    <Compile Include="Old\PythonApplication1_Training.py" />
-    <Compile Include="PythonApplication1.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Old\" />
+    <Compile Include="AiModelServiceRunner.py" />
+    <Compile Include="debug_model.py" />
+    <Compile Include="qlora_train.py" />
+    <Compile Include="setup_and_train.py" />
+    <Compile Include="test_model.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
