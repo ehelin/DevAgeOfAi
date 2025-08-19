@@ -26,14 +26,14 @@ namespace HabitTracker
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var historyAgent = new HistorianAgent(serviceProvider.GetRequiredService<IDataFileService>());
-            historyAgent.Start();
+            //var historyAgent = new HistorianAgent(serviceProvider.GetRequiredService<IDataFileService>());
+            //historyAgent.Start();
 
-            var strategyAgent = new StrategistAgent(serviceProvider.GetRequiredService<IDataFileService>());
-            strategyAgent.Start();
+            //var strategyAgent = new StrategistAgent(serviceProvider.GetRequiredService<IDataFileService>());
+            //strategyAgent.Start();
 
-            var builderAgent = new BuilderAgent(serviceProvider.GetRequiredService<IDataFileService>());
-            builderAgent.Start();
+            //var builderAgent = new BuilderAgent(serviceProvider.GetRequiredService<IDataFileService>());
+            //builderAgent.Start();
 
             // Create and run the main form, injecting the required dependencies
             var mainForm = serviceProvider.GetRequiredService<HabitTrackerForm>();

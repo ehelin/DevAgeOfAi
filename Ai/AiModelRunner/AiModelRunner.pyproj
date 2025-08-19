@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>AiModelRunner</Name>
     <RootNamespace>AiModelRunner</RootNamespace>
+    <TestFramework>unittest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

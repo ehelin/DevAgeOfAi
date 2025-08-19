@@ -1,33 +1,56 @@
+import sys
+import os
+import warnings
+import logging
+
+# Suppress all warnings
+warnings.filterwarnings('ignore')
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+# Suppress transformers logging
+logging.getLogger('transformers').setLevel(logging.ERROR)
+logging.getLogger('transformers.modeling_utils').setLevel(logging.ERROR)
+logging.getLogger('transformers.tokenization_utils').setLevel(logging.ERROR)
+
+# Now import transformers after setting up suppression
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
-import sys
 import torch
-import os
+
+# Disable transformers warnings about deprecations
+import transformers
+transformers.logging.set_verbosity_error()
 
 # Model configuration
 model_name = "microsoft/Phi-3.5-mini-instruct"
 adapter_path = "./fine_tuned_phi_habits"  # Path to your fine-tuned adapters
 
 # Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 # Load the base model
 # SECURITY: Always scan for malicious code when loading models
-model = AutoModelForCausalLM.from_pretrained(
-    model_name,
-    torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
-    device_map="auto",
-    trust_remote_code=True,  # Required for Phi-3.5
-    code_revision=None  # Always use latest code revision with security patches
-)
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    # Redirect stderr temporarily to suppress loading bars
+    import contextlib
+    import io
+    with contextlib.redirect_stderr(io.StringIO()):
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
+            device_map="auto",
+            trust_remote_code=True,  # Required for Phi-3.5
+            code_revision=None  # Always use latest code revision with security patches
+        )
 
 # Load the fine-tuned LoRA adapters if they exist
 if os.path.exists(adapter_path):
-    print(f"Loading fine-tuned adapters from {adapter_path}...")
-    model = PeftModel.from_pretrained(model, adapter_path)
-    print("Fine-tuned adapters loaded successfully!")
-else:
-    print(f"Warning: No fine-tuned adapters found at {adapter_path}, using base model")
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        model = PeftModel.from_pretrained(model, adapter_path)
 
 def generate_response(input_line):
     try:
@@ -61,15 +84,17 @@ def generate_response(input_line):
         inputs = {k: v.to(model.device) for k, v in inputs.items()}
             
         # Generate a response with parameters optimized for the fine-tuned model
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=10,  # Enough for 5-6 word habits
-            do_sample=True,     # Enable sampling for variety
-            temperature=0.5,    # Moderate temperature for good variety
-            top_p=0.9,          # Standard nucleus sampling
-            pad_token_id=tokenizer.pad_token_id,
-            eos_token_id=tokenizer.eos_token_id
-        )
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=10,  # Enough for 5-6 word habits
+                do_sample=True,     # Enable sampling for variety
+                temperature=0.5,    # Moderate temperature for good variety
+                top_p=0.9,          # Standard nucleus sampling
+                pad_token_id=tokenizer.pad_token_id,
+                eos_token_id=tokenizer.eos_token_id
+            )
 
         # Decode only the generated tokens (exclude input)
         generated_tokens = outputs[0][len(inputs['input_ids'][0]):]
@@ -93,7 +118,6 @@ def generate_response(input_line):
             
             response = response.strip()
         
-        print(f"DEBUG: Generated Response: {response}", file=sys.stderr)  # Debug output
         return response
 
     except Exception as e:
