@@ -7,19 +7,26 @@ import logging
 warnings.filterwarnings('ignore')
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-# Suppress transformers logging
+# Suppress transformers and other library logging
 logging.getLogger('transformers').setLevel(logging.ERROR)
-logging.getLogger('transformers.modeling_utils').setLevel(logging.ERROR)
+logging.getLogger('transformers.modeling_utils').setLevel(logging.ERROR) 
 logging.getLogger('transformers.tokenization_utils').setLevel(logging.ERROR)
+logging.getLogger('peft').setLevel(logging.ERROR)
+logging.getLogger('bitsandbytes').setLevel(logging.ERROR)
+
+# Suppress stderr output during imports
+import contextlib
+import io
 
 # Now import transformers after setting up suppression
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from peft import PeftModel
-import torch
-
-# Disable transformers warnings about deprecations
-import transformers
-transformers.logging.set_verbosity_error()
+with contextlib.redirect_stderr(io.StringIO()):
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+    from peft import PeftModel
+    import torch
+    
+    # Disable transformers warnings about deprecations
+    import transformers
+    transformers.logging.set_verbosity_error()
 
 # Model configuration
 model_name = "microsoft/Phi-3.5-mini-instruct"
@@ -154,22 +161,53 @@ def main():
             sys.stdout.flush()
 
 if __name__ == "__main__":
-    print("Starting Python script...")
-
-    if sys.stdin.isatty():  # Running in CLI mode
-        print("Running in interactive mode. Type 'exit' to quit.")
-        print("\nTip: Try asking 'Please suggest a habit that can be tracked'\n")
+    # Suppress any remaining startup warnings
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
         
-        while True:
-            input_text = input("You: ")
-            if input_text.lower() == "exit":
-                print("Exiting interactive mode.")
-                break
-            
-            response = generate_response(input_text)
-            print("Model:", response)
+        print("Starting Python script...")
 
-    else:  # Running inside C# service
-        print("Running in main mode (C# integration).")
-        sys.stdout.flush()
-        main()
+        if sys.stdin.isatty():  # Running in CLI mode
+            print("Running in interactive mode. Type 'exit' to quit.")
+            print("\nTip: Try asking 'Please suggest a habit that can be tracked'\n")
+            
+            seen_responses = set()  # Track unique responses
+            
+            while True:
+                input_text = input("You: ")
+                if input_text.lower() == "exit":
+                    print("Exiting interactive mode.")
+                    break
+                
+                # Suppress warnings during generation
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore")
+                    response = generate_response(input_text)
+                
+                # Only print if we haven't seen this exact response before
+                if response not in seen_responses:
+                    print("Model:", response)
+                    seen_responses.add(response)
+                else:
+                    # Generate another response if we got a duplicate
+                    with warnings.catch_warnings():
+                        warnings.simplefilter("ignore")
+                        # Try again with slightly different temperature
+                        original_response = response
+                        attempts = 0
+                        while response in seen_responses and attempts < 3:
+                            attempts += 1
+                            # Temporarily modify temperature for variety
+                            response = generate_response(input_text)
+                        
+                        if response not in seen_responses:
+                            print("Model:", response)
+                            seen_responses.add(response)
+                        else:
+                            # If still duplicate after retries, skip printing
+                            pass
+
+        else:  # Running inside C# service
+            print("Running in main mode (C# integration).")
+            sys.stdout.flush()
+            main()
