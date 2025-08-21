@@ -24,6 +24,7 @@ namespace AiModelApi
 		/// </summary>
 		public static string Message = string.Empty;
 		public static string Response = string.Empty;
+		public static bool IsReady = false;
 		public static void BackgroundProcessThreadMethod()
 		{
 			using (Process process = new Process())
@@ -50,7 +51,15 @@ namespace AiModelApi
 								string line = sr.ReadLine();
 								if (line != null)
 								{
-									Response = line;
+									if (line == "Python model ready")
+									{
+										IsReady = true;
+										Console.WriteLine("Python model is ready");
+									}
+									else if (IsReady)
+									{
+										Response = line;
+									}
 									Console.WriteLine("Python Output: " + line);
 								}
 							}
@@ -69,9 +78,10 @@ namespace AiModelApi
 							if (!string.IsNullOrEmpty(Message))
 							{
 								sw.WriteLine(Message);
+								sw.Flush();
 								Message = string.Empty;
 							}
-							Thread.Sleep(500);
+							Thread.Sleep(100);
 						}
 					}
 					catch (IOException)

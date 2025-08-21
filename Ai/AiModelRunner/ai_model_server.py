@@ -28,15 +28,21 @@ with contextlib.redirect_stderr(io.StringIO()):
     import transformers
     transformers.logging.set_verbosity_error()
 
+# Flask imports
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 # Model configuration
 model_name = "microsoft/Phi-3.5-mini-instruct"
 adapter_path = "./fine_tuned_phi_habits"  # Path to your fine-tuned adapters
 
+print("Loading tokenizer...")
 # Load the tokenizer
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+print("Loading base model...")
 # Load the base model
 # SECURITY: Always scan for malicious code when loading models
 with warnings.catch_warnings():
@@ -54,11 +60,15 @@ with warnings.catch_warnings():
             code_revision=None  # Always use latest code revision with security patches
         )
 
+print("Loading LoRA adapters...")
 # Load the fine-tuned LoRA adapters if they exist
 if os.path.exists(adapter_path):
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         model = PeftModel.from_pretrained(model, adapter_path)
+    print("LoRA adapters loaded successfully")
+else:
+    print("No LoRA adapters found, using base model")
 
 def generate_response(input_line):
     try:
@@ -94,15 +104,16 @@ def generate_response(input_line):
         # Generate a response with parameters optimized for the fine-tuned model
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            outputs = model.generate(
-                **inputs,
-                max_new_tokens=10,  # Enough for 5-6 word habits
-                do_sample=True,     # Enable sampling for variety
-                temperature=0.5,    # Moderate temperature for good variety
-                top_p=0.9,          # Standard nucleus sampling
-                pad_token_id=tokenizer.pad_token_id,
-                eos_token_id=tokenizer.eos_token_id
-            )
+            with torch.no_grad():
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=10,  # Enough for 5-6 word habits
+                    do_sample=True,     # Enable sampling for variety
+                    temperature=0.5,    # Moderate temperature for good variety
+                    top_p=0.9,          # Standard nucleus sampling
+                    pad_token_id=tokenizer.pad_token_id,
+                    eos_token_id=tokenizer.eos_token_id
+                )
 
         # Decode only the generated tokens (exclude input)
         generated_tokens = outputs[0][len(inputs['input_ids'][0]):]
@@ -131,84 +142,46 @@ def generate_response(input_line):
     except Exception as e:
         return f"An error occurred: {str(e)}"
 
-def main():
-    """Handles interaction with C# via stdin/stdout."""
-    print("Python model ready")  # Signal to C# that Python is ready
-    sys.stdout.flush()
+# Create Flask app
+app = Flask(__name__)
+CORS(app)  # Enable CORS for cross-origin requests
 
-    while True:
-        try:
-            input_line = sys.stdin.readline().strip()
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({"status": "ready", "model": model_name})
 
-            # Ignore empty input (prevents hanging)
-            if not input_line:
-                continue  
-
-            # Exit condition
-            if input_line.lower() == "exit":
-                print("Python exiting")
-                sys.stdout.flush()
-                break
-
-            # Generate response
-            response = generate_response(input_line)
-
-            # Print response for C# to read
-            print(response)
-            sys.stdout.flush()
-
-        except Exception as e:
-            print(f"Error: {str(e)}")
-            sys.stdout.flush()
-
-if __name__ == "__main__":
-    # Suppress any remaining startup warnings
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
+@app.route('/chat', methods=['POST'])
+def chat():
+    """Chat endpoint that processes messages and returns AI responses"""
+    try:
+        data = request.get_json()
+        if not data or 'message' not in data:
+            return jsonify({"error": "Missing 'message' field"}), 400
         
-        print("Starting Python script...")
+        message = data['message']
+        if not message.strip():
+            return jsonify({"error": "Message cannot be empty"}), 400
+        
+        # Generate response using your fine-tuned model
+        response = generate_response(message)
+        
+        return jsonify({
+            "response": response,
+            "model": model_name,
+            "status": "success"
+        })
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-        if sys.stdin.isatty():  # Running in CLI mode
-            print("Running in interactive mode. Type 'exit' to quit.")
-            print("\nTip: Try asking 'Please suggest a habit that can be tracked'\n")
-            
-            seen_responses = set()  # Track unique responses
-            
-            while True:
-                input_text = input("You: ")
-                if input_text.lower() == "exit":
-                    print("Exiting interactive mode.")
-                    break
-                
-                # Suppress warnings during generation
-                with warnings.catch_warnings():
-                    warnings.simplefilter("ignore")
-                    response = generate_response(input_text)
-                
-                # Only print if we haven't seen this exact response before
-                if response not in seen_responses:
-                    print("Model:", response)
-                    seen_responses.add(response)
-                else:
-                    # Generate another response if we got a duplicate
-                    with warnings.catch_warnings():
-                        warnings.simplefilter("ignore")
-                        # Try again with slightly different temperature
-                        original_response = response
-                        attempts = 0
-                        while response in seen_responses and attempts < 3:
-                            attempts += 1
-                            # Temporarily modify temperature for variety
-                            response = generate_response(input_text)
-                        
-                        if response not in seen_responses:
-                            print("Model:", response)
-                            seen_responses.add(response)
-                        else:
-                            # If still duplicate after retries, skip printing
-                            pass
-
-        else:  # Running inside C# service
-            print("Running in main mode (C# integration).")
-            sys.stdout.flush()
-            main()
+if __name__ == '__main__':
+    print("AI Model Server starting...")
+    print(f"Model: {model_name}")
+    print(f"LoRA adapters: {'Found' if os.path.exists(adapter_path) else 'Not found'}")
+    print("Server will be available at: http://localhost:5000")
+    print("Health check: http://localhost:5000/health")
+    print("Chat endpoint: POST http://localhost:5000/chat")
+    
+    # Start the Flask server
+    app.run(host='localhost', port=5000, debug=False, threaded=True)
