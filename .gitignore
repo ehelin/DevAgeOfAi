@@ -370,3 +370,4 @@ FodyWeavers.xsd
 /BLL/Ai/Data/suggestedHabits.json
 /Ai/AiModelRunner/fine_tuned_phi_habits
 /Ai/AiModelRunner/model_cache/models--microsoft--Phi-3.5-mini-instruct
+/Ai/AiModelRunner/model_offload
