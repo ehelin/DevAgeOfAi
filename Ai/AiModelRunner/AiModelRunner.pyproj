@@ -23,10 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AiModelServiceRunner.py" />
-    <Compile Include="debug_model.py" />
+    <Compile Include="ai_model_server.py" />
     <Compile Include="qlora_train.py" />
-    <Compile Include="setup_and_train.py" />
-    <Compile Include="test_model.py" />
+    <Compile Include="simple_train.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
