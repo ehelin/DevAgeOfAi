@@ -15,8 +15,12 @@ namespace HabitTracker
 
         public HabitTrackerForm(IEnumerable<IThirdPartyAiService> thirdPartyAiServices, IDataFileService dataFileService)
         {
-            //this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.PythonScriptService);
-            this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.OpenAiService);
+            // You can switch between different AI services here:
+            // - OpenAiService: Uses OpenAI API
+            // - MicrosoftAiService: Uses Microsoft Azure AI
+            // - PythonAiModelService: Uses local Python Flask server with fine-tuned model
+            //this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.OpenAiService);
+            this.thirdPartyAiService = thirdPartyAiServices.First(x => x is BLL.Ai.Services.PythonAiModelService);
 
             this.dataFileService = dataFileService;
 

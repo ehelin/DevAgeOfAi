@@ -59,6 +59,7 @@ namespace HabitTracker
             // Register the AI Service(s)
             services.AddSingleton<IThirdPartyAiService, OpenAiService>();        
             services.AddSingleton<IThirdPartyAiService, MicrosoftAiService>();
+            services.AddSingleton<IThirdPartyAiService, PythonAiModelService>();  // New Python AI Model service
             //services.AddSingleton(provider => new PythonScriptService(pythonScriptPath));
             //services.AddSingleton<IPythonScriptService>(provider => provider.GetRequiredService<PythonScriptService>());
             //services.AddSingleton<IThirdPartyAiService>(provider => provider.GetRequiredService<PythonScriptService>());

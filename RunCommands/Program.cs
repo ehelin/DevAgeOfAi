@@ -1,4 +1,5 @@
 ﻿using BLL.Ai.Services;
+using RunCommands;
 using Shared.Interfaces;
 using System.Diagnostics;
 
@@ -6,7 +7,16 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        // Define the script path
+       // if (args.Length > 0 && args[0] == "test-python-ai")
+        //{
+            // Run the new Python AI client test
+            await TestPythonAiClient.RunTest();
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
+            return;
+        //}
+
+        // Original code for testing PythonScriptService
         var scriptPath = "C:\\temp\\New folder\\Ai\\AiModelRunner\\PythonApplication1.py";
         var psi = new ProcessStartInfo
         {
