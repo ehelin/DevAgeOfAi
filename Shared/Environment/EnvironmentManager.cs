@@ -25,10 +25,10 @@ public static class EnvironmentManager
                 }
             }
 
-            if (string.IsNullOrEmpty(value))
-            {
-                throw new InvalidOperationException($"{variableName} is not set in environment variables or the local file.");
-            }
+            //if (string.IsNullOrEmpty(value))
+            //{
+            //    throw new InvalidOperationException($"{variableName} is not set in environment variables or the local file.");
+            //}
 
             _variables[variableName] = value;
         }

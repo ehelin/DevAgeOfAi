@@ -75,25 +75,25 @@ namespace HabitTracker
 
         private static void ValidateInput(string openAiKey, string msAiKey, string msAiDeploymentId, string pythonScriptPath)
         {
-            if (string.IsNullOrEmpty(openAiKey))
-            {
-                throw new InvalidOperationException("openAiKey is missing in environment variables.");
-            }
+            //if (string.IsNullOrEmpty(openAiKey))
+            //{
+            //    throw new InvalidOperationException("openAiKey is missing in environment variables.");
+            //}
 
-            if (string.IsNullOrEmpty(msAiKey))
-            {
-                throw new InvalidOperationException("msAiKey is missing in environment variables.");
-            }
+            //if (string.IsNullOrEmpty(msAiKey))
+            //{
+            //    throw new InvalidOperationException("msAiKey is missing in environment variables.");
+            //}
 
-            if (string.IsNullOrEmpty(msAiDeploymentId))
-            {
-                throw new InvalidOperationException("msAiDeploymentId is missing in environment variables.");
-            }
+            //if (string.IsNullOrEmpty(msAiDeploymentId))
+            //{
+            //    throw new InvalidOperationException("msAiDeploymentId is missing in environment variables.");
+            //}
 
-            if (string.IsNullOrEmpty(pythonScriptPath))
-            {
-                throw new InvalidOperationException("Python script path is missing in environment variables.");
-            }
+            //if (string.IsNullOrEmpty(pythonScriptPath))
+            //{
+            //    throw new InvalidOperationException("Python script path is missing in environment variables.");
+            //}
         }
 
         private static async Task InitializeServicesAsync(IServiceProvider serviceProvider)
