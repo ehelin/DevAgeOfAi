@@ -23,7 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AiModelServiceRunner.py" />
+    <Compile Include="ai_model_core.py" />
     <Compile Include="ai_model_server.py" />
+    <Compile Include="ai_model_test_wrapper.py" />
     <Compile Include="qlora_train.py" />
     <Compile Include="simple_train.py" />
   </ItemGroup>

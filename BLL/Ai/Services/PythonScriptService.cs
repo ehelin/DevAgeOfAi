@@ -112,7 +112,9 @@ namespace BLL.Ai.Services
             while (!isReady && !_reader.EndOfStream)
             {
                 var line = await _reader.ReadLineAsync();
-                if (line != null && line.Contains("Python model ready", StringComparison.OrdinalIgnoreCase))
+                // Support both old and new ready signals
+                if (line != null && (line.Contains("Python model ready", StringComparison.OrdinalIgnoreCase) || 
+                                     line.Contains("TEST_READY", StringComparison.OrdinalIgnoreCase)))
                 {
                     isReady = true;
                 }
